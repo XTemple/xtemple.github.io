@@ -12,9 +12,26 @@
       background-color: #1e1e1e;
     }
 
+    .top-nav {
+      background-color: #1e1e1e;
+      padding: 1rem 2rem;
+      text-align: right;
+    }
+
+    .top-nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .top-nav a:hover {
+      color: #008bb0;
+    }
+
     .dashboard-container {
       width: 100vw;
-      height: 100vh;
+      height: calc(100vh - 60px); /* Adjusted to account for nav height */
     }
 
     iframe {
@@ -25,11 +42,16 @@
   </style>
 </head>
 <body>
+  <nav class="top-nav">
+    <a href="about.html">About</a>
+  </nav>
+
   <div class="dashboard-container">
     <iframe 
-      title="detentionStats"
-      src="https://app.powerbi.com/view?r=eyJrIjoiZmRmMzA1YmMtYThkNS00NDgyLWI1MDEtYTE2MTM0ZDg2MmMyIiwidCI6ImQ1N2QzMmNjLWMxMjEtNDg4Zi1iMDdiLWRmZTcwNTY4MGM3MSIsImMiOjN9"
-      allowfullscreen="true">
+      title="detentionStats" 
+      src="https://app.powerbi.com/view?r=eyJrIjoiZmRmMzA1YmMtYThkNS00NDgyLWI1MDEtYTE2MTM0ZDg2MmMyIiwidCI6ImQ1N2QzMmNjLWMxMjEtNDg4Zi1iMDdiLWRmZTcwNTY4MGM3MSIsImMiOjN9&pageName=ReportSection&navContentPaneEnabled=false&footerEnabled=false" 
+      frameborder="0" 
+      allowFullScreen="true">
     </iframe>
   </div>
 </body>
