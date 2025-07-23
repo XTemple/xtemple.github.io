@@ -1,3 +1,59 @@
+/* ====== GLOBAL STYLES ====== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #29242e;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #ffffff;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: #8be9fd;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ====== NAVIGATION BAR ====== */
+
+.top-nav {
+  background-color: #1e1e1e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.top-nav a {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+  color: #008bb0;
+}
+
+/* ====== CONTAINER ====== */
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
 /* ====== LANDING PAGE SPECIFIC ====== */
 
 .landing-page .container {
@@ -43,4 +99,45 @@
 .proceed-button:hover {
   background-color: #178f72;
   border-color: #ffffff;
+}
+
+/* ====== ABOUT PAGE BUTTONS ====== */
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.about-btn {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.about-btn:hover {
+  background-color: #008bb0;
+}
+
+/* ====== SECTIONS ====== */
+
+section {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+ul {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 1rem;
 }
