@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A public dashboard visualizing U.S. immigration detention data from ICE and CBP, updated biweekly.">
   <title>Dashboard | Detention Stats</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       background-color: #1e1e1e;
+      font-family: "Segoe UI", sans-serif;
     }
 
     .top-nav {
@@ -23,6 +27,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 1.1rem;
+      margin-left: 1.5rem;
     }
 
     .top-nav a:hover {
@@ -31,7 +36,7 @@
 
     .dashboard-container {
       width: 100vw;
-      height: calc(100vh - 60px); /* Adjusted to account for nav height */
+      height: calc(100vh - 120px); /* nav + footer height */
     }
 
     iframe {
@@ -39,20 +44,44 @@
       height: 100%;
       border: none;
     }
+
+    footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.95rem;
+      border-top: 1px solid #444;
+    }
+
+    footer a {
+      color: #8be9fd;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <nav class="top-nav">
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
   </nav>
 
-  <div class="dashboard-container">
-    <iframe 
-      title="detentionStats" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiZmRmMzA1YmMtYThkNS00NDgyLWI1MDEtYTE2MTM0ZDg2MmMyIiwidCI6ImQ1N2QzMmNjLWMxMjEtNDg4Zi1iMDdiLWRmZTcwNTY4MGM3MSIsImMiOjN9&pageName=ReportSection&navContentPaneEnabled=false&footerEnabled=false" 
-      frameborder="0" 
-      allowFullScreen="true">
-    </iframe>
-  </div>
+  <main class="dashboard-container">
+    <iframe
+      title="detentionStats"
+      src="https://app.powerbi.com/view?r=eyJrIjoiZmRmMzA1YmMtYThkNS00NDgyLWI1MDEtYTE2MTM0ZDg2MmMyIiwidCI6ImQ1N2QzMmNjLWMxMjEtNDg4Zi1iMDdiLWRmZTcwNTY4MGM3MSIsImMiOjN9&pageName=ReportSection&navContentPaneEnabled=false&footerEnabled=false"
+      frameborder="0"
+      allowfullscreen="true"
+      rel="noopener noreferrer"
+    ></iframe>
+  </main>
+
+  <footer>
+    Contact us: <a href="mailto:info@detentionstats.com">info@detentionstats.com</a>
+  </footer>
 </body>
 </html>

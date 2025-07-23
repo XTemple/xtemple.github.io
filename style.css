@@ -126,6 +126,11 @@ a:hover {
   background-color: #008bb0;
 }
 
+/* ====== LEFT ALIGN FOR SOURCES PAGE ====== */
+.left-align {
+  text-align: left;
+}
+
 /* ====== SECTIONS ====== */
 
 section {
@@ -140,4 +145,24 @@ ul {
 
 ul li {
   margin-bottom: 1rem;
+}
+
+/* ====== FOOTER ====== */
+
+footer {
+  background-color: #1e1e1e;
+  color: #ccc;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: 1px solid #444;
+}
+
+footer a {
+  color: #8be9fd;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
