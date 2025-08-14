@@ -52,35 +52,20 @@
 
     .top-nav a:hover { color: var(--accent); }
 
-    /* Update ticker */
-    .update-ticker {
+    /* Static data freshness block */
+    .last-updated {
       background: #151515;
       color: #ccc;
       padding: 0.6rem 2rem;
       font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
       border-bottom: 1px solid #444;
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      align-items: baseline;
     }
-
-    .update-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      display: inline-block;
-      animation: pulse 2s ease-in-out infinite;
-      box-shadow: 0 0 0 0 rgba(0,139,176,0.6);
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.15); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.7; }
-    }
-
-    .muted { color: #a9a9a9; }
+    .last-updated strong { color: #e8e8e8; }
+    .last-updated time { font-variant-numeric: tabular-nums; }
 
     .dashboard-container {
       flex: 1;
@@ -117,20 +102,10 @@
     <a href="about.html">About</a>
   </nav>
 
-  <!-- Update Ticker -->
-  <div class="update-ticker" role="status" aria-live="polite">
-    <span class="update-dot" aria-hidden="true"></span>
-    <span>
-      <strong>Last update:</strong>
-      <time id="lastUpdatedAbsolute" datetime=""></time>
-      <span id="lastUpdatedRelative" class="muted"></span>
-    </span>
-    <span>•</span>
-    <span>
-      <strong>Next update target:</strong>
-      <time id="nextUpdateAbsolute" datetime=""></time>
-      <span id="nextUpdateRelative" class="muted"></span>
-    </span>
+  <!-- Update Tracking. EDIT THESE DATES ONLY when the underlying data changes. -->
+  <div class="last-updated" aria-label="Data freshness">
+    <div><strong>Last updated:</strong> <time datetime="2025-08-01">01 Aug 2025</time></div>
+    <div><strong>Next update target:</strong> <time datetime="2025-08-15">15 Aug 2025</time></div>
   </div>
 
   <main class="dashboard-container">
@@ -146,77 +121,5 @@
   <footer>
     Contact us: <a href="mailto:info@detentionstats.com">info@detentionstats.com</a>
   </footer>
-
-  <script>
-    /**
-     * >>> UPDATE THIS when you publish new data <<<
-     * Use an ISO 8601 string (UTC recommended), e.g. "2025-08-12T14:30:00Z"
-     * Leave empty ("") to fall back to document.lastModified.
-     */
-    const LAST_REFRESH_ISO = "August 1, 2025";
-
-    // --- Helpers ---
-    const MS = { minute: 60_000, hour: 3_600_000, day: 86_400_000 };
-    const fmt = new Intl.DateTimeFormat(undefined, {
-      year: "numeric", month: "short", day: "2-digit",
-      hour: "2-digit", minute: "2-digit"
-    });
-
-    function parseLastDate() {
-      if (LAST_REFRESH_ISO && !isNaN(Date.parse(LAST_REFRESH_ISO))) {
-        return new Date(LAST_REFRESH_ISO);
-      }
-      // Fallback to the file's last modified time
-      const fallback = new Date(document.lastModified);
-      return isNaN(fallback.getTime()) ? new Date() : fallback;
-    }
-
-    function addDays(date, days) {
-      return new Date(date.getTime() + days * MS.day);
-    }
-
-    function relFromNow(target) {
-      const now = Date.now();
-      const diff = target.getTime() - now;
-      const abs = Math.abs(diff);
-
-      const units = [
-        ["day", MS.day],
-        ["hour", MS.hour],
-        ["minute", MS.minute]
-      ];
-
-      for (const [name, unitMs] of units) {
-        if (abs >= unitMs || name === "minute") {
-          const val = Math.round(abs / unitMs);
-          const plural = val === 1 ? "" : "s";
-          return diff < 0 ? `${val} ${name}${plural} ago` : `in ${val} ${name}${plural}`;
-        }
-      }
-      return "just now";
-    }
-
-    function updateTicker() {
-      const last = parseLastDate();
-      const next = addDays(last, 14);
-
-      const lastAbsEl = document.getElementById("lastUpdatedAbsolute");
-      const lastRelEl = document.getElementById("lastUpdatedRelative");
-      const nextAbsEl = document.getElementById("nextUpdateAbsolute");
-      const nextRelEl = document.getElementById("nextUpdateRelative");
-
-      lastAbsEl.textContent = fmt.format(last);
-      lastAbsEl.setAttribute("datetime", last.toISOString());
-      lastRelEl.textContent = `(${relFromNow(last)})`;
-
-      nextAbsEl.textContent = fmt.format(next);
-      nextAbsEl.setAttribute("datetime", next.toISOString());
-      nextRelEl.textContent = `(${relFromNow(next)})`;
-    }
-
-    // Initial paint + refresh relative text every 60s
-    updateTicker();
-    setInterval(updateTicker, 60_000);
-  </script>
 </body>
 </html>
