@@ -67,6 +67,16 @@
     .last-updated strong { color: #e8e8e8; }
     .last-updated time { font-variant-numeric: tabular-nums; }
 
+        .ice-alert {
+      background: #3b1c1c;      /* dark red background */
+      color: #ffbaba;           /* light red text */
+      padding: 0.75rem 2rem;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #662222;
+      font-weight: 500;
+    }
+
+
     .dashboard-container {
       flex: 1;
       min-height: 0; /* important so the iframe can size inside flex */
@@ -106,6 +116,12 @@
   <div class="last-updated" aria-label="Data freshness">
     <div><strong>Last updated:</strong> <time datetime="2025-08-14">14 Aug 2025</time></div>
     <div><strong>Next update target:</strong> <time datetime="2025-08-28">28 Aug 2025</time></div>
+  </div>
+
+    <!-- ICE update alert banner -->
+  <div class="ice-alert" role="alert">
+    ⚠️ ICE has not released updated detention data for this cycle.  
+    The dashboard currently reflects the most recent available dataset.
   </div>
 
   <main class="dashboard-container">
