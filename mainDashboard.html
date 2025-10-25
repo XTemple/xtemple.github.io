@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="A public dashboard visualizing U.S. immigration detention data from ICE and CBP, updated biweekly.">
   <title>Dashboard | Detention Stats</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <!-- Google tag (gtag.js) -->
@@ -67,7 +68,7 @@
     .last-updated strong { color: #e8e8e8; }
     .last-updated time { font-variant-numeric: tabular-nums; }
 
-        .ice-alert {
+    .ice-alert {
       background: #3b1c1c;      /* dark red background */
       color: #ffbaba;           /* light red text */
       padding: 0.75rem 2rem;
@@ -75,7 +76,6 @@
       border-bottom: 1px solid #662222;
       font-weight: 500;
     }
-
 
     .dashboard-container {
       flex: 1;
@@ -106,19 +106,27 @@
     footer a:hover { text-decoration: underline; }
   </style>
 </head>
+
 <body>
-  <div id="detentionstats-banner" class="site-banner" role="region" aria-label="Site notice">
-  <div class="site-banner__inner" role="status" aria-live="polite">
-    <span class="site-banner__badge">Data Notice</span>
-    <div class="site-banner__text">
-      <strong>Updates temporarily limited:</strong>
-      ICE has paused some public web updates during a federal funding lapse. Our charts reflect the
-      <span id="ds-last-available-date">latest available release</span> and will refresh when official updates resume.
-      <a href="https://www.ice.gov/funding-lapse" target="_blank" rel="noopener">Learn more</a>.
+  <!-- DATA NOTICE MODAL -->
+  <div id="detentionstats-modal"
+       class="ds-modal"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="ds-modal-title"
+       hidden>
+    <div class="ds-modal__backdrop" data-close></div>
+    <div class="ds-modal__dialog">
+      <button class="ds-modal__close" type="button" aria-label="Dismiss notice">&times;</button>
+      <p class="ds-modal__title" id="ds-modal-title">Data Notice</p>
+      <p>
+        <strong>Updates temporarily limited:</strong>
+        ICE has paused some public web updates during a federal funding lapse. Our charts reflect the
+        <span id="ds-last-available-date">latest available release</span> and will refresh when official updates resume.
+        <a href="https://www.ice.gov/funding-lapse" target="_blank" rel="noopener">Learn more</a>.
+      </p>
     </div>
-    <button class="site-banner__close" type="button" aria-label="Dismiss notice" title="Dismiss">&times;</button>
   </div>
-</div>
 
   <nav class="top-nav">
     <a href="index.html">Home</a>
@@ -131,9 +139,9 @@
     <div><strong>Next update target:</strong> <time datetime="2025-10-10">10 Oct 2025</time></div>
   </div>
 
-    UPDATE ALERT
+  UPDATE ALERT
   <div class="ice-alert" role="alert">
-    ⚠️ ICE has not released updated detention data for this cycle.  
+    ⚠️ ICE has not released updated detention data for this cycle.
     The dashboard currently reflects the most recent available dataset. ⚠️
   </div>
 
@@ -150,28 +158,39 @@
   <footer>
     Contact us: <a href="mailto:info@detentionstats.com">info@detentionstats.com</a>
   </footer>
+
+  <!-- MODAL SCRIPT (shared key with index.html) -->
   <script>
-(function(){
-  const BANNER_ID = "detentionstats-banner";
-  const KEY = "ds_banner_dismiss_v1"; // bump this to re-show for everyone
-  const banner = document.getElementById(BANNER_ID);
-  if(!banner) return;
+  (function () {
+    const KEY = "ds_notice_v1";                         // shared across pages
+    const force = new URLSearchParams(location.search).has("notice"); // add ?notice to force-show
+    const modal = document.getElementById("detentionstats-modal");
+    if (!modal) return;
 
-  try{
-    if(localStorage.getItem(KEY)==="1"){ banner.setAttribute("hidden",""); return; }
-  }catch(e){}
+    if (!force) {
+      try { if (localStorage.getItem(KEY) === "1") { modal.hidden = true; return; } } catch (e) {}
+    }
 
-  const closeBtn = banner.querySelector(".site-banner__close");
-  if(closeBtn){
-    closeBtn.addEventListener("click",()=>{
-      banner.setAttribute("data-state","closing");
-      try{ localStorage.setItem(KEY,"1"); }catch(e){}
-      setTimeout(()=>banner.setAttribute("hidden",""),200);
-    });
-  }
+    // Open
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
 
-})();
-</script>
+    const closeBtn = modal.querySelector(".ds-modal__close");
+    const backdrop = modal.querySelector(".ds-modal__backdrop");
 
+    function closeModal(persist = true) {
+      modal.hidden = true;
+      document.body.classList.remove("modal-open");
+      if (persist) { try { localStorage.setItem(KEY, "1"); } catch (e) {} }
+    }
+
+    closeBtn?.addEventListener("click", () => closeModal(true));
+    backdrop?.addEventListener("click", () => closeModal(true));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(true); });
+
+    // Optional: exact “as of” date
+    // document.getElementById("ds-last-available-date").textContent = "as of Sep 30, 2025";
+  })();
+  </script>
 </body>
 </html>

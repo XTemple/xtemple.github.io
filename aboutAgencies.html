@@ -14,25 +14,11 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-97FZXK7RF5');
   </script>
-
 </head>
-<body class="about-page">
-  <div id="detentionstats-banner" class="site-banner" role="region" aria-label="Site notice">
-  <div class="site-banner__inner" role="status" aria-live="polite">
-    <span class="site-banner__badge">Data Notice</span>
-    <div class="site-banner__text">
-      <strong>Updates temporarily limited:</strong>
-      ICE has paused some public web updates during a federal funding lapse. Our charts reflect the
-      <span id="ds-last-available-date">latest available release</span> and will refresh when official updates resume.
-      <a href="https://www.ice.gov/funding-lapse" target="_blank" rel="noopener">Learn more</a>.
-    </div>
-    <button class="site-banner__close" type="button" aria-label="Dismiss notice" title="Dismiss">&times;</button>
-  </div>
-</div>
 
+<body class="about-page">
   <nav class="top-nav">
     <a href="index.html">Home</a>
     <a href="mainDashboard.html">Dashboard</a>
@@ -81,28 +67,5 @@
   <footer>
     Contact us: <a href="mailto:info@detentionstats.com">info@detentionstats.com</a>
   </footer>
-  <script>
-(function(){
-  const BANNER_ID = "detentionstats-banner";
-  const KEY = "ds_banner_dismiss_v1"; // bump this to re-show for everyone
-  const banner = document.getElementById(BANNER_ID);
-  if(!banner) return;
-
-  try{
-    if(localStorage.getItem(KEY)==="1"){ banner.setAttribute("hidden",""); return; }
-  }catch(e){}
-
-  const closeBtn = banner.querySelector(".site-banner__close");
-  if(closeBtn){
-    closeBtn.addEventListener("click",()=>{
-      banner.setAttribute("data-state","closing");
-      try{ localStorage.setItem(KEY,"1"); }catch(e){}
-      setTimeout(()=>banner.setAttribute("hidden",""),200);
-    });
-  }
-
-})();
-</script>
-
 </body>
 </html>
