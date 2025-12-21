@@ -19,25 +19,7 @@
 </head>
 
 <body class="landing-page">
-  <!-- DATA NOTICE MODAL -->
-  <div id="detentionstats-modal"
-       class="ds-modal"
-       role="dialog"
-       aria-modal="true"
-       aria-labelledby="ds-modal-title"
-       hidden>
-    <div class="ds-modal__backdrop" data-close></div>
-    <div class="ds-modal__dialog">
-      <button class="ds-modal__close" type="button" aria-label="Dismiss notice">&times;</button>
-      <p class="ds-modal__title" id="ds-modal-title">Data Notice</p>
-      <p>
-        <strong>Updates temporarily limited:</strong>
-        ICE has paused some public web updates during a federal funding lapse. Our charts reflect the
-        <span id="ds-last-available-date">latest available release</span> and will refresh when official updates resume.
-        <a href="https://www.ice.gov/detain/detention-management" target="_blank" rel="noopener">Learn more</a>.
-      </p>
-    </div>
-  </div>
+
 
   <div class="container">
     <h1>Detention Stats</h1>
@@ -59,38 +41,5 @@
     <a href="mainDashboard.html" class="proceed-button">Proceed</a>
   </div>
 
-  <!-- MODAL SCRIPT -->
-  <script>
-  (function () {
-    const KEY = "ds_notice_v1";                        // shared with mainDashboard.html
-    const force = new URLSearchParams(location.search).has("notice"); // add ?notice to force-show
-    const modal = document.getElementById("detentionstats-modal");
-    if (!modal) return;
-
-    if (!force) {
-      try { if (localStorage.getItem(KEY) === "1") { modal.hidden = true; return; } } catch (e) {}
-    }
-
-    // Open
-    modal.hidden = false;
-    document.body.classList.add("modal-open");
-
-    const closeBtn = modal.querySelector(".ds-modal__close");
-    const backdrop = modal.querySelector(".ds-modal__backdrop");
-
-    function closeModal(persist = true) {
-      modal.hidden = true;
-      document.body.classList.remove("modal-open");
-      if (persist) { try { localStorage.setItem(KEY, "1"); } catch (e) {} }
-    }
-
-    closeBtn?.addEventListener("click", () => closeModal(true));
-    backdrop?.addEventListener("click", () => closeModal(true));
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(true); });
-
-    // Optional: exact “as of” date
-    // document.getElementById("ds-last-available-date").textContent = "as of Sep 30, 2025";
-  })();
-  </script>
 </body>
 </html>
