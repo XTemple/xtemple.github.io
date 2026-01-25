@@ -1,0 +1,9 @@
+FY25 Criminality Measure:
+
+No Crim Rate FY25 :=
+CALCULATE(
+    [Have No Criminal Record],
+    'Date'[FiscalYear] = "FY25"
+)
+
+
