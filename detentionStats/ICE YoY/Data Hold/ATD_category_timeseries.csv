@@ -1,0 +1,115 @@
+Month,Category,Count,Total,Share
+2023-09-01,Case Mgmt / No Tech (lowest intrusiveness),445.0,194632.0,0.0022863660651896915
+2023-09-01,Layered Monitoring (high intrusiveness),598.0,194632.0,0.003072464959513338
+2023-09-01,Other/Uncategorized,0.0,194632.0,0.0
+2023-09-01,Phone/Voice Reporting (moderate intrusiveness),181535.0,194632.0,0.9327089070656418
+2023-09-01,Physical Tracking (highest intrusiveness),12054.0,194632.0,0.061932261909655145
+2023-11-01,Case Mgmt / No Tech (lowest intrusiveness),261.0,189988.0,0.001373770975008948
+2023-11-01,Layered Monitoring (high intrusiveness),1117.0,189988.0,0.005879318693812241
+2023-11-01,Other/Uncategorized,0.0,189988.0,0.0
+2023-11-01,Phone/Voice Reporting (moderate intrusiveness),173539.0,189988.0,0.9134208476324821
+2023-11-01,Physical Tracking (highest intrusiveness),15071.0,189988.0,0.07932606269869676
+2023-12-01,Case Mgmt / No Tech (lowest intrusiveness),246.0,192163.0,0.0012801631947877584
+2023-12-01,Layered Monitoring (high intrusiveness),994.0,192163.0,0.005172691933410698
+2023-12-01,Other/Uncategorized,0.0,192163.0,0.0
+2023-12-01,Phone/Voice Reporting (moderate intrusiveness),174029.0,192163.0,0.9056321976655235
+2023-12-01,Physical Tracking (highest intrusiveness),16894.0,192163.0,0.087914947206278
+2024-01-01,Case Mgmt / No Tech (lowest intrusiveness),47.0,192490.0,0.000244168528235233
+2024-01-01,Layered Monitoring (high intrusiveness),721.0,192490.0,0.003745649124629851
+2024-01-01,Other/Uncategorized,0.0,192490.0,0.0
+2024-01-01,Phone/Voice Reporting (moderate intrusiveness),174467.0,192490.0,0.9063691620343914
+2024-01-01,Physical Tracking (highest intrusiveness),17255.0,192490.0,0.08964102031274351
+2024-02-01,Case Mgmt / No Tech (lowest intrusiveness),8.0,184601.0,4.333670998531969e-05
+2024-02-01,Layered Monitoring (high intrusiveness),1342.0,184601.0,0.007269733100037378
+2024-02-01,Other/Uncategorized,0.0,184601.0,0.0
+2024-02-01,Phone/Voice Reporting (moderate intrusiveness),166086.0,184601.0,0.8997026018277258
+2024-02-01,Physical Tracking (highest intrusiveness),17165.0,184601.0,0.09298432836225155
+2024-03-01,Case Mgmt / No Tech (lowest intrusiveness),10.0,183935.0,5.436703183189714e-05
+2024-03-01,Layered Monitoring (high intrusiveness),1759.0,183935.0,0.009563160899230707
+2024-03-01,Other/Uncategorized,0.0,183935.0,0.0
+2024-03-01,Phone/Voice Reporting (moderate intrusiveness),163076.0,183935.0,0.8865958083018458
+2024-03-01,Physical Tracking (highest intrusiveness),19090.0,183935.0,0.10378666376709164
+2024-04-01,Case Mgmt / No Tech (lowest intrusiveness),11.0,184318.0,5.9679467008105556e-05
+2024-04-01,Layered Monitoring (high intrusiveness),1650.0,184318.0,0.008951920051215834
+2024-04-01,Other/Uncategorized,0.0,184318.0,0.0
+2024-04-01,Phone/Voice Reporting (moderate intrusiveness),160343.0,184318.0,0.8699258889527881
+2024-04-01,Physical Tracking (highest intrusiveness),22314.0,184318.0,0.12106251152898795
+2024-05-01,Case Mgmt / No Tech (lowest intrusiveness),9.0,184083.0,4.88909893906553e-05
+2024-05-01,Layered Monitoring (high intrusiveness),1341.0,184083.0,0.00728475741920764
+2024-05-01,Other/Uncategorized,0.0,184083.0,0.0
+2024-05-01,Phone/Voice Reporting (moderate intrusiveness),158278.0,184083.0,0.8598186687526822
+2024-05-01,Physical Tracking (highest intrusiveness),24455.0,184083.0,0.13284768283871948
+2024-06-01,Case Mgmt / No Tech (lowest intrusiveness),14.0,181499.0,7.713541121438685e-05
+2024-06-01,Layered Monitoring (high intrusiveness),1076.0,181499.0,0.00592840731904859
+2024-06-01,Other/Uncategorized,0.0,181499.0,0.0
+2024-06-01,Phone/Voice Reporting (moderate intrusiveness),156247.0,181499.0,0.8608697568581645
+2024-06-01,Physical Tracking (highest intrusiveness),24162.0,181499.0,0.1331247004115725
+2024-07-01,Case Mgmt / No Tech (lowest intrusiveness),14.0,177670.0,7.879777114875893e-05
+2024-07-01,Layered Monitoring (high intrusiveness),534.0,177670.0,0.0030055721281026623
+2024-07-01,Other/Uncategorized,0.0,177670.0,0.0
+2024-07-01,Phone/Voice Reporting (moderate intrusiveness),154207.0,177670.0,0.8679405639669049
+2024-07-01,Physical Tracking (highest intrusiveness),22915.0,177670.0,0.12897506613384363
+2024-08-01,Case Mgmt / No Tech (lowest intrusiveness),6.0,175619.0,3.416486826596211e-05
+2024-08-01,Layered Monitoring (high intrusiveness),384.0,175619.0,0.002186551569021575
+2024-08-01,Other/Uncategorized,0.0,175619.0,0.0
+2024-08-01,Phone/Voice Reporting (moderate intrusiveness),153432.0,175619.0,0.8736640112971831
+2024-08-01,Physical Tracking (highest intrusiveness),21797.0,175619.0,0.12411527226552936
+2024-09-01,Case Mgmt / No Tech (lowest intrusiveness),4.0,176886.0,2.2613434641520527e-05
+2024-09-01,Layered Monitoring (high intrusiveness),423.0,176886.0,0.0023913707133407956
+2024-09-01,Other/Uncategorized,0.0,176886.0,0.0
+2024-09-01,Phone/Voice Reporting (moderate intrusiveness),154136.0,176886.0,0.871386090476352
+2024-09-01,Physical Tracking (highest intrusiveness),22323.0,176886.0,0.12619992537566568
+2024-11-01,Case Mgmt / No Tech (lowest intrusiveness),2.0,181888.0,1.0995777621393385e-05
+2024-11-01,Layered Monitoring (high intrusiveness),605.0,181888.0,0.003326222730471499
+2024-11-01,Other/Uncategorized,0.0,181888.0,0.0
+2024-11-01,Phone/Voice Reporting (moderate intrusiveness),157315.0,181888.0,0.8649003782547502
+2024-11-01,Physical Tracking (highest intrusiveness),23966.0,181888.0,0.13176240323715693
+2024-12-01,Case Mgmt / No Tech (lowest intrusiveness),12.0,185707.0,6.461791962607764e-05
+2024-12-01,Layered Monitoring (high intrusiveness),500.0,185707.0,0.002692413317753235
+2024-12-01,Other/Uncategorized,0.0,185707.0,0.0
+2024-12-01,Phone/Voice Reporting (moderate intrusiveness),159716.0,185707.0,0.8600429709165514
+2024-12-01,Physical Tracking (highest intrusiveness),25479.0,185707.0,0.13719999784606934
+2025-01-01,Case Mgmt / No Tech (lowest intrusiveness),4.0,188304.0,2.12422465799983e-05
+2025-01-01,Layered Monitoring (high intrusiveness),473.0,188304.0,0.002511895658084799
+2025-01-01,Other/Uncategorized,0.0,188304.0,0.0
+2025-01-01,Phone/Voice Reporting (moderate intrusiveness),161150.0,188304.0,0.8557970090916815
+2025-01-01,Physical Tracking (highest intrusiveness),26677.0,188304.0,0.14166985300365367
+2025-02-01,Case Mgmt / No Tech (lowest intrusiveness),2.0,185511.0,1.0781031852558608e-05
+2025-02-01,Layered Monitoring (high intrusiveness),108.0,185511.0,0.0005821757200381648
+2025-02-01,Other/Uncategorized,0.0,185511.0,0.0
+2025-02-01,Phone/Voice Reporting (moderate intrusiveness),162191.0,185511.0,0.8742931685991666
+2025-02-01,Physical Tracking (highest intrusiveness),23210.0,185511.0,0.12511387464894266
+2025-03-01,Case Mgmt / No Tech (lowest intrusiveness),6.0,183884.0,3.262926627656566e-05
+2025-03-01,Layered Monitoring (high intrusiveness),42.0,183884.0,0.00022840486393595961
+2025-03-01,Other/Uncategorized,0.0,183884.0,0.0
+2025-03-01,Phone/Voice Reporting (moderate intrusiveness),161513.0,183884.0,0.878341780687825
+2025-03-01,Physical Tracking (highest intrusiveness),22323.0,183884.0,0.12139718518196255
+2025-04-01,Case Mgmt / No Tech (lowest intrusiveness),4.0,183635.0,2.178233996787105e-05
+2025-04-01,Layered Monitoring (high intrusiveness),37.0,183635.0,0.0002014866447028072
+2025-04-01,Other/Uncategorized,0.0,183635.0,0.0
+2025-04-01,Phone/Voice Reporting (moderate intrusiveness),161127.0,183635.0,0.8774307730007896
+2025-04-01,Physical Tracking (highest intrusiveness),22467.0,183635.0,0.12234595801453971
+2025-05-01,Case Mgmt / No Tech (lowest intrusiveness),3.0,185675.0,1.6157264036623133e-05
+2025-05-01,Layered Monitoring (high intrusiveness),22.0,185675.0,0.0001184866029352363
+2025-05-01,Other/Uncategorized,0.0,185675.0,0.0
+2025-05-01,Phone/Voice Reporting (moderate intrusiveness),161598.0,185675.0,0.8703271845967416
+2025-05-01,Physical Tracking (highest intrusiveness),24052.0,185675.0,0.12953817153628652
+2025-06-01,Layered Monitoring (high intrusiveness),14.0,183756.0,7.618798841942576e-05
+2025-06-01,Other/Uncategorized,0.0,183756.0,0.0
+2025-06-01,Phone/Voice Reporting (moderate intrusiveness),158608.0,183756.0,0.86314460480202
+2025-06-01,Physical Tracking (highest intrusiveness),25134.0,183756.0,0.1367792072095605
+2025-07-01,Case Mgmt / No Tech (lowest intrusiveness),3.0,182799.0,1.641146833407185e-05
+2025-07-01,Layered Monitoring (high intrusiveness),13.0,182799.0,7.111636278097802e-05
+2025-07-01,Other/Uncategorized,0.0,182799.0,0.0
+2025-07-01,Phone/Voice Reporting (moderate intrusiveness),154380.0,182799.0,0.8445341604713373
+2025-07-01,Physical Tracking (highest intrusiveness),28403.0,182799.0,0.15537831169754757
+2025-08-01,Case Mgmt / No Tech (lowest intrusiveness),12.0,182584.0,6.572317399114928e-05
+2025-08-01,Layered Monitoring (high intrusiveness),9.0,182584.0,4.929238049336196e-05
+2025-08-01,Other/Uncategorized,0.0,182584.0,0.0
+2025-08-01,Phone/Voice Reporting (moderate intrusiveness),151870.0,182584.0,0.8317815361696534
+2025-08-01,Physical Tracking (highest intrusiveness),30693.0,182584.0,0.16810344827586207
+2025-09-01,Case Mgmt / No Tech (lowest intrusiveness),19.0,181210.0,0.00010485072567739087
+2025-09-01,Layered Monitoring (high intrusiveness),8.0,181210.0,4.4147673969427735e-05
+2025-09-01,Other/Uncategorized,0.0,181210.0,0.0
+2025-09-01,Phone/Voice Reporting (moderate intrusiveness),148442.0,181210.0,0.819171127421224
+2025-09-01,Physical Tracking (highest intrusiveness),32741.0,181210.0,0.18067987417912917

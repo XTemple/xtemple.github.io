@@ -1,0 +1,6 @@
+Category,Share_FY24,Share_FY25,Delta_pp_FY25_minus_FY24
+Physical Tracking (highest intrusiveness),0.1104365645011101,0.14081561399202847,3.037904949091837
+Other/Uncategorized,0.0,0.0,0.0
+Case Mgmt / No Tech (lowest intrusiveness),0.00031137989731382944,3.3087187702628157e-05,-0.027829270961120124
+Layered Monitoring (high intrusiveness),0.0056053324054541895,0.0009042185176643606,-0.47011138877898295
+Phone/Voice Reporting (moderate intrusiveness),0.8836467231961219,0.8582470803026045,-2.539964289351737

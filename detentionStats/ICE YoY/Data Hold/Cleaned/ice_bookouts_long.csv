@@ -1,0 +1,1275 @@
+Fiscal Year,Source File Date,Source File,Sheet Used,Release Reason,Criminality,Month,Count,IsSheetTotal,Level,ParentReason
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Oct,20382,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Oct,941,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Oct,188,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Oct,220,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Oct,533,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Oct,294,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Oct,45,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Oct,50,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Oct,199,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Oct,647,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Oct,143,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Oct,170,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Oct,334,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Oct,2920,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Oct,192,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Oct,233,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Oct,2495,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Oct,549,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Oct,162,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Oct,49,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Oct,338,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Oct,5626,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Oct,103,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Oct,93,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Oct,5430,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Oct,67,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Oct,33,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Oct,11,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Oct,23,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Oct,9733,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Oct,4231,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Oct,991,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Oct,4511,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Oct,99,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Oct,46,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Oct,15,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Oct,38,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Oct,424,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Oct,297,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Oct,82,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Oct,45,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Oct,20,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Oct,6,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Oct,7,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Oct,7,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Oct,3,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Oct,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Oct,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Oct,3,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Nov,19637,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Nov,940,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Nov,173,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Nov,212,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Nov,555,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Nov,363,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Nov,42,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Nov,39,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Nov,282,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Nov,577,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Nov,131,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Nov,173,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Nov,273,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Nov,3068,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Nov,185,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Nov,211,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Nov,2672,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Nov,385,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Nov,166,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Nov,50,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Nov,169,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Nov,5630,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Nov,54,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Nov,78,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Nov,5498,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Nov,78,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Nov,31,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Nov,5,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Nov,42,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Nov,9022,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Nov,4085,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Nov,946,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Nov,3991,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Nov,82,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Nov,44,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Nov,10,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Nov,28,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Nov,385,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Nov,263,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Nov,108,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Nov,14,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Nov,45,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Nov,16,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Nov,7,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Nov,22,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Nov,2,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Nov,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Nov,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Nov,2,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Dec,20287,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Dec,981,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Dec,194,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Dec,212,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Dec,575,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Dec,360,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Dec,33,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Dec,54,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Dec,273,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Dec,621,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Dec,161,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Dec,158,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Dec,302,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Dec,4452,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Dec,180,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Dec,250,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Dec,4022,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Dec,409,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Dec,190,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Dec,30,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Dec,189,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Dec,5130,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Dec,59,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Dec,64,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Dec,5007,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Dec,63,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Dec,20,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Dec,12,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Dec,31,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Dec,8785,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Dec,4029,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Dec,919,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Dec,3837,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Dec,84,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Dec,43,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Dec,13,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Dec,28,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Dec,345,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Dec,243,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Dec,83,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Dec,19,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Dec,34,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Dec,18,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Dec,2,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Dec,14,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Dec,4,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Dec,2,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Dec,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Dec,2,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Jan,19291,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Jan,690,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Jan,164,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Jan,192,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Jan,334,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Jan,125,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Jan,9,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Jan,35,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Jan,81,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Jan,565,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Jan,155,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Jan,157,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Jan,253,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Jan,1938,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Jan,97,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Jan,189,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Jan,1652,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Jan,477,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Jan,168,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Jan,40,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Jan,269,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Jan,4732,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Jan,75,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Jan,46,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Jan,4611,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Jan,77,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Jan,20,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Jan,5,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Jan,52,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Jan,10803,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Jan,4523,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Jan,1093,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Jan,5187,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Jan,102,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Jan,57,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Jan,11,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Jan,34,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Jan,443,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Jan,284,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Jan,87,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Jan,72,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Jan,28,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Jan,3,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Jan,4,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Jan,21,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Jan,1,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Jan,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Jan,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Jan,1,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Feb,22137,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Feb,852,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Feb,180,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Feb,189,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Feb,483,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Feb,203,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Feb,24,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Feb,34,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Feb,145,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Feb,649,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Feb,156,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Feb,155,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Feb,338,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Feb,2272,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Feb,240,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Feb,255,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Feb,1777,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Feb,358,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Feb,150,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Feb,44,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Feb,164,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Feb,5259,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Feb,46,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Feb,50,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Feb,5163,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Feb,128,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Feb,27,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Feb,10,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Feb,91,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Feb,12635,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Feb,4584,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Feb,1029,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Feb,7022,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Feb,84,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Feb,33,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Feb,8,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Feb,43,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Feb,526,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Feb,284,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Feb,100,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Feb,142,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Feb,20,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Feb,11,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Feb,0,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Feb,9,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Feb,3,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Feb,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Feb,2,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Feb,1,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Mar,24399,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Mar,1085,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Mar,217,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Mar,267,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Mar,601,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Mar,314,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Mar,30,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Mar,41,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Mar,243,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Mar,771,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Mar,187,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Mar,226,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Mar,358,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Mar,2415,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Mar,302,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Mar,349,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Mar,1764,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Mar,985,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Mar,180,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Mar,79,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Mar,726,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Mar,6017,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Mar,42,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Mar,62,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Mar,5913,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Mar,100,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Mar,25,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Mar,10,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Mar,65,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Mar,12989,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Mar,4627,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Mar,1120,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Mar,7242,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Mar,112,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Mar,35,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Mar,12,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Mar,65,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Mar,616,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Mar,315,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Mar,160,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Mar,141,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Mar,76,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Mar,29,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Mar,26,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Mar,21,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Mar,4,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Mar,2,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Mar,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Mar,2,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Apr,23643,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Apr,1084,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Apr,228,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Apr,293,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Apr,563,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Apr,321,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Apr,42,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Apr,46,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Apr,233,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Apr,763,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Apr,186,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Apr,247,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Apr,330,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Apr,1502,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Apr,175,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Apr,234,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Apr,1093,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Apr,1157,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Apr,196,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Apr,96,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Apr,865,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Apr,5345,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Apr,65,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Apr,60,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Apr,5220,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Apr,97,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Apr,23,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Apr,10,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Apr,64,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Apr,13720,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Apr,4930,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Apr,1288,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Apr,7502,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Apr,118,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Apr,44,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Apr,8,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Apr,66,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Apr,590,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Apr,359,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Apr,127,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Apr,104,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Apr,28,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Apr,9,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Apr,2,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Apr,17,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Apr,2,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Apr,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Apr,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Apr,2,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,May,25952,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,May,1021,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,May,239,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,May,275,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,May,507,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,May,335,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,May,49,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,May,60,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,May,226,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,May,686,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,May,190,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,May,215,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,May,281,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,May,1748,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,May,174,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,May,366,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,May,1208,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,May,1060,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,May,230,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,May,120,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,May,710,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,May,4785,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,May,25,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,May,72,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,May,4688,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,May,191,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,May,37,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,May,18,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,May,136,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,May,16327,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,May,5082,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,May,1435,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,May,9810,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,May,142,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,May,53,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,May,10,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,May,79,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,May,632,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,May,329,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,May,224,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,May,79,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,May,40,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,May,6,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,May,20,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,May,14,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,May,6,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,May,2,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,May,3,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,May,1,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Jun,23738,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Jun,885,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Jun,223,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Jun,279,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Jun,383,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Jun,154,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Jun,25,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Jun,40,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Jun,89,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Jun,731,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Jun,198,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Jun,239,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Jun,294,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Jun,1735,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Jun,153,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Jun,348,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Jun,1234,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Jun,796,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Jun,167,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Jun,102,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Jun,527,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Jun,4213,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Jun,30,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Jun,60,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Jun,4123,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Jun,161,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Jun,19,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Jun,11,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Jun,131,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Jun,15371,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Jun,4506,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Jun,1300,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Jun,9565,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Jun,114,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Jun,42,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Jun,16,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Jun,56,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Jun,416,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Jun,270,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Jun,99,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Jun,47,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Jun,44,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Jun,19,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Jun,7,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Jun,18,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Jun,3,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Jun,1,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Jun,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Jun,2,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Jul,24735,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Jul,968,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Jul,241,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Jul,290,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Jul,437,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Jul,158,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Jul,29,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Jul,26,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Jul,103,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Jul,810,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Jul,212,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Jul,264,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Jul,334,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Jul,1878,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Jul,159,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Jul,254,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Jul,1465,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Jul,628,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Jul,205,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Jul,128,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Jul,295,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Jul,4806,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Jul,46,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Jul,81,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Jul,4679,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Jul,117,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Jul,24,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Jul,18,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Jul,75,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Jul,15627,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Jul,4930,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Jul,1510,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Jul,9187,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Jul,135,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Jul,63,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Jul,13,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Jul,59,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Jul,549,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Jul,361,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Jul,125,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Jul,63,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Jul,25,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Jul,6,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Jul,4,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Jul,15,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Jul,2,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Jul,1,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Jul,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Jul,1,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Aug,23652,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Aug,1046,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Aug,240,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Aug,343,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Aug,463,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Aug,289,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Aug,31,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Aug,49,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Aug,209,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Aug,757,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Aug,209,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Aug,294,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Aug,254,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Aug,1270,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Aug,132,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Aug,272,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Aug,866,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Aug,657,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Aug,237,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Aug,136,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Aug,284,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Aug,4977,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Aug,53,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Aug,92,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Aug,4832,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Aug,79,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Aug,28,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Aug,27,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Aug,24,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Aug,14856,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Aug,5020,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Aug,1698,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Aug,8138,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Aug,116,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Aug,52,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Aug,13,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Aug,51,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Aug,569,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Aug,370,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Aug,151,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Aug,48,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Aug,80,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Aug,15,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Aug,8,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Aug,57,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Aug,2,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Aug,1,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Aug,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Aug,1,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Sep,4683,False,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Sep,195,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Sep,49,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Sep,57,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Sep,89,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Sep,62,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Sep,8,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Sep,12,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Sep,42,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Sep,133,False,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Sep,41,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Sep,45,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Sep,47,False,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Sep,275,False,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Sep,34,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Sep,59,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Sep,182,False,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Sep,97,False,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Sep,39,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Sep,24,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Sep,34,False,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Sep,972,False,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Sep,7,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Sep,12,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Sep,953,False,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Sep,14,False,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Sep,4,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Sep,10,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Sep,0,False,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Sep,2884,False,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Sep,1038,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Sep,375,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Sep,1471,False,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Sep,26,False,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Sep,8,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Sep,3,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Sep,15,False,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Sep,85,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Sep,59,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Sep,17,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Sep,9,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Sep,134,False,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Sep,40,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Sep,27,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Sep,67,False,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Sep,1,False,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Sep,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Sep,1,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Sep,0,False,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Total,None,Total,252536,True,Criminality Detail,Total
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Total,Total,10688,True,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Convicted Criminal,Total,2336,True,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Pending Criminal Charges,Total,2829,True,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bonded Out,Other Immigration Violator,Total,5523,True,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Total,Total,2978,True,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Convicted Criminal,Total,367,True,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Pending Criminal Charges,Total,486,True,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by ICE,Other Immigration Violator,Total,2125,True,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Total,Total,7710,True,Reason Total,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Convicted Criminal,Total,1969,True,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Pending Criminal Charges,Total,2343,True,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Bond Set by IJ,Other Immigration Violator,Total,3398,True,Criminality Detail,Bonded Out
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Total,Total,25473,True,Reason Total,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Convicted Criminal,Total,2023,True,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Pending Criminal Charges,Total,3020,True,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Recognizance,Other Immigration Violator,Total,20430,True,Criminality Detail,Order of Recognizance
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Total,Total,7558,True,Reason Total,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Convicted Criminal,Total,2090,True,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Pending Criminal Charges,Total,898,True,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Order of Supervision,Other Immigration Violator,Total,4570,True,Criminality Detail,Order of Supervision
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Total,Total,57492,True,Reason Total,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Convicted Criminal,Total,605,True,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Pending Criminal Charges,Total,770,True,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Paroled,Other Immigration Violator,Total,56117,True,Criminality Detail,Paroled
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Total,Total,1172,True,Reason Total,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Convicted Criminal,Total,291,True,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Pending Criminal Charges,Total,147,True,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Proceedings Terminated,Other Immigration Violator,Total,734,True,Criminality Detail,Proceedings Terminated
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Total,Total,142752,True,Reason Total,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Convicted Criminal,Total,51585,True,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Pending Criminal Charges,Total,13704,True,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Release to Remove,Other Immigration Violator,Total,77463,True,Criminality Detail,Release to Remove
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Total,Total,1214,True,Reason Total,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Convicted Criminal,Total,520,True,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Pending Criminal Charges,Total,132,True,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Relief Granted by IJ,Other Immigration Violator,Total,562,True,Criminality Detail,Relief Granted by IJ
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Total,Total,5580,True,Reason Total,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Convicted Criminal,Total,3434,True,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Total,1363,True,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Total,783,True,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Total,Total,574,True,Reason Total,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Convicted Criminal,Total,178,True,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Pending Criminal Charges,Total,114,True,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Transferred,Other Immigration Violator,Total,282,True,Criminality Detail,Transferred
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Total,Total,33,True,Reason Total,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Convicted Criminal,Total,9,True,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Pending Criminal Charges,Total,6,True,Criminality Detail,Other
+FY24,2024-09-17,FY24_detentionStats09172024.xlsx,Detention FY24,Other,Other Immigration Violator,Total,18,True,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Oct,21709,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Oct,909,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Oct,223,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Oct,327,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Oct,359,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Oct,109,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Oct,19,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Oct,40,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Oct,50,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Oct,800,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Oct,204,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Oct,287,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Oct,309,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Oct,1494,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Oct,163,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Oct,334,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Oct,997,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Oct,457,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Oct,189,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Oct,109,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Oct,159,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Oct,4385,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Oct,64,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Oct,43,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Oct,4278,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Oct,84,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Oct,30,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Oct,15,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Oct,39,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Oct,13645,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Oct,4944,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Oct,1608,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Oct,7093,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Oct,128,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Oct,55,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Oct,14,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Oct,59,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Oct,591,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Oct,398,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Oct,140,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Oct,53,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Oct,15,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Oct,5,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Oct,3,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Oct,7,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Oct,1,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Oct,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Oct,0,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Oct,0,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Nov,20890,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Nov,653,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Nov,193,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Nov,247,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Nov,213,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Nov,92,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Nov,29,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Nov,26,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Nov,37,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Nov,561,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Nov,164,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Nov,221,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Nov,176,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Nov,1480,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Nov,140,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Nov,244,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Nov,1096,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Nov,443,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Nov,195,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Nov,100,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Nov,148,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Nov,4962,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Nov,62,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Nov,51,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Nov,4849,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Nov,58,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Nov,24,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Nov,12,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Nov,22,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Nov,12608,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Nov,4874,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Nov,1639,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Nov,6095,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Nov,94,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Nov,28,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Nov,14,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Nov,52,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Nov,555,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Nov,326,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Nov,142,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Nov,87,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Nov,36,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Nov,14,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Nov,7,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Nov,15,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Nov,1,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Nov,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Nov,0,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Nov,0,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Dec,20696,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Dec,806,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Dec,232,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Dec,326,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Dec,248,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Dec,114,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Dec,27,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Dec,50,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Dec,37,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Dec,692,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Dec,205,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Dec,276,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Dec,211,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Dec,1108,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Dec,162,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Dec,360,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Dec,586,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Dec,432,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Dec,179,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Dec,82,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Dec,171,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Dec,5159,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Dec,59,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Dec,51,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Dec,5049,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Dec,50,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Dec,25,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Dec,11,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Dec,14,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Dec,12300,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Dec,4761,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Dec,1539,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Dec,6000,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Dec,105,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Dec,38,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Dec,15,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Dec,52,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Dec,524,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Dec,307,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Dec,138,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Dec,79,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Dec,211,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Dec,43,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Dec,11,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Dec,157,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Dec,1,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Dec,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Dec,0,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Dec,0,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Jan,19970,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Jan,677,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Jan,161,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Jan,268,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Jan,248,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Jan,149,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Jan,17,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Jan,45,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Jan,87,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Jan,528,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Jan,144,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Jan,223,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Jan,161,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Jan,1023,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Jan,158,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Jan,325,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Jan,540,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Jan,537,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Jan,239,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Jan,135,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Jan,163,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Jan,4962,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Jan,60,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Jan,48,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Jan,4854,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Jan,56,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Jan,30,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Jan,10,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Jan,16,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Jan,11915,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Jan,4978,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Jan,1684,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Jan,5253,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Jan,94,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Jan,37,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Jan,10,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Jan,47,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Jan,633,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Jan,409,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Jan,170,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Jan,54,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Jan,69,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Jan,19,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Jan,6,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Jan,44,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Jan,4,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Jan,0,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Jan,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Jan,3,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Feb,17330,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Feb,803,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Feb,187,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Feb,277,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Feb,339,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Feb,80,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Feb,16,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Feb,28,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Feb,36,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Feb,723,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Feb,171,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Feb,249,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Feb,303,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Feb,326,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Feb,55,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Feb,98,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Feb,173,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Feb,108,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Feb,38,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Feb,24,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Feb,46,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Feb,559,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Feb,12,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Feb,7,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Feb,540,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Feb,55,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Feb,28,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Feb,13,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Feb,14,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Feb,14314,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Feb,6300,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Feb,2400,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Feb,5614,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Feb,85,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Feb,28,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Feb,8,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Feb,49,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Feb,979,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Feb,622,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Feb,267,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Feb,90,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Feb,99,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Feb,52,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Feb,21,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Feb,26,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Feb,2,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Feb,0,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Feb,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Feb,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Mar,19363,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Mar,1791,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Mar,349,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Mar,531,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Mar,911,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Mar,50,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Mar,9,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Mar,16,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Mar,25,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Mar,1741,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Mar,340,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Mar,515,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Mar,886,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Mar,99,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Mar,16,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Mar,38,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Mar,45,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Mar,62,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Mar,17,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Mar,8,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Mar,37,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Mar,46,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Mar,3,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Mar,5,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Mar,38,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Mar,65,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Mar,38,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Mar,13,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Mar,14,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Mar,15916,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Mar,7292,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Mar,3718,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Mar,4906,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Mar,102,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Mar,28,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Mar,7,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Mar,67,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Mar,1161,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Mar,699,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Mar,377,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Mar,85,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Mar,113,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Mar,36,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Mar,41,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Mar,36,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Mar,8,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Mar,5,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Mar,2,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Mar,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Apr,21115,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Apr,2512,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Apr,517,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Apr,806,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Apr,1189,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Apr,79,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Apr,16,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Apr,26,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Apr,37,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Apr,2433,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Apr,501,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Apr,780,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Apr,1152,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Apr,125,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Apr,21,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Apr,31,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Apr,73,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Apr,106,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Apr,21,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Apr,16,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Apr,69,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Apr,64,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Apr,3,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Apr,5,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Apr,56,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Apr,56,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Apr,34,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Apr,8,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Apr,14,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Apr,16995,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Apr,7997,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Apr,4125,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Apr,4873,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Apr,111,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Apr,34,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Apr,8,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Apr,69,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Apr,1068,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Apr,680,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Apr,292,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Apr,96,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Apr,73,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Apr,25,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Apr,29,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Apr,19,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Apr,5,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Apr,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Apr,2,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Apr,2,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,May,26798,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,May,2438,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,May,457,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,May,899,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,May,1082,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,May,89,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,May,17,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,May,35,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,May,37,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,May,2349,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,May,440,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,May,864,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,May,1045,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,May,142,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,May,18,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,May,40,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,May,84,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,May,136,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,May,12,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,May,17,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,May,107,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,May,38,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,May,0,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,May,2,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,May,36,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,May,84,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,May,38,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,May,23,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,May,23,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,May,22520,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,May,10478,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,May,5934,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,May,6108,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,May,159,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,May,53,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,May,18,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,May,88,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,May,1071,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,May,700,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,May,292,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,May,79,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,May,205,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,May,86,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,May,47,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,May,72,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,May,5,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,May,2,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,May,0,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,May,3,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Jun,29387,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Jun,2479,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Jun,473,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Jun,798,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Jun,1208,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Jun,91,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Jun,18,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Jun,33,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Jun,40,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Jun,2388,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Jun,455,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Jun,765,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Jun,1168,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Jun,148,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Jun,19,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Jun,27,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Jun,102,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Jun,83,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Jun,27,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Jun,12,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Jun,44,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Jun,67,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Jun,1,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Jun,7,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Jun,59,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Jun,111,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Jun,47,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Jun,24,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Jun,40,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Jun,24887,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Jun,10125,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Jun,6565,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Jun,8197,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Jun,201,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Jun,52,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Jun,26,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Jun,123,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Jun,930,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Jun,546,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Jun,301,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Jun,83,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Jun,471,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Jun,181,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Jun,114,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Jun,176,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Jun,10,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Jun,3,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Jun,4,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Jun,3,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Jul,30729,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Jul,2051,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Jul,350,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Jul,596,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Jul,1105,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Jul,113,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Jul,26,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Jul,31,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Jul,56,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Jul,1938,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Jul,324,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Jul,565,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Jul,1049,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Jul,277,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Jul,16,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Jul,22,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Jul,239,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Jul,143,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Jul,22,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Jul,25,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Jul,96,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Jul,81,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Jul,4,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Jul,1,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Jul,76,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Jul,92,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Jul,45,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Jul,17,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Jul,30,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Jul,26697,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Jul,9773,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Jul,7183,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Jul,9741,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Jul,237,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Jul,51,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Jul,35,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Jul,151,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Jul,837,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Jul,518,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Jul,241,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Jul,78,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Jul,307,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Jul,86,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Jul,68,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Jul,153,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Jul,7,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Jul,2,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Jul,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Jul,4,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Aug,32395,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Aug,899,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Aug,144,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Aug,256,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Aug,499,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Aug,62,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Aug,18,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Aug,10,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Aug,34,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Aug,837,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Aug,126,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Aug,246,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Aug,465,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Aug,219,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Aug,18,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Aug,25,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Aug,176,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Aug,107,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Aug,35,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Aug,17,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Aug,55,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Aug,157,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Aug,1,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Aug,7,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Aug,149,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Aug,118,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Aug,52,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Aug,21,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Aug,45,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Aug,29446,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Aug,10166,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Aug,7870,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Aug,11410,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Aug,258,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Aug,64,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Aug,38,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Aug,156,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Aug,824,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Aug,483,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Aug,273,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Aug,68,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Aug,361,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Aug,129,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Aug,118,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Aug,114,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Aug,6,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Aug,2,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Aug,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Aug,3,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Sep,23637,False,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Sep,464,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Sep,71,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Sep,131,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Sep,262,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Sep,31,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Sep,5,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Sep,6,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Sep,20,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Sep,433,False,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Sep,66,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Sep,125,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Sep,242,False,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Sep,145,False,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Sep,10,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Sep,12,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Sep,123,False,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Sep,55,False,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Sep,20,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Sep,5,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Sep,30,False,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Sep,73,False,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Sep,0,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Sep,3,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Sep,70,False,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Sep,89,False,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Sep,38,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Sep,13,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Sep,38,False,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Sep,21158,False,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Sep,7241,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Sep,5461,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Sep,8456,False,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Sep,190,False,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Sep,53,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Sep,26,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Sep,111,False,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Sep,563,False,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Sep,344,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Sep,138,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Sep,81,False,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Sep,896,False,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Sep,296,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Sep,234,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Sep,366,False,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Sep,4,False,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Sep,2,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Sep,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Sep,1,False,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Total,None,Total,284019,True,Criminality Detail,Total
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Total,Total,16482,True,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Convicted Criminal,Total,3357,True,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Pending Criminal Charges,Total,5462,True,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bonded Out,Other Immigration Violator,Total,7663,True,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Total,Total,1059,True,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Convicted Criminal,Total,217,True,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Pending Criminal Charges,Total,346,True,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by ICE,Other Immigration Violator,Total,496,True,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Total,Total,15423,True,Reason Total,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Convicted Criminal,Total,3140,True,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Pending Criminal Charges,Total,5116,True,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Bond Set by IJ,Other Immigration Violator,Total,7167,True,Criminality Detail,Bonded Out
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Total,Total,6586,True,Reason Total,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Convicted Criminal,Total,796,True,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Pending Criminal Charges,Total,1556,True,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Recognizance,Other Immigration Violator,Total,4234,True,Criminality Detail,Order of Recognizance
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Total,Total,2669,True,Reason Total,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Convicted Criminal,Total,994,True,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Pending Criminal Charges,Total,550,True,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Order of Supervision,Other Immigration Violator,Total,1125,True,Criminality Detail,Order of Supervision
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Total,Total,20553,True,Reason Total,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Convicted Criminal,Total,269,True,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Pending Criminal Charges,Total,230,True,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Paroled,Other Immigration Violator,Total,20054,True,Criminality Detail,Paroled
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Total,Total,918,True,Reason Total,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Convicted Criminal,Total,429,True,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Pending Criminal Charges,Total,180,True,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Proceedings Terminated,Other Immigration Violator,Total,309,True,Criminality Detail,Proceedings Terminated
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Total,Total,222401,True,Reason Total,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Convicted Criminal,Total,88929,True,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Pending Criminal Charges,Total,49726,True,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Release to Remove,Other Immigration Violator,Total,83746,True,Criminality Detail,Release to Remove
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Total,Total,1764,True,Reason Total,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Convicted Criminal,Total,521,True,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Pending Criminal Charges,Total,219,True,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Relief Granted by IJ,Other Immigration Violator,Total,1024,True,Criminality Detail,Relief Granted by IJ
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Total,Total,9736,True,Reason Total,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Convicted Criminal,Total,6032,True,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Pending Criminal Charges,Total,2771,True,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transfer to U.S. Marshals or other agency,Other Immigration Violator,Total,933,True,Criminality Detail,Transfer to U.S. Marshals or other agency
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Total,Total,2856,True,Reason Total,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Convicted Criminal,Total,972,True,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Pending Criminal Charges,Total,699,True,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Transferred,Other Immigration Violator,Total,1185,True,Criminality Detail,Transferred
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Total,Total,54,True,Reason Total,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Convicted Criminal,Total,20,True,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Pending Criminal Charges,Total,13,True,Criminality Detail,Other
+FY25,2025-09-25,FY25_detentionStats09252025.xlsx,Detention FY25,Other,Other Immigration Violator,Total,21,True,Criminality Detail,Other
