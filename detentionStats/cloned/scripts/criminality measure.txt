@@ -1,0 +1,5 @@
+Have No Criminal Record = 
+DIVIDE(
+    SUM('criminality_by_sex'[Total Non-Crim]),
+    SUM('criminality_by_sex'[Total Population (Crim + Non-Crim)])
+)
