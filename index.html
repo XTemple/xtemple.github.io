@@ -1,45 +1,1772 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DetentionStats.com is an independent dashboard visualizing ICE detention data for public understanding and transparency." />
-  <title>Detention Stats</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICE Detention Statistics Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2333;
+    --border: #30363d;
+    --accent: #e36e25;
+    --accent2: #4a9eff;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --text-muted: #484f58;
+    /* Brand colors */
+    --brand-black: #000208;
+    --brand-blue: #175dbf;
+    --brand-slate: #2e496e;
+    --brand-grey: #c2c3c4;
+    --cbp: #4a9eff;
+    --ice: #e05252;
+    /* Criminality — greyscale */
+    --convicted: #e8e8e8;   /* near white */
+    --pending: #888888;     /* mid grey */
+    --other: #3a3a3a;       /* dark grey */
+    /* State chart */
+    --crim-bar: #02020C;
+    --non-crim-bar: #AFCBDB;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --red: #e05252;         /* KPI card accent + state bar criminal */
+  }
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-97FZXK7RF5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-97FZXK7RF5');
-  </script>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* SPLASH OVERLAY */
+  #splash {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    transition: opacity 0.4s ease;
+  }
+
+  #splash.dismissed {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .splash-inner {
+    max-width: 680px;
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    overflow: hidden;
+  }
+
+  .splash-header {
+    background: var(--brand-black);
+    border-bottom: 2px solid var(--brand-slate);
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .splash-logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--brand-grey);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .splash-logo span { color: var(--brand-blue); }
+
+  .splash-badge {
+    background: var(--brand-blue);
+    color: #fff;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .splash-body {
+    padding: 32px;
+  }
+
+  .splash-body h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .splash-body p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .splash-body p:last-of-type {
+    margin-bottom: 0;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  .splash-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  .splash-footer {
+    padding: 0 32px 32px;
+  }
+
+  .splash-proceed {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--brand-blue);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 11px 24px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    letter-spacing: 0.02em;
+  }
+
+  .splash-proceed:hover { background: #1a6fd4; }
+  .splash-proceed::after { content: '→'; font-size: 15px; }
+
+  /* ABOUT BUTTON */
+  .about-btn {
+    background: transparent;
+    border: 1px solid var(--brand-slate);
+    border-radius: 3px;
+    color: var(--brand-grey);
+    padding: 4px 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+    letter-spacing: 0.02em;
+  }
+  .about-btn:hover { border-color: var(--brand-blue); color: #fff; }
+
+  /* ABOUT DRAWER */
+  #about-drawer {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(560px, 100vw);
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+  #about-drawer.open { transform: translateX(0); }
+
+  #about-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 899;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  #about-overlay.open { opacity: 1; pointer-events: all; }
+
+  .drawer-header {
+    background: var(--brand-black);
+    border-bottom: 2px solid var(--brand-slate);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  .drawer-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--brand-grey);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .drawer-close {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+    transition: color 0.15s;
+  }
+  .drawer-close:hover { color: var(--text); }
+
+  .drawer-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+    flex-shrink: 0;
+    overflow-x: auto;
+  }
+
+  .drawer-tab {
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-dim);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .drawer-tab:hover { color: var(--text); }
+  .drawer-tab.active { color: #fff; border-bottom-color: var(--brand-blue); }
+
+  .drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 28px 40px;
+  }
+
+  .drawer-panel { display: none; }
+  .drawer-panel.active { display: block; }
+
+  .drawer-panel h2 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .drawer-panel h3 {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brand-blue);
+    margin: 24px 0 10px;
+  }
+
+  .drawer-panel h3:first-of-type { margin-top: 0; }
+
+  .drawer-panel p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+
+  .drawer-panel ul {
+    list-style: none;
+    margin-bottom: 12px;
+  }
+
+  .drawer-panel ul li {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  .drawer-panel ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--brand-blue);
+    font-weight: 700;
+  }
+
+  .drawer-panel .disclaimer {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    margin-top: 16px;
+  }
+
+  /* Glossary grid */
+  .glossary-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .glossary-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 16px;
+  }
+
+  .glossary-term {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--brand-blue);
+    margin-bottom: 4px;
+  }
+
+  .glossary-def {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* Sources */
+  .source-item {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.65;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .source-item:last-child { border-bottom: none; }
+  .source-item a {
+    color: var(--brand-blue);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .source-item a:hover { text-decoration: underline; }
+
+  .site-header {
+    background: var(--brand-black);
+    border-bottom: 1px solid var(--brand-slate);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .site-header .logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand-grey);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .site-header .logo span { color: var(--brand-blue); }
+
+  .header-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--brand-grey);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .header-meta .badge {
+    background: var(--brand-blue);
+    color: #fff;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+  }
+
+  .nav-tabs {
+    background: var(--brand-slate);
+    border-bottom: 2px solid rgba(23,93,191,0.5);
+    padding: 0 32px;
+    display: flex;
+  }
+
+  .nav-tab {
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--brand-grey);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .nav-tab:hover { color: #fff; }
+  .nav-tab.active { color: #fff; border-bottom-color: var(--brand-blue); }
+
+  main { max-width: 1400px; margin: 0 auto; padding: 32px; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* KPI CARDS */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .kpi-card.accent-1::before { background: #b85c5c; }   /* muted red */
+  .kpi-card.accent-2::before { background: #b8834a; }   /* muted orange */
+  .kpi-card.accent-3::before { background: #a89b40; }   /* muted yellow */
+  .kpi-card.accent-4::before { background: #4a8c5c; }   /* muted green */
+  .kpi-card.accent-5::before { background: #4a6fa8; }   /* muted blue */
+  .kpi-card.accent-6::before { background: #6b4fa8; }   /* muted violet */
+  .kpi-card.accent-7::before { background: #4a9e8c; }   /* muted teal */
+
+  .kpi-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+
+  .kpi-value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .kpi-sub { font-size: 11px; color: var(--text-muted); font-family: 'IBM Plex Mono', monospace; }
+
+  /* CHART CARDS */
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+  .chart-grid.full { grid-template-columns: 1fr; }
+
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+  }
+
+  .chart-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .agency-pill {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  .pill-cbp { background: rgba(74,158,255,0.15); color: var(--cbp); }
+  .pill-ice { background: rgba(224,82,82,0.15); color: var(--ice); }
+
+  canvas { max-height: 260px; }
+
+  /* SECTION DIVIDER */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 32px 0 16px;
+  }
+
+  .section-header h2 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+
+  .section-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* TABLES */
+  .table-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .table-controls input,
+  .table-controls select {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    padding: 7px 12px;
+    font-size: 13px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .table-controls input:focus,
+  .table-controls select:focus { border-color: var(--accent); }
+  .table-controls input { width: 260px; }
+
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .table-wrap table { width: 100%; border-collapse: collapse; }
+
+  .table-wrap th {
+    background: var(--surface2);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .table-wrap th:hover { color: var(--text); }
+
+  .table-wrap td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  .table-wrap tr:last-child td { border-bottom: none; }
+  .table-wrap tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+
+  .table-pager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-top: 1px solid var(--border);
+    background: var(--surface2);
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  .pager-btns { display: flex; gap: 6px; }
+
+  .pager-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: border-color 0.15s;
+  }
+
+  .pager-btn:hover { border-color: var(--accent); }
+  .pager-btn:disabled { opacity: 0.4; cursor: default; }
+
+  .bar-wrap { display: flex; gap: 4px; align-items: center; }
+  .bar-inner { height: 6px; border-radius: 3px; min-width: 2px; }
+
+  .legend { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-dim); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+</style>
 </head>
+<body>
 
-<body class="landing-page">
-
-
-  <div class="container">
-    <h1>Detention Stats</h1>
-
-    <p>
-      <strong>DetentionStats.com</strong> is an independent data visualization project that presents publicly available immigration detention data released by U.S. Immigration and Customs Enforcement (ICE). The goal is to make this data more accessible, understandable, and transparent to the general public, policymakers, researchers, and journalists.
-    </p>
-
-    <p>
-      The visualizations on this site are generated from ICE’s biweekly detention statistics, which are published without access restrictions on
-      <a href="https://www.ice.gov/detain/detention-management" target="_blank" rel="noopener">ice.gov</a>.
-      This site does not alter the data beyond cleaning and organizing it for clarity and usability in public-facing dashboards.
-    </p>
-
-    <p class="disclaimer">
-      <strong>This site is not affiliated with or endorsed by U.S. Immigration and Customs Enforcement or the U.S. Department of Homeland Security.</strong> The interpretations and visualizations presented here are those of the site’s creator and do not reflect the official views of any government agency.
-    </p>
-
-    <a href="mainDashboard.html" class="proceed-button">Proceed</a>
+<!-- SPLASH OVERLAY -->
+<div id="splash">
+  <div class="splash-inner">
+    <div class="splash-header">
+      <div class="splash-logo">Detention<span>Stats</span>.com</div>
+      <div class="splash-badge">Independent</div>
+    </div>
+    <div class="splash-body">
+      <h1>Detention Stats</h1>
+      <p>DetentionStats.com is an independent data visualization project that presents publicly available immigration detention data released by U.S. Immigration and Customs Enforcement (ICE). The goal is to make this data more accessible, understandable, and transparent to the general public, policymakers, researchers, and journalists.</p>
+      <p>The visualizations on this site are generated from ICE's biweekly detention statistics, which are published without access restrictions on ice.gov. This site does not alter the data beyond cleaning and organizing it for clarity and usability in public-facing dashboards.</p>
+      <p>This site is not affiliated with or endorsed by U.S. Immigration and Customs Enforcement or the U.S. Department of Homeland Security. The interpretations and visualizations presented here are those of the site's creator and do not reflect the official views of any government agency.</p>
+    </div>
+    <div class="splash-divider"></div>
+    <div class="splash-footer">
+      <button class="splash-proceed" id="splash-btn">Proceed to Dashboard</button>
+    </div>
   </div>
+</div>
+
+<!-- ABOUT OVERLAY + DRAWER -->
+<div id="about-overlay"></div>
+<div id="about-drawer">
+  <div class="drawer-header">
+    <div class="drawer-title">About DetentionStats.com</div>
+    <button class="drawer-close" id="drawer-close">✕</button>
+  </div>
+  <div class="drawer-tabs">
+    <div class="drawer-tab active" data-drawer="project">The Project</div>
+    <div class="drawer-tab" data-drawer="dashboard">The Dashboard</div>
+    <div class="drawer-tab" data-drawer="agencies">The Agencies</div>
+    <div class="drawer-tab" data-drawer="glossary">Glossary</div>
+    <div class="drawer-tab" data-drawer="sources">Sources</div>
+  </div>
+  <div class="drawer-body">
+
+    <!-- PROJECT -->
+    <div class="drawer-panel active" id="drawer-project">
+      <h2>About This Project</h2>
+      <p>Immigration detention in the United States is vast, complex, and often difficult to understand. ICE publishes detailed statistics, but those numbers are frequently buried in spreadsheets with little context. This project aims to make those figures easier to interpret and explore — whether you're a researcher, journalist, policymaker, advocate, or curious member of the public.</p>
+
+      <h3>What's Included</h3>
+      <p>The main dashboard presents:</p>
+      <ul>
+        <li>The number of people detained by ICE and Customs and Border Protection (CBP) each month</li>
+        <li>Criminality classifications (e.g., convicted, pending charges, non-criminal)</li>
+        <li>Facility-level data, including population breakdowns and average length of stay</li>
+        <li>Geographic trends and comparisons by state</li>
+        <li>Year-over-year comparisons across FY24, FY25, and FY26 including Alternatives to Detention (ATD) and bond statistics</li>
+      </ul>
+      <p>All visualizations are updated using ICE's biweekly dataset, available on ice.gov.</p>
+
+      <h3>Data Preparation</h3>
+      <p>All data used on this site is:</p>
+      <ul>
+        <li>Publicly available</li>
+        <li>Cleaned and organized to enhance readability</li>
+        <li>Not altered beyond formatting, standardization, and restructuring</li>
+      </ul>
+      <p>The source files come directly from ICE's Detention Management reporting. The visualizations do not change or reinterpret the numbers — they only display them in an accessible format.</p>
+
+      <p class="disclaimer">DetentionStats.com is not affiliated with or endorsed by U.S. Immigration and Customs Enforcement (ICE) or any government agency. This project was developed independently for educational and public interest purposes.</p>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="drawer-panel" id="drawer-dashboard">
+      <h2>About This Dashboard</h2>
+      <p>DetentionStats.com visualizes data from U.S. Immigration and Customs Enforcement (ICE) on individuals detained in the United States. The dashboard is updated biweekly and reflects data as published in ICE's Detention Management Statistics spreadsheets.</p>
+
+      <h3>What This Data Represents</h3>
+      <ul>
+        <li>This dashboard aggregates data by state where detention facilities are located</li>
+        <li>It does not reflect where individuals were arrested, where they lived, or their country of origin</li>
+        <li>All information is sourced directly from ICE's Detention Stats files, publicly available at ICE.gov</li>
+        <li>Data cleaning and processing scripts are available upon request for transparency</li>
+      </ul>
+
+      <h3>Key Terminology</h3>
+      <ul>
+        <li><strong style="color:var(--text)">Convicted / Convicted Criminal</strong> — A noncitizen who has been convicted in a court of law for a criminal offense, regardless of whether they are currently serving a sentence</li>
+        <li><strong style="color:var(--text)">Pending / Pending Criminal Charges</strong> — A noncitizen with one or more criminal charges currently pending adjudication in a U.S. court</li>
+        <li><strong style="color:var(--text)">Other Immigration Violator</strong> — A noncitizen without a known criminal conviction or pending charge, typically detained for administrative or immigration violations (e.g., unauthorized entry, visa overstay)</li>
+        <li><strong style="color:var(--text)">Currently Detained</strong> — The number of individuals held in ICE custody on the date of data collection</li>
+        <li><strong style="color:var(--text)">ALOS (Average Length of Stay)</strong> — The average number of days individuals remain in ICE custody during the reporting period</li>
+      </ul>
+
+      <h3>Timeline and Reporting Period</h3>
+      <ul>
+        <li>ICE reports its data according to the U.S. Fiscal Year (FY), which runs October 1 – September 30</li>
+        <li>The current reporting period is FY2026 (October 1, 2025 – September 30, 2026)</li>
+        <li>Month filters in this dashboard follow fiscal year order (Oct → Sep)</li>
+      </ul>
+    </div>
+
+    <!-- AGENCIES -->
+    <div class="drawer-panel" id="drawer-agencies">
+      <h2>Agencies Involved</h2>
+      <p>This dashboard includes data from two federal agencies that carry out immigration enforcement operations under the U.S. Department of Homeland Security (DHS).</p>
+
+      <h3>ICE — Immigration and Customs Enforcement</h3>
+      <ul>
+        <li><strong style="color:var(--text)">Primary Role:</strong> Detains noncitizens already inside the United States, often after an immigration court hearing or local law enforcement referral</li>
+        <li><strong style="color:var(--text)">Funding:</strong> ICE receives federal appropriations to operate detention facilities, contract with private operators, and fund removal operations</li>
+        <li><strong style="color:var(--text)">Detention Data:</strong> The majority of detainees in ICE custody fall under ICE's direct supervision, including facilities run by ICE or through agreements with state, local, or private contractors</li>
+      </ul>
+
+      <h3>CBP — Customs and Border Protection</h3>
+      <ul>
+        <li><strong style="color:var(--text)">Primary Role:</strong> Conducts immigration enforcement at ports of entry and along the border; often detains individuals at or shortly after entry</li>
+        <li><strong style="color:var(--text)">Funding:</strong> CBP is funded to operate short-term holding facilities and conduct border operations; detainees may be temporarily held before transfer to ICE custody</li>
+        <li><strong style="color:var(--text)">Detention Data:</strong> This dashboard includes CBP detention counts for comparative purposes, but most long-term detentions are managed by ICE</li>
+      </ul>
+
+      <h3>Funding Context</h3>
+      <p>Both agencies operate on publicly appropriated tax dollars, with budgets authorized by Congress. Funding levels changed significantly following the enactment of the One Big Beautiful Bill Act (OBBBA) in July 2025, which directed an unprecedented level of resources to DHS immigration enforcement.</p>
+      <ul>
+        <li>Prior to the OBBBA, ICE's annual budget was approximately $8 billion, with around $3 billion dedicated to custody operations (FY2024)</li>
+        <li>The OBBBA allocated $45 billion for ICE detention expansion over four years — an additional $11.25 billion per year — bringing ICE's total detention budget in FY2025 to over $14 billion, more than 400% greater than FY2024 detention funding</li>
+        <li>Through February 2026, ICE had been apportioned approximately $33 billion in OBBBA funds, with monthly outlays rising from ~$800 million to ~$1.7 billion following the bill's enactment</li>
+        <li>CBP received approximately $56 billion in OBBBA apportionments, with the majority allocated to border wall construction and infrastructure</li>
+        <li>ICE's effective detention budget now exceeds the entire Department of Justice budget for the federal prison system, which holds over 155,000 inmates</li>
+      </ul>
+      <p style="font-size:12px;color:var(--text-muted);font-style:italic;margin-top:8px;">Funding figures reflect a combination of baseline appropriations and OBBBA reconciliation allocations. Figures are sourced from OMB apportionment data, DHS congressional budget justifications, and independent policy analysis. The FY2026 appropriations process was ongoing at the time of last update.</p>
+    </div>
+
+    <!-- GLOSSARY -->
+    <div class="drawer-panel" id="drawer-glossary">
+      <h2>Acronym &amp; Term Glossary</h2>
+      <div class="glossary-grid">
+        <div class="glossary-item"><div class="glossary-term">OBBBA</div><div class="glossary-def">One Big Beautiful Bill Act — a budget reconciliation law enacted July 4, 2025, that directed approximately $191 billion to DHS immigration enforcement, including $45 billion specifically for ICE detention expansion over four years.</div></div>
+        <div class="glossary-item"><div class="glossary-term">ICE</div><div class="glossary-def">Immigration and Customs Enforcement — the federal agency primarily responsible for interior immigration enforcement and detention.</div></div>
+        <div class="glossary-item"><div class="glossary-term">CBP</div><div class="glossary-def">Customs and Border Protection — the federal agency responsible for border enforcement and short-term detention at ports of entry.</div></div>
+        <div class="glossary-item"><div class="glossary-term">DHS</div><div class="glossary-def">Department of Homeland Security — the cabinet department that oversees both ICE and CBP.</div></div>
+        <div class="glossary-item"><div class="glossary-term">ATD</div><div class="glossary-def">Alternatives to Detention — supervision programs (e.g., ankle monitors, SmartLINK check-ins) used as non-custodial alternatives to physical detention.</div></div>
+        <div class="glossary-item"><div class="glossary-term">ALOS</div><div class="glossary-def">Average Length of Stay — the mean number of days a detainee remains in custody during a reporting period.</div></div>
+        <div class="glossary-item"><div class="glossary-term">ALIP</div><div class="glossary-def">Average Length in Program — the mean number of days a participant has been enrolled in an ATD supervision program.</div></div>
+        <div class="glossary-item"><div class="glossary-term">ADP</div><div class="glossary-def">Average Daily Population — the average number of individuals held in detention on any given day within a reporting period.</div></div>
+        <div class="glossary-item"><div class="glossary-term">AOR</div><div class="glossary-def">Area of Responsibility — geographic regions used by ICE to organize enforcement and supervision operations across the U.S.</div></div>
+        <div class="glossary-item"><div class="glossary-term">FY</div><div class="glossary-def">Fiscal Year — the U.S. government's accounting year, running October 1 through September 30. FY26 = October 2025 – September 2026.</div></div>
+        <div class="glossary-item"><div class="glossary-term">YTD</div><div class="glossary-def">Year to Date — data accumulated from the start of the current fiscal year through the most recent reporting date.</div></div>
+        <div class="glossary-item"><div class="glossary-term">FAMU</div><div class="glossary-def">Family Unit — a case classification used by ICE for individuals detained as part of a family group.</div></div>
+        <div class="glossary-item"><div class="glossary-term">SmartLINK</div><div class="glossary-def">A mobile app-based ATD supervision technology requiring regular check-ins via facial recognition, used as an alternative to physical detention.</div></div>
+        <div class="glossary-item"><div class="glossary-term">SPC / STAGING / BOP / DOD</div><div class="glossary-def">Facility type classifications used to distinguish public facilities (Service Processing Centers, staging facilities, Bureau of Prisons, and Department of Defense) from privately contracted detention facilities.</div></div>
+        <div class="glossary-item"><div class="glossary-term">YoY</div><div class="glossary-def">Year-over-Year — a comparison of data across multiple fiscal years to identify trends over time.</div></div>
+      </div>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="drawer-panel" id="drawer-sources">
+      <h2>Sources</h2>
+      <div class="source-item">U.S. Immigration and Customs Enforcement. (2025). <em>FY 2025 ICE Detention Statistics.</em><br><a href="https://www.ice.gov/detain/detention-management" target="_blank">https://www.ice.gov/detain/detention-management</a></div>
+      <div class="source-item">U.S. Immigration and Customs Enforcement. (n.d.). <em>Detention Facility Standards.</em><br><a href="https://www.ice.gov/detain/detention-management/2025" target="_blank">https://www.ice.gov/detain/detention-management/2025</a></div>
+      <div class="source-item">U.S. Department of Homeland Security. (2025). <em>FY 2026 ICE Congressional Budget Justification.</em><br><a href="https://www.dhs.gov/sites/default/files/2025-06/25_0613_ice_fy26-congressional-budget-justificatin.pdf" target="_blank">https://www.dhs.gov/sites/default/files/2025-06/25_0613_ice_fy26-congressional-budget-justificatin.pdf</a></div>
+      <div class="source-item">U.S. Department of Homeland Security. (2024). <em>Congressional Budget Justification – FY 2025.</em><br><a href="https://www.dhs.gov/publication/congressional-budget-justification-fiscal-year-fy-2025" target="_blank">https://www.dhs.gov/publication/congressional-budget-justification-fiscal-year-fy-2025</a></div>
+      <div class="source-item">National Immigration Forum. (2025). <em>Immigration Detention Costs in a Time of Mass Deportation.</em><br><a href="https://forumtogether.org/article/immigration-detention-costs-in-a-time-of-mass-deportation/" target="_blank">https://forumtogether.org/article/immigration-detention-costs-in-a-time-of-mass-deportation/</a></div>
+      <div class="source-item">U.S. Customs and Border Protection. (n.d.). <em>About CBP.</em><br><a href="https://www.cbp.gov/about" target="_blank">https://www.cbp.gov/about</a></div>
+      <div class="source-item">U.S. Immigration and Customs Enforcement. (n.d.). <em>About ICE.</em><br><a href="https://www.ice.gov/about-ice" target="_blank">https://www.ice.gov/about-ice</a></div>
+    </div>
+
+  </div>
+</div>
+  <div class="logo">Detention<span>Stats</span>.com</div>
+  <div class="header-meta">
+    <span id="fyBadge" class="badge">FY25</span>
+    <span id="sourceLabel">Loading…</span>
+    <button class="about-btn" id="about-btn">About</button>
+  </div>
+</header>
+
+<nav class="nav-tabs">
+  <div class="nav-tab active" data-panel="overview">Overview</div>
+  <div class="nav-tab" data-panel="bookins">Book-Ins</div>
+  <div class="nav-tab" data-panel="criminality">Criminality</div>
+  <div class="nav-tab" data-panel="facilities">Facilities</div>
+  <div class="nav-tab" data-panel="yoy">Year-over-Year</div>
+</nav>
+
+<main>
+
+  <!-- =================== OVERVIEW =================== -->
+  <div class="panel active" id="panel-overview">
+
+    <div class="kpi-row" id="kpi-row"></div>
+
+    <div class="section-header"><h2>Monthly Book-Ins by Agency</h2></div>
+    <div class="chart-grid full">
+      <div class="chart-card">
+        <div class="chart-title">CBP vs ICE — Book-Ins per Month</div>
+        <canvas id="chart-bookins-overview"></canvas>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--cbp)"></div>CBP</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--ice)"></div>ICE</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h2>Segregation Placements by Month — Public vs Private Facilities</h2></div>
+    <div class="chart-grid full">
+      <div class="chart-card">
+        <div class="chart-title">Monthly Segregation Placements</div>
+        <canvas id="chart-segregation"></canvas>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#02020C"></div>Public Facilities</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#AFCBDB"></div>Private Facilities</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h2>Detained Population by State — Top 10</h2></div>
+    <div class="chart-grid full">
+      <div class="chart-card">
+        <div class="chart-title">Total Detained Population by State</div>
+        <canvas id="chart-state-bar"></canvas>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--crim-bar)"></div>Criminal Record</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--non-crim-bar)"></div>No Criminal Record</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =================== BOOK-INS =================== -->
+  <div class="panel" id="panel-bookins">
+
+    <div class="section-header"><h2>Monthly Book-Ins — Current vs Prior FY</h2></div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">CBP <span class="agency-pill pill-cbp">CBP</span></div>
+        <canvas id="chart-bookins-cbp"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">ICE <span class="agency-pill pill-ice">ICE</span></div>
+        <canvas id="chart-bookins-ice"></canvas>
+      </div>
+    </div>
+
+    <div class="section-header"><h2>Book-Ins Table</h2></div>
+    <div class="table-wrap">
+      <table id="table-bookins">
+        <thead>
+          <tr>
+            <th>Agency</th>
+            <th>Month</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-bookins"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- =================== CRIMINALITY =================== -->
+  <div class="panel" id="panel-criminality">
+
+    <div class="section-header"><h2>Criminality — Average Daily Population Over Time</h2></div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">CBP <span class="agency-pill pill-cbp">CBP</span></div>
+        <canvas id="chart-crim-cbp-line"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">ICE <span class="agency-pill pill-ice">ICE</span></div>
+        <canvas id="chart-crim-ice-line"></canvas>
+      </div>
+    </div>
+
+    <div class="section-header"><h2>Criminality of Population by State</h2></div>
+    <div class="table-controls">
+      <input type="text" id="state-search" placeholder="Search state…">
+      <select id="state-sort">
+        <option value="total_population">Sort: Total Population</option>
+        <option value="total_crim">Sort: Criminal Record</option>
+        <option value="total_non_crim">Sort: No Criminal Record</option>
+        <option value="state">Sort: State (A–Z)</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Total Criminal</th>
+            <th>Total Non-Criminal</th>
+            <th>Total Pop</th>
+            <th>% Criminal</th>
+            <th>Split</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-state"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- =================== FACILITIES =================== -->
+  <div class="panel" id="panel-facilities">
+
+    <div class="section-header"><h2>Facility Data</h2></div>
+    <div class="table-controls">
+      <input type="text" id="fac-search" placeholder="Search facility, city, state…">
+      <select id="fac-state"><option value="">All States</option></select>
+      <select id="fac-sort">
+        <option value="total_population">Sort: Total Population ↓</option>
+        <option value="alos">Sort: ALOS ↓</option>
+        <option value="name">Sort: Name A–Z</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Facility</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ALOS (days)</th>
+            <th>Male — Criminal Record</th>
+            <th>Male — No Criminal Record</th>
+            <th>Female — Criminal Record</th>
+            <th>Female — No Criminal Record</th>
+            <th>Total Pop.</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-facilities"></tbody>
+      </table>
+      <div class="table-pager" id="fac-pager">
+        <span id="fac-pager-info"></span>
+        <div class="pager-btns">
+          <button class="pager-btn" id="fac-prev">← Prev</button>
+          <button class="pager-btn" id="fac-next">Next →</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =================== YEAR-OVER-YEAR =================== -->
+  <div class="panel" id="panel-yoy">
+
+    <div class="section-header"><h2>Alternatives to Detention (ATD) — FY24 / FY25 / FY26</h2></div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">ATD Active Population by FY</div>
+        <canvas id="chart-yoy-atd-pop"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Avg Length in ATD Program (Days)</div>
+        <canvas id="chart-yoy-atd-alip"></canvas>
+      </div>
+    </div>
+
+    <div class="section-header"><h2>ATD Supervision Technology Mix</h2></div>
+    <div class="chart-grid full">
+      <div class="chart-card">
+        <div class="chart-title">ATD Participants by Technology — FY24 / FY25 / FY26</div>
+        <canvas id="chart-yoy-atd-tech"></canvas>
+        <div class="legend" id="legend-yoy-atd-tech"></div>
+      </div>
+    </div>
+
+    <div class="section-header"><h2>Bond Statistics — Multi-Year Trend</h2></div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Average Length of Stay (Days) — Monthly</div>
+        <canvas id="chart-yoy-alos"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Bond Rate (% of Book-Outs Released on Bond) — Monthly</div>
+        <canvas id="chart-yoy-bond-rate"></canvas>
+      </div>
+    </div>
+    <div class="chart-grid full">
+      <div class="chart-card">
+        <div class="chart-title">Average Bond Amount ($) — Monthly</div>
+        <canvas id="chart-yoy-bond-amount"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  Data source: U.S. Immigration and Customs Enforcement (ICE) · detentionstats.com
+</footer>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const DATA = {"meta": {"fy": "FY26", "source_file": "FY26_detentionStats_02122026.xlsx", "record_counts": {"book_ins": 10, "criminality": 30, "criminality_by_state": 48, "facilities": 219, "fear_determination": 25, "segregation": 4}}, "bookIns": [{"fy": "FY26", "agency": "CBP", "month": "Oct", "month_order": 1, "count": 4991}, {"fy": "FY26", "agency": "CBP", "month": "Nov", "month_order": 2, "count": 3925}, {"fy": "FY26", "agency": "CBP", "month": "Dec", "month_order": 3, "count": 4290}, {"fy": "FY26", "agency": "CBP", "month": "Jan", "month_order": 4, "count": 3595}, {"fy": "FY26", "agency": "CBP", "month": "Feb", "month_order": 5, "count": 803}, {"fy": "FY26", "agency": "ICE", "month": "Oct", "month_order": 1, "count": 36627}, {"fy": "FY26", "agency": "ICE", "month": "Nov", "month_order": 2, "count": 34487}, {"fy": "FY26", "agency": "ICE", "month": "Dec", "month_order": 3, "count": 37840}, {"fy": "FY26", "agency": "ICE", "month": "Jan", "month_order": 4, "count": 36099}, {"fy": "FY26", "agency": "ICE", "month": "Feb", "month_order": 5, "count": 7137}], "bookInsYoy": [{"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Oct", "month_order": 1, "count": 17271}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Nov", "month_order": 2, "count": 10921}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Dec", "month_order": 3, "count": 13348}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Jan", "month_order": 4, "count": 13997}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Feb", "month_order": 5, "count": 17045}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Mar", "month_order": 6, "count": 14553}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Apr", "month_order": 7, "count": 15531}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "May", "month_order": 8, "count": 20123}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Jun", "month_order": 9, "count": 17677}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Jul", "month_order": 10, "count": 15625}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Aug", "month_order": 11, "count": 16508}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "CBP", "month": "Sep", "month_order": 12, "count": 3632}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Oct", "month_order": 1, "count": 6841}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Nov", "month_order": 2, "count": 6770}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Dec", "month_order": 3, "count": 7736}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Jan", "month_order": 4, "count": 6538}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Feb", "month_order": 5, "count": 7387}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Mar", "month_order": 6, "count": 7548}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Apr", "month_order": 7, "count": 8442}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "May", "month_order": 8, "count": 8451}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Jun", "month_order": 9, "count": 7358}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Jul", "month_order": 10, "count": 8008}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Aug", "month_order": 11, "count": 8188}, {"fy": "FY24", "snapshot_date": "2024-09-17", "source_file": "FY24_detentionStats09172024.xlsx", "agency": "ICE", "month": "Sep", "month_order": 12, "count": 1634}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Oct", "month_order": 1, "count": 15004}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Nov", "month_order": 2, "count": 13543}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Dec", "month_order": 3, "count": 14238}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Jan", "month_order": 4, "count": 10237}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Feb", "month_order": 5, "count": 4252}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Mar", "month_order": 6, "count": 3798}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Apr", "month_order": 7, "count": 4602}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "May", "month_order": 8, "count": 5238}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Jun", "month_order": 9, "count": 5114}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Jul", "month_order": 10, "count": 3805}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Aug", "month_order": 11, "count": 4056}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "CBP", "month": "Sep", "month_order": 12, "count": 3462}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Oct", "month_order": 1, "count": 8609}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Nov", "month_order": 2, "count": 7580}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Dec", "month_order": 3, "count": 7884}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Jan", "month_order": 4, "count": 11753}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Feb", "month_order": 5, "count": 17378}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Mar", "month_order": 6, "count": 19123}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Apr", "month_order": 7, "count": 18215}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "May", "month_order": 8, "count": 23642}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Jun", "month_order": 9, "count": 31590}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Jul", "month_order": 10, "count": 27457}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Aug", "month_order": 11, "count": 28308}, {"fy": "FY25", "snapshot_date": "2025-09-25", "source_file": "FY25_detentionStats09252025.xlsx", "agency": "ICE", "month": "Sep", "month_order": 12, "count": 21293}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "CBP", "month": "Oct", "month_order": 1, "count": 4991}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "CBP", "month": "Nov", "month_order": 2, "count": 3925}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "CBP", "month": "Dec", "month_order": 3, "count": 4290}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "CBP", "month": "Jan", "month_order": 4, "count": 3595}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "CBP", "month": "Feb", "month_order": 5, "count": 803}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "ICE", "month": "Oct", "month_order": 1, "count": 36627}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "ICE", "month": "Nov", "month_order": 2, "count": 34487}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "ICE", "month": "Dec", "month_order": 3, "count": 37840}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "ICE", "month": "Jan", "month_order": 4, "count": 36099}, {"fy": "FY26", "snapshot_date": "2026-02-12", "source_file": "FY26_detentionStats_02122026.xlsx", "agency": "ICE", "month": "Feb", "month_order": 5, "count": 7137}], "criminality": [{"fy": "FY26", "agency": "CBP", "category": "Convicted", "month": "Oct", "month_order": 1, "count": 1069.7, "fy_overall": 1011.98}, {"fy": "FY26", "agency": "CBP", "category": "Convicted", "month": "Nov", "month_order": 2, "count": 1015.0, "fy_overall": 1011.98}, {"fy": "FY26", "agency": "CBP", "category": "Convicted", "month": "Dec", "month_order": 3, "count": 997.3, "fy_overall": 1011.98}, {"fy": "FY26", "agency": "CBP", "category": "Convicted", "month": "Jan", "month_order": 4, "count": 979.2, "fy_overall": 1011.98}, {"fy": "FY26", "agency": "CBP", "category": "Convicted", "month": "Feb", "month_order": 5, "count": 953.7, "fy_overall": 1011.98}, {"fy": "FY26", "agency": "CBP", "category": "Pending", "month": "Oct", "month_order": 1, "count": 1185.7, "fy_overall": 1363.5}, {"fy": "FY26", "agency": "CBP", "category": "Pending", "month": "Nov", "month_order": 2, "count": 1355.3, "fy_overall": 1363.5}, {"fy": "FY26", "agency": "CBP", "category": "Pending", "month": "Dec", "month_order": 3, "count": 1456.3, "fy_overall": 1363.5}, {"fy": "FY26", "agency": "CBP", "category": "Pending", "month": "Jan", "month_order": 4, "count": 1442.4, "fy_overall": 1363.5}, {"fy": "FY26", "agency": "CBP", "category": "Pending", "month": "Feb", "month_order": 5, "count": 1426.0, "fy_overall": 1363.5}, {"fy": "FY26", "agency": "CBP", "category": "Other Violation", "month": "Oct", "month_order": 1, "count": 10359.5, "fy_overall": 9163.69}, {"fy": "FY26", "agency": "CBP", "category": "Other Violation", "month": "Nov", "month_order": 2, "count": 9549.1, "fy_overall": 9163.69}, {"fy": "FY26", "agency": "CBP", "category": "Other Violation", "month": "Dec", "month_order": 3, "count": 8796.8, "fy_overall": 9163.69}, {"fy": "FY26", "agency": "CBP", "category": "Other Violation", "month": "Jan", "month_order": 4, "count": 8278.7, "fy_overall": 9163.69}, {"fy": "FY26", "agency": "CBP", "category": "Other Violation", "month": "Feb", "month_order": 5, "count": 7760.6, "fy_overall": 9163.69}, {"fy": "FY26", "agency": "ICE", "category": "Convicted", "month": "Oct", "month_order": 1, "count": 16497.6, "fy_overall": 17058.38}, {"fy": "FY26", "agency": "ICE", "category": "Convicted", "month": "Nov", "month_order": 2, "count": 16784.5, "fy_overall": 17058.38}, {"fy": "FY26", "agency": "ICE", "category": "Convicted", "month": "Dec", "month_order": 3, "count": 17309.1, "fy_overall": 17058.38}, {"fy": "FY26", "agency": "ICE", "category": "Convicted", "month": "Jan", "month_order": 4, "count": 17532.7, "fy_overall": 17058.38}, {"fy": "FY26", "agency": "ICE", "category": "Convicted", "month": "Feb", "month_order": 5, "count": 17504.7, "fy_overall": 17058.38}, {"fy": "FY26", "agency": "ICE", "category": "Pending", "month": "Oct", "month_order": 1, "count": 15369.6, "fy_overall": 16337.73}, {"fy": "FY26", "agency": "ICE", "category": "Pending", "month": "Nov", "month_order": 2, "count": 16034.1, "fy_overall": 16337.73}, {"fy": "FY26", "agency": "ICE", "category": "Pending", "month": "Dec", "month_order": 3, "count": 16575.3, "fy_overall": 16337.73}, {"fy": "FY26", "agency": "ICE", "category": "Pending", "month": "Jan", "month_order": 4, "count": 17216.0, "fy_overall": 16337.73}, {"fy": "FY26", "agency": "ICE", "category": "Pending", "month": "Feb", "month_order": 5, "count": 16985.3, "fy_overall": 16337.73}, {"fy": "FY26", "agency": "ICE", "category": "Other Violation", "month": "Oct", "month_order": 1, "count": 18695.6, "fy_overall": 23037.63}, {"fy": "FY26", "agency": "ICE", "category": "Other Violation", "month": "Nov", "month_order": 2, "count": 21878.4, "fy_overall": 23037.63}, {"fy": "FY26", "agency": "ICE", "category": "Other Violation", "month": "Dec", "month_order": 3, "count": 24417.1, "fy_overall": 23037.63}, {"fy": "FY26", "agency": "ICE", "category": "Other Violation", "month": "Jan", "month_order": 4, "count": 26506.3, "fy_overall": 23037.63}, {"fy": "FY26", "agency": "ICE", "category": "Other Violation", "month": "Feb", "month_order": 5, "count": 25764.0, "fy_overall": 23037.63}], "byState": [{"fy": "FY26", "state": "TX", "male_crim": 3053, "male_non_crim": 12390, "female_crim": 316, "female_non_crim": 2974, "total_crim": 3369, "total_non_crim": 15364, "total_population": 18733}, {"fy": "FY26", "state": "LA", "male_crim": 1376, "male_non_crim": 5161, "female_crim": 196, "female_non_crim": 1510, "total_crim": 1572, "total_non_crim": 6671, "total_population": 8243}, {"fy": "FY26", "state": "CA", "male_crim": 1657, "male_non_crim": 4037, "female_crim": 82, "female_non_crim": 685, "total_crim": 1739, "total_non_crim": 4722, "total_population": 6461}, {"fy": "FY26", "state": "FL", "male_crim": 1496, "male_non_crim": 3493, "female_crim": 39, "female_non_crim": 201, "total_crim": 1535, "total_non_crim": 3694, "total_population": 5229}, {"fy": "FY26", "state": "GA", "male_crim": 1064, "male_non_crim": 2837, "female_crim": 62, "female_non_crim": 266, "total_crim": 1126, "total_non_crim": 3103, "total_population": 4229}, {"fy": "FY26", "state": "AZ", "male_crim": 627, "male_non_crim": 1625, "female_crim": 94, "female_non_crim": 522, "total_crim": 721, "total_non_crim": 2147, "total_population": 2868}, {"fy": "FY26", "state": "MS", "male_crim": 194, "male_non_crim": 2027, "female_crim": 0, "female_non_crim": 5, "total_crim": 194, "total_non_crim": 2032, "total_population": 2226}, {"fy": "FY26", "state": "PA", "male_crim": 536, "male_non_crim": 1547, "female_crim": 25, "female_non_crim": 50, "total_crim": 561, "total_non_crim": 1597, "total_population": 2158}, {"fy": "FY26", "state": "MI", "male_crim": 187, "male_non_crim": 1491, "female_crim": 7, "female_non_crim": 125, "total_crim": 194, "total_non_crim": 1616, "total_population": 1810}, {"fy": "FY26", "state": "NM", "male_crim": 204, "male_non_crim": 1159, "female_crim": 10, "female_non_crim": 132, "total_crim": 214, "total_non_crim": 1291, "total_population": 1505}, {"fy": "FY26", "state": "WA", "male_crim": 376, "male_non_crim": 863, "female_crim": 31, "female_non_crim": 102, "total_crim": 407, "total_non_crim": 965, "total_population": 1372}, {"fy": "FY26", "state": "CO", "male_crim": 293, "male_non_crim": 848, "female_crim": 26, "female_non_crim": 83, "total_crim": 319, "total_non_crim": 931, "total_population": 1250}, {"fy": "FY26", "state": "NJ", "male_crim": 117, "male_non_crim": 1009, "female_crim": 5, "female_non_crim": 86, "total_crim": 122, "total_non_crim": 1095, "total_population": 1217}, {"fy": "FY26", "state": "VA", "male_crim": 293, "male_non_crim": 843, "female_crim": 6, "female_non_crim": 13, "total_crim": 299, "total_non_crim": 856, "total_population": 1155}, {"fy": "FY26", "state": "NY", "male_crim": 235, "male_non_crim": 849, "female_crim": 1, "female_non_crim": 18, "total_crim": 236, "total_non_crim": 867, "total_population": 1103}, {"fy": "FY26", "state": "KY", "male_crim": 260, "male_non_crim": 593, "female_crim": 30, "female_non_crim": 158, "total_crim": 290, "total_non_crim": 751, "total_population": 1041}, {"fy": "FY26", "state": "OK", "male_crim": 222, "male_non_crim": 667, "female_crim": 1, "female_non_crim": 30, "total_crim": 223, "total_non_crim": 697, "total_population": 920}, {"fy": "FY26", "state": "OH", "male_crim": 131, "male_non_crim": 577, "female_crim": 11, "female_non_crim": 93, "total_crim": 142, "total_non_crim": 670, "total_population": 812}, {"fy": "FY26", "state": "IN", "male_crim": 342, "male_non_crim": 374, "female_crim": 11, "female_non_crim": 65, "total_crim": 353, "total_non_crim": 439, "total_population": 792}, {"fy": "FY26", "state": "NV", "male_crim": 238, "male_non_crim": 343, "female_crim": 4, "female_non_crim": 17, "total_crim": 242, "total_non_crim": 360, "total_population": 602}, {"fy": "FY26", "state": "MA", "male_crim": 136, "male_non_crim": 367, "female_crim": 0, "female_non_crim": 0, "total_crim": 136, "total_non_crim": 367, "total_population": 503}, {"fy": "FY26", "state": "MO", "male_crim": 80, "male_non_crim": 302, "female_crim": 8, "female_non_crim": 36, "total_crim": 88, "total_non_crim": 338, "total_population": 426}, {"fy": "FY26", "state": "TN", "male_crim": 44, "male_non_crim": 290, "female_crim": 1, "female_non_crim": 10, "total_crim": 45, "total_non_crim": 300, "total_population": 345}, {"fy": "FY26", "state": "NH", "male_crim": 77, "male_non_crim": 246, "female_crim": 2, "female_non_crim": 17, "total_crim": 79, "total_non_crim": 263, "total_population": 342}, {"fy": "FY26", "state": "MN", "male_crim": 102, "male_non_crim": 211, "female_crim": 7, "female_non_crim": 14, "total_crim": 109, "total_non_crim": 225, "total_population": 334}, {"fy": "FY26", "state": "IA", "male_crim": 123, "male_non_crim": 117, "female_crim": 5, "female_non_crim": 16, "total_crim": 128, "total_non_crim": 133, "total_population": 261}, {"fy": "FY26", "state": "NE", "male_crim": 103, "male_non_crim": 100, "female_crim": 6, "female_non_crim": 7, "total_crim": 109, "total_non_crim": 107, "total_population": 216}, {"fy": "FY26", "state": "KS", "male_crim": 77, "male_non_crim": 83, "female_crim": 2, "female_non_crim": 10, "total_crim": 79, "total_non_crim": 93, "total_population": 172}, {"fy": "FY26", "state": "WI", "male_crim": 56, "male_non_crim": 85, "female_crim": 0, "female_non_crim": 4, "total_crim": 56, "total_non_crim": 89, "total_population": 145}, {"fy": "FY26", "state": "AL", "male_crim": 20, "male_non_crim": 102, "female_crim": 3, "female_non_crim": 14, "total_crim": 23, "total_non_crim": 116, "total_population": 139}, {"fy": "FY26", "state": "RI", "male_crim": 38, "male_non_crim": 75, "female_crim": 0, "female_non_crim": 1, "total_crim": 38, "total_non_crim": 76, "total_population": 114}, {"fy": "FY26", "state": "WV", "male_crim": 9, "male_non_crim": 69, "female_crim": 0, "female_non_crim": 6, "total_crim": 9, "total_non_crim": 75, "total_population": 84}, {"fy": "FY26", "state": "HI", "male_crim": 19, "male_non_crim": 49, "female_crim": 0, "female_non_crim": 11, "total_crim": 19, "total_non_crim": 60, "total_population": 79}, {"fy": "FY26", "state": "WY", "male_crim": 12, "male_non_crim": 36, "female_crim": 1, "female_non_crim": 1, "total_crim": 13, "total_non_crim": 37, "total_population": 50}, {"fy": "FY26", "state": "ND", "male_crim": 7, "male_non_crim": 25, "female_crim": 1, "female_non_crim": 4, "total_crim": 8, "total_non_crim": 29, "total_population": 37}, {"fy": "FY26", "state": "UT", "male_crim": 8, "male_non_crim": 22, "female_crim": 0, "female_non_crim": 1, "total_crim": 8, "total_non_crim": 23, "total_population": 31}, {"fy": "FY26", "state": "MP", "male_crim": 3, "male_non_crim": 15, "female_crim": 1, "female_non_crim": 2, "total_crim": 4, "total_non_crim": 17, "total_population": 21}, {"fy": "FY26", "state": "ID", "male_crim": 5, "male_non_crim": 13, "female_crim": 0, "female_non_crim": 1, "total_crim": 5, "total_non_crim": 14, "total_population": 19}, {"fy": "FY26", "state": "SD", "male_crim": 3, "male_non_crim": 14, "female_crim": 0, "female_non_crim": 0, "total_crim": 3, "total_non_crim": 14, "total_population": 17}, {"fy": "FY26", "state": "GU", "male_crim": 4, "male_non_crim": 11, "female_crim": 0, "female_non_crim": 1, "total_crim": 4, "total_non_crim": 12, "total_population": 16}, {"fy": "FY26", "state": "VT", "male_crim": 1, "male_non_crim": 10, "female_crim": 0, "female_non_crim": 5, "total_crim": 1, "total_non_crim": 15, "total_population": 16}, {"fy": "FY26", "state": "PR", "male_crim": 2, "male_non_crim": 13, "female_crim": 0, "female_non_crim": 1, "total_crim": 2, "total_non_crim": 14, "total_population": 16}, {"fy": "FY26", "state": "ME", "male_crim": 3, "male_non_crim": 5, "female_crim": 0, "female_non_crim": 0, "total_crim": 3, "total_non_crim": 5, "total_population": 8}, {"fy": "FY26", "state": "AR", "male_crim": 1, "male_non_crim": 5, "female_crim": 0, "female_non_crim": 0, "total_crim": 1, "total_non_crim": 5, "total_population": 6}, {"fy": "FY26", "state": "SC", "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 1, "total_crim": 1, "total_non_crim": 4, "total_population": 5}, {"fy": "FY26", "state": "NC", "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 0, "total_crim": 1, "total_non_crim": 3, "total_population": 4}, {"fy": "FY26", "state": "MT", "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 0, "total_crim": 1, "total_non_crim": 3, "total_population": 4}, {"fy": "FY26", "state": "AK", "male_crim": 0, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 0, "total_crim": 0, "total_non_crim": 2, "total_population": 2}], "facilities": [{"fy": "FY26", "name": "ADAMS COUNTY CORRECTIONAL CENTER", "city": "NATCHEZ", "state": "MS", "aor": "NOL", "alos": 36.91, "male_crim": 190, "male_non_crim": 2001, "female_crim": 0, "female_non_crim": 0, "total_population": 2191}, {"fy": "FY26", "name": "ADELANTO ICE PROCESSING CENTER", "city": "ADELANTO", "state": "CA", "aor": "LOS", "alos": 47.1, "male_crim": 702, "male_non_crim": 842, "female_crim": 33, "female_non_crim": 226, "total_population": 1803}, {"fy": "FY26", "name": "ALEXANDRIA STAGING FACILI", "city": "ALEXANDRIA", "state": "LA", "aor": "NOL", "alos": 2.58, "male_crim": 90, "male_non_crim": 319, "female_crim": 0, "female_non_crim": 1, "total_population": 410}, {"fy": "FY26", "name": "ALLEGANY COUNTY JAIL", "city": "BELMONT", "state": "NY", "aor": "BUF", "alos": 7.34, "male_crim": 0, "male_non_crim": 0, "female_crim": 0, "female_non_crim": 5, "total_population": 5}, {"fy": "FY26", "name": "ALLEN PARISH PUBLIC SAFETY COMPLEX", "city": "OBERLIN", "state": "LA", "aor": "NOL", "alos": 72.35, "male_crim": 50, "male_non_crim": 99, "female_crim": 0, "female_non_crim": 0, "total_population": 149}, {"fy": "FY26", "name": "ANCHORAGE CORRECTIONAL COMPLEX", "city": "ANCHORAGE", "state": "AK", "aor": "SEA", "alos": 4.98, "male_crim": 0, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 0, "total_population": 2}, {"fy": "FY26", "name": "BAKER CORRECTIONAL INSTITUTION", "city": "SANDERSON", "state": "FL", "aor": "MIA", "alos": 17.54, "male_crim": 223, "male_non_crim": 649, "female_crim": 0, "female_non_crim": 0, "total_population": 872}, {"fy": "FY26", "name": "BAKER COUNTY SHERIFF DEPT.", "city": "MACCLENNY", "state": "FL", "aor": "MIA", "alos": 45.3, "male_crim": 76, "male_non_crim": 105, "female_crim": 27, "female_non_crim": 78, "total_population": 286}, {"fy": "FY26", "name": "BALDWIN COUNTY CORRECTIONAL CENTER", "city": "BAY MINETTE", "state": "AL", "aor": "NOL", "alos": 3.0, "male_crim": 2, "male_non_crim": 15, "female_crim": 0, "female_non_crim": 1, "total_population": 18}, {"fy": "FY26", "name": "BERLIN FED. CORR. INST.", "city": "BERLIN", "state": "NH", "aor": "BOS", "alos": 58.4, "male_crim": 34, "male_non_crim": 164, "female_crim": 0, "female_non_crim": 0, "total_population": 198}, {"fy": "FY26", "name": "BLUEBONNET DETENTION FACILITY", "city": "ANSON", "state": "TX", "aor": "DAL", "alos": 21.31, "male_crim": 239, "male_non_crim": 656, "female_crim": 9, "female_non_crim": 122, "total_population": 1026}, {"fy": "FY26", "name": "BOONE COUNTY JAIL", "city": "BURLINGTON", "state": "KY", "aor": "CHI", "alos": 54.12, "male_crim": 89, "male_non_crim": 107, "female_crim": 1, "female_non_crim": 5, "total_population": 202}, {"fy": "FY26", "name": "BROOKLYN MDC", "city": "BROOKLYN", "state": "NY", "aor": "NYC", "alos": 51.74, "male_crim": 24, "male_non_crim": 89, "female_crim": 0, "female_non_crim": 0, "total_population": 113}, {"fy": "FY26", "name": "BROOME COUNTY JAIL", "city": "BINGHAMTON", "state": "NY", "aor": "BUF", "alos": 50.53, "male_crim": 3, "male_non_crim": 44, "female_crim": 0, "female_non_crim": 0, "total_population": 47}, {"fy": "FY26", "name": "BROWARD COUNTY JAIL", "city": "FT.LAUDERDALE", "state": "FL", "aor": "MIA", "alos": 1.03, "male_crim": 0, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 1, "total_population": 3}, {"fy": "FY26", "name": "BROWARD TRANSITIONAL CENTER", "city": "POMPANO BEACH", "state": "FL", "aor": "MIA", "alos": 21.43, "male_crim": 63, "male_non_crim": 517, "female_crim": 7, "female_non_crim": 93, "total_population": 680}, {"fy": "FY26", "name": "BUFFALO SERVICE PROCESSING CENTER", "city": "BATAVIA", "state": "NY", "aor": "BUF", "alos": 37.28, "male_crim": 124, "male_non_crim": 621, "female_crim": 0, "female_non_crim": 0, "total_population": 745}, {"fy": "FY26", "name": "BURLEIGH COUNTY", "city": "BISMARCK", "state": "ND", "aor": "SPM", "alos": 26.31, "male_crim": 2, "male_non_crim": 13, "female_crim": 0, "female_non_crim": 1, "total_population": 16}, {"fy": "FY26", "name": "BUTLER COUNTY JAIL", "city": "HAMILTON", "state": "OH", "aor": "DET", "alos": 30.85, "male_crim": 60, "male_non_crim": 276, "female_crim": 4, "female_non_crim": 22, "total_population": 362}, {"fy": "FY26", "name": "CALHOUN COUNTY CORRECTIONAL CENTER", "city": "BATTLE CREEK", "state": "MI", "aor": "DET", "alos": 50.92, "male_crim": 18, "male_non_crim": 139, "female_crim": 0, "female_non_crim": 19, "total_population": 176}, {"fy": "FY26", "name": "CALIFORNIA CITY IMMIGRATION PROCESSING CENTER", "city": "CALIFORNIA CITY", "state": "CA", "aor": "SFR", "alos": 48.44, "male_crim": 267, "male_non_crim": 631, "female_crim": 28, "female_non_crim": 162, "total_population": 1088}, {"fy": "FY26", "name": "CAMBRIA COUNTY PRISON", "city": "EBENSBURG", "state": "PA", "aor": "PHI", "alos": 5.83, "male_crim": 5, "male_non_crim": 17, "female_crim": 2, "female_non_crim": 11, "total_population": 35}, {"fy": "FY26", "name": "CAMPBELL CO DET CTR", "city": "NEWPORT", "state": "KY", "aor": "CHI", "alos": 63.13, "male_crim": 26, "male_non_crim": 88, "female_crim": 4, "female_non_crim": 23, "total_population": 141}, {"fy": "FY26", "name": "CAROLINE DETENTION FACILITY", "city": "BOWLING GREEN", "state": "VA", "aor": "WAS", "alos": 51.49, "male_crim": 107, "male_non_crim": 225, "female_crim": 5, "female_non_crim": 10, "total_population": 347}, {"fy": "FY26", "name": "CASCADE COUNTY JAIL, MT", "city": "GREAT FALLS", "state": "MT", "aor": "SLC", "alos": 6.0, "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 0, "total_population": 4}, {"fy": "FY26", "name": "CASS COUNTY JAIL", "city": "PLATTSMOUTH", "state": "NE", "aor": "SPM", "alos": 23.18, "male_crim": 6, "male_non_crim": 8, "female_crim": 1, "female_non_crim": 1, "total_population": 16}, {"fy": "FY26", "name": "CCA, FLORENCE CORRECTIONAL CENTER", "city": "FLORENCE", "state": "AZ", "aor": "PHO", "alos": 39.41, "male_crim": 225, "male_non_crim": 302, "female_crim": 0, "female_non_crim": 1, "total_population": 528}, {"fy": "FY26", "name": "CENTRAL LOUISIANA ICE PROCESSING CENTER (CLIPC)", "city": "JENA", "state": "LA", "aor": "NOL", "alos": 25.06, "male_crim": 244, "male_non_crim": 943, "female_crim": 0, "female_non_crim": 0, "total_population": 1187}, {"fy": "FY26", "name": "CHASE COUNTY JAIL", "city": "COTTONWOOD FALL", "state": "KS", "aor": "CHI", "alos": 22.59, "male_crim": 35, "male_non_crim": 65, "female_crim": 2, "female_non_crim": 10, "total_population": 112}, {"fy": "FY26", "name": "CHIPPEWA COUNTY SSM", "city": "SAULT STE MARIE", "state": "MI", "aor": "DET", "alos": 50.42, "male_crim": 7, "male_non_crim": 31, "female_crim": 0, "female_non_crim": 0, "total_population": 38}, {"fy": "FY26", "name": "CHITTENDEN REGIONAL CORRECTIONAL FACILITY", "city": "SOUTH BURLINGTON", "state": "VT", "aor": "BOS", "alos": 10.19, "male_crim": 0, "male_non_crim": 0, "female_crim": 0, "female_non_crim": 5, "total_population": 5}, {"fy": "FY26", "name": "CHRISTIAN COUNTY JAIL", "city": "HOPKINSVILLE", "state": "KY", "aor": "CHI", "alos": 32.15, "male_crim": 20, "male_non_crim": 84, "female_crim": 1, "female_non_crim": 0, "total_population": 105}, {"fy": "FY26", "name": "CIBOLA COUNTY CORRECTIONAL CENTER", "city": "MILAN", "state": "NM", "aor": "ELP", "alos": 61.17, "male_crim": 27, "male_non_crim": 204, "female_crim": 0, "female_non_crim": 0, "total_population": 231}, {"fy": "FY26", "name": "CIMMARRON CORR FACILITY", "city": "CUSHING", "state": "OK", "aor": "DAL", "alos": 41.38, "male_crim": 141, "male_non_crim": 448, "female_crim": 0, "female_non_crim": 0, "total_population": 589}, {"fy": "FY26", "name": "CLARK COUNTY JAIL (IN)", "city": "JEFFERSONVILLE", "state": "IN", "aor": "CHI", "alos": 48.49, "male_crim": 5, "male_non_crim": 22, "female_crim": 8, "female_non_crim": 59, "total_population": 94}, {"fy": "FY26", "name": "CLAY COUNTY JUSTICE CENTER", "city": "BRAZIL", "state": "IN", "aor": "CHI", "alos": 12.23, "male_crim": 60, "male_non_crim": 180, "female_crim": 0, "female_non_crim": 1, "total_population": 241}, {"fy": "FY26", "name": "CLINTON COUNTY CORRECTIONAL FACILITY", "city": "MCELHATTAN", "state": "PA", "aor": "PHI", "alos": 52.14, "male_crim": 42, "male_non_crim": 37, "female_crim": 3, "female_non_crim": 11, "total_population": 93}, {"fy": "FY26", "name": "CLINTON COUNTY JAIL", "city": "PLATTSBURGH", "state": "NY", "aor": "BUF", "alos": 2.71, "male_crim": 0, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 2, "total_population": 4}, {"fy": "FY26", "name": "CLINTON COUNTY JAIL", "city": "FRANKFORT", "state": "IN", "aor": "CHI", "alos": 5.18, "male_crim": 8, "male_non_crim": 11, "female_crim": 3, "female_non_crim": 5, "total_population": 27}, {"fy": "FY26", "name": "COASTAL BEND DETENTION FACILITY", "city": "ROBSTOWN", "state": "TX", "aor": "HLG", "alos": 5.61, "male_crim": 7, "male_non_crim": 37, "female_crim": 2, "female_non_crim": 9, "total_population": 55}, {"fy": "FY26", "name": "COLLIER COUNTY NAPLES JAIL CENTER", "city": "NAPLES", "state": "FL", "aor": "MIA", "alos": 4.98, "male_crim": 9, "male_non_crim": 26, "female_crim": 1, "female_non_crim": 6, "total_population": 42}, {"fy": "FY26", "name": "CORR. CTR OF NORTHWEST OHIO", "city": "STRYKER", "state": "OH", "aor": "DET", "alos": 39.03, "male_crim": 4, "male_non_crim": 37, "female_crim": 2, "female_non_crim": 31, "total_population": 74}, {"fy": "FY26", "name": "CROW WING COUNTY JAIL", "city": "BRAINERD", "state": "MN", "aor": "SPM", "alos": 11.06, "male_crim": 6, "male_non_crim": 13, "female_crim": 1, "female_non_crim": 3, "total_population": 23}, {"fy": "FY26", "name": "DAKOTA COUNTY JAIL", "city": "DAKOTA CITY", "state": "NE", "aor": "SPM", "alos": 22.21, "male_crim": 10, "male_non_crim": 14, "female_crim": 2, "female_non_crim": 3, "total_population": 29}, {"fy": "FY26", "name": "DALLAS COUNTY JAIL - LEW STERRETT JUSTICE CENTER", "city": "DALLAS", "state": "TX", "aor": "DAL", "alos": 0.75, "male_crim": 0, "male_non_crim": 1, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "DAVIESS COUNTY DETENTION", "city": "OWENSBORO", "state": "KY", "aor": "CHI", "alos": 23.76, "male_crim": 7, "male_non_crim": 19, "female_crim": 0, "female_non_crim": 1, "total_population": 27}, {"fy": "FY26", "name": "DAVIS COUNTY", "city": "FARMINGTON", "state": "UT", "aor": "SLC", "alos": 3.36, "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 0, "total_population": 4}, {"fy": "FY26", "name": "DELANEY HALL DETENTION FACILITY", "city": "NEWARK", "state": "NJ", "aor": "NEW", "alos": 19.21, "male_crim": 66, "male_non_crim": 785, "female_crim": 2, "female_non_crim": 55, "total_population": 908}, {"fy": "FY26", "name": "DENVER CONTRACT DETENTION FACILITY", "city": "AURORA", "state": "CO", "aor": "DEN", "alos": 47.27, "male_crim": 293, "male_non_crim": 848, "female_crim": 26, "female_non_crim": 83, "total_population": 1250}, {"fy": "FY26", "name": "DEPARTMENT OF CORRECTIONS HAGATNA", "city": "HAGATNA", "state": "GU", "aor": "SFR", "alos": 35.96, "male_crim": 4, "male_non_crim": 11, "female_crim": 0, "female_non_crim": 1, "total_population": 16}, {"fy": "FY26", "name": "DESERT VIEW ANNEX", "city": "ADELANTO", "state": "CA", "aor": "LOS", "alos": 53.58, "male_crim": 43, "male_non_crim": 373, "female_crim": 0, "female_non_crim": 0, "total_population": 416}, {"fy": "FY26", "name": "DIAMONDBACK CORR FACILITY", "city": "WATONGA", "state": "OK", "aor": "DAL", "alos": 9.43, "male_crim": 19, "male_non_crim": 81, "female_crim": 1, "female_non_crim": 25, "total_population": 126}, {"fy": "FY26", "name": "DILLEY IMMIGRATION PROCESSING CENTER", "city": "DILLEY", "state": "TX", "aor": "SNA", "alos": 27.5, "male_crim": 2, "male_non_crim": 253, "female_crim": 5, "female_non_crim": 446, "total_population": 706}, {"fy": "FY26", "name": "DILLEY PROCESSING SINGLE ADULT FEMALE", "city": "DILLEY", "state": "TX", "aor": "SNA", "alos": 56.82, "male_crim": 0, "male_non_crim": 0, "female_crim": 4, "female_non_crim": 191, "total_population": 195}, {"fy": "FY26", "name": "DODGE COUNTY JAIL", "city": "JUNEAU", "state": "WI", "aor": "CHI", "alos": 24.8, "male_crim": 47, "male_non_crim": 54, "female_crim": 0, "female_non_crim": 0, "total_population": 101}, {"fy": "FY26", "name": "DONA ANA COUNTY DETENTION CENTER", "city": "LAS CRUCES", "state": "NM", "aor": "ELP", "alos": 0.67, "male_crim": 0, "male_non_crim": 0, "female_crim": 1, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "DOUGLAS COUNTY", "city": "SUPERIOR", "state": "WI", "aor": "SPM", "alos": 35.64, "male_crim": 4, "male_non_crim": 19, "female_crim": 0, "female_non_crim": 4, "total_population": 27}, {"fy": "FY26", "name": "EAST HIDALGO DETENTION CENTER", "city": "LA VILLA", "state": "TX", "aor": "HLG", "alos": 2.84, "male_crim": 3, "male_non_crim": 0, "female_crim": 0, "female_non_crim": 0, "total_population": 3}, {"fy": "FY26", "name": "EDEN DETENTION CTR", "city": "EDEN", "state": "TX", "aor": "DAL", "alos": 31.54, "male_crim": 50, "male_non_crim": 435, "female_crim": 0, "female_non_crim": 0, "total_population": 485}, {"fy": "FY26", "name": "EL PASO COUNTY DETENTION FACILITY", "city": "EL PASO", "state": "TX", "aor": "ELP", "alos": 0.16, "male_crim": 0, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 0, "total_population": 2}, {"fy": "FY26", "name": "EL PASO SERVICE PROCESSING CENTER", "city": "EL PASO", "state": "TX", "aor": "ELP", "alos": 47.78, "male_crim": 188, "male_non_crim": 396, "female_crim": 47, "female_non_crim": 174, "total_population": 805}, {"fy": "FY26", "name": "EL VALLE DETENTION FACILITY", "city": "RAYMONDVILLE", "state": "TX", "aor": "HLG", "alos": 42.24, "male_crim": 141, "male_non_crim": 420, "female_crim": 27, "female_non_crim": 354, "total_population": 942}, {"fy": "FY26", "name": "ELIZABETH CONTRACT DETENTION FACILITY", "city": "ELIZABETH", "state": "NJ", "aor": "NEW", "alos": 12.04, "male_crim": 51, "male_non_crim": 224, "female_crim": 3, "female_non_crim": 31, "total_population": 309}, {"fy": "FY26", "name": "ELMORE COUNTY JAIL", "city": "MOUNTAIN HOME", "state": "ID", "aor": "SLC", "alos": 4.36, "male_crim": 3, "male_non_crim": 6, "female_crim": 0, "female_non_crim": 1, "total_population": 10}, {"fy": "FY26", "name": "ELOY FEDERAL CONTRACT FACILITY", "city": "ELOY", "state": "AZ", "aor": "PHO", "alos": 65.81, "male_crim": 196, "male_non_crim": 615, "female_crim": 90, "female_non_crim": 439, "total_population": 1340}, {"fy": "FY26", "name": "ERIE COUNTY JAIL", "city": "ERIE", "state": "PA", "aor": "PHI", "alos": 11.31, "male_crim": 2, "male_non_crim": 15, "female_crim": 0, "female_non_crim": 0, "total_population": 17}, {"fy": "FY26", "name": "ERO EL PASO CAMP EAST MONTANA", "city": "EL PASO", "state": "TX", "aor": "ELP", "alos": 9.35, "male_crim": 526, "male_non_crim": 2145, "female_crim": 26, "female_non_crim": 257, "total_population": 2954}, {"fy": "FY26", "name": "ETOWAH COUNTY JAIL", "city": "GADSDEN", "state": "AL", "aor": "NOL", "alos": 4.07, "male_crim": 13, "male_non_crim": 54, "female_crim": 1, "female_non_crim": 10, "total_population": 78}, {"fy": "FY26", "name": "FARMVILLE DETENTION CENTER", "city": "FARMVILLE", "state": "VA", "aor": "WAS", "alos": 44.59, "male_crim": 173, "male_non_crim": 541, "female_crim": 0, "female_non_crim": 0, "total_population": 714}, {"fy": "FY26", "name": "FCI ATLANTA", "city": "ATLANTA", "state": "GA", "aor": "ATL", "alos": 14.05, "male_crim": 46, "male_non_crim": 64, "female_crim": 0, "female_non_crim": 0, "total_population": 110}, {"fy": "FY26", "name": "FDC PHILADELPHIA", "city": "PHILADELPHIA", "state": "PA", "aor": "PHI", "alos": 6.36, "male_crim": 8, "male_non_crim": 89, "female_crim": 0, "female_non_crim": 0, "total_population": 97}, {"fy": "FY26", "name": "FLORENCE SERVICE PROCESSING CENTER", "city": "FLORENCE", "state": "AZ", "aor": "PHO", "alos": 8.99, "male_crim": 53, "male_non_crim": 272, "female_crim": 1, "female_non_crim": 9, "total_population": 335}, {"fy": "FY26", "name": "FLORENCE STAGING FACILITY", "city": "FLORENCE", "state": "AZ", "aor": "PHO", "alos": 2.79, "male_crim": 94, "male_non_crim": 226, "female_crim": 2, "female_non_crim": 17, "total_population": 339}, {"fy": "FY26", "name": "FLORIDA SOFT-SIDED FACILITY", "city": "OCHOPEE", "state": "FL", "aor": "MIA", "alos": 14.85, "male_crim": 446, "male_non_crim": 904, "female_crim": 0, "female_non_crim": 0, "total_population": 1350}, {"fy": "FY26", "name": "FOLKSTON ANNEX IPC", "city": "FOLKSTON", "state": "GA", "aor": "ATL", "alos": 39.41, "male_crim": 77, "male_non_crim": 199, "female_crim": 0, "female_non_crim": 0, "total_population": 276}, {"fy": "FY26", "name": "FOLKSTON D RAY ICE PROCESSING CTR", "city": "FOLKSTON", "state": "GA", "aor": "ATL", "alos": 31.2, "male_crim": 153, "male_non_crim": 833, "female_crim": 0, "female_non_crim": 0, "total_population": 986}, {"fy": "FY26", "name": "FOLKSTON MAIN IPC", "city": "FOLKSTON", "state": "GA", "aor": "ATL", "alos": 35.04, "male_crim": 188, "male_non_crim": 515, "female_crim": 0, "female_non_crim": 0, "total_population": 703}, {"fy": "FY26", "name": "FREEBORN COUNTY ADULT DETENTION CENTER", "city": "ALBERT LEA", "state": "MN", "aor": "SPM", "alos": 23.7, "male_crim": 34, "male_non_crim": 48, "female_crim": 0, "female_non_crim": 0, "total_population": 82}, {"fy": "FY26", "name": "FULTON CO JAIL INDIANA", "city": "ROCHESTER", "state": "IN", "aor": "CHI", "alos": 3.48, "male_crim": 2, "male_non_crim": 4, "female_crim": 0, "female_non_crim": 0, "total_population": 6}, {"fy": "FY26", "name": "GEAUGA COUNTY JAIL", "city": "CHARDON", "state": "OH", "aor": "DET", "alos": 72.22, "male_crim": 2, "male_non_crim": 11, "female_crim": 1, "female_non_crim": 6, "total_population": 20}, {"fy": "FY26", "name": "GLADES COUNTY DETENTION CENTER", "city": "MOORE HAVEN", "state": "FL", "aor": "MIA", "alos": 46.84, "male_crim": 46, "male_non_crim": 423, "female_crim": 0, "female_non_crim": 0, "total_population": 469}, {"fy": "FY26", "name": "GOLDEN STATE ANNEX", "city": "MCFARLAND", "state": "CA", "aor": "SFR", "alos": 71.51, "male_crim": 247, "male_non_crim": 373, "female_crim": 0, "female_non_crim": 0, "total_population": 620}, {"fy": "FY26", "name": "GRAND FORKS COUNTY CORRECTIONAL FACILITY", "city": "GRAND FORKS", "state": "ND", "aor": "SPM", "alos": 17.14, "male_crim": 5, "male_non_crim": 11, "female_crim": 1, "female_non_crim": 3, "total_population": 20}, {"fy": "FY26", "name": "GRAYSON COUNTY JAIL", "city": "LEITCHFIELD", "state": "KY", "aor": "CHI", "alos": 33.0, "male_crim": 4, "male_non_crim": 3, "female_crim": 24, "female_non_crim": 127, "total_population": 158}, {"fy": "FY26", "name": "GREENE COUNTY JAIL", "city": "SPRINGFIELD", "state": "MO", "aor": "CHI", "alos": 22.6, "male_crim": 50, "male_non_crim": 189, "female_crim": 6, "female_non_crim": 25, "total_population": 270}, {"fy": "FY26", "name": "HALL COUNTY DEPARTMENT OF CORRECTIONS", "city": "GRAND ISLAND", "state": "NE", "aor": "SPM", "alos": 11.49, "male_crim": 6, "male_non_crim": 7, "female_crim": 0, "female_non_crim": 0, "total_population": 13}, {"fy": "FY26", "name": "HANCOCK COUNTY PUBLIC SAFETY COMPLEX", "city": "BAY ST. LOUIS", "state": "MS", "aor": "NOL", "alos": 1.75, "male_crim": 3, "male_non_crim": 20, "female_crim": 0, "female_non_crim": 3, "total_population": 26}, {"fy": "FY26", "name": "HARDIN COUNTY JAIL", "city": "ELDORA", "state": "IA", "aor": "SPM", "alos": 24.31, "male_crim": 22, "male_non_crim": 20, "female_crim": 0, "female_non_crim": 1, "total_population": 43}, {"fy": "FY26", "name": "HENDERSON DETENTION", "city": "HENDERSON", "state": "NV", "aor": "SLC", "alos": 24.92, "male_crim": 26, "male_non_crim": 46, "female_crim": 4, "female_non_crim": 15, "total_population": 91}, {"fy": "FY26", "name": "HILLSBOROUGH COUNTY JAIL", "city": "TAMPA", "state": "FL", "aor": "MIA", "alos": 1.28, "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 0, "total_population": 4}, {"fy": "FY26", "name": "HONOLULU FEDERAL DETENTION CENTER", "city": "HONOLULU", "state": "HI", "aor": "SFR", "alos": 56.15, "male_crim": 19, "male_non_crim": 49, "female_crim": 0, "female_non_crim": 11, "total_population": 79}, {"fy": "FY26", "name": "HOPKINS COUNTY JAIL", "city": "MADISONVILLE", "state": "KY", "aor": "CHI", "alos": 62.1, "male_crim": 35, "male_non_crim": 129, "female_crim": 0, "female_non_crim": 2, "total_population": 166}, {"fy": "FY26", "name": "HOUSTON CONTRACT DETENTION FACILITY", "city": "HOUSTON", "state": "TX", "aor": "HOU", "alos": 41.8, "male_crim": 157, "male_non_crim": 438, "female_crim": 45, "female_non_crim": 245, "total_population": 885}, {"fy": "FY26", "name": "IAH SECURE ADULT DETENTION FACILITY (POLK)", "city": "LIVINGSTON", "state": "TX", "aor": "HOU", "alos": 67.12, "male_crim": 246, "male_non_crim": 629, "female_crim": 0, "female_non_crim": 0, "total_population": 875}, {"fy": "FY26", "name": "IMPERIAL REGIONAL DETENTION FACILITY", "city": "CALEXICO", "state": "CA", "aor": "SND", "alos": 67.22, "male_crim": 92, "male_non_crim": 526, "female_crim": 3, "female_non_crim": 53, "total_population": 674}, {"fy": "FY26", "name": "IRWIN COUNTY DETENTION CENTER", "city": "OCILLA", "state": "GA", "aor": "ATL", "alos": 14.19, "male_crim": 27, "male_non_crim": 90, "female_crim": 1, "female_non_crim": 12, "total_population": 130}, {"fy": "FY26", "name": "JACKSON PARISH CORRECTIONAL CENTER", "city": "JONESBORO", "state": "LA", "aor": "NOL", "alos": 41.73, "male_crim": 153, "male_non_crim": 1051, "female_crim": 0, "female_non_crim": 0, "total_population": 1204}, {"fy": "FY26", "name": "JEFFERSON COUNTY JAIL", "city": "RIGBY", "state": "ID", "aor": "SLC", "alos": 5.17, "male_crim": 1, "male_non_crim": 5, "female_crim": 0, "female_non_crim": 0, "total_population": 6}, {"fy": "FY26", "name": "JOE CORLEY PROCESSING CTR", "city": "CONROE", "state": "TX", "aor": "HOU", "alos": 47.75, "male_crim": 150, "male_non_crim": 799, "female_crim": 0, "female_non_crim": 0, "total_population": 949}, {"fy": "FY26", "name": "JTF CAMP SIX", "city": "FPO", "state": "FL", "aor": "MIA", "alos": 30.41, "male_crim": 4, "male_non_crim": 12, "female_crim": 0, "female_non_crim": 0, "total_population": 16}, {"fy": "FY26", "name": "KANDIYOHI COUNTY JAIL", "city": "WILLMAR", "state": "MN", "aor": "SPM", "alos": 32.6, "male_crim": 35, "male_non_crim": 69, "female_crim": 2, "female_non_crim": 6, "total_population": 112}, {"fy": "FY26", "name": "KARNES COUNTY CORRECTIONAL CENTER", "city": "KARNES CITY", "state": "TX", "aor": "SNA", "alos": 3.04, "male_crim": 2, "male_non_crim": 0, "female_crim": 0, "female_non_crim": 0, "total_population": 2}, {"fy": "FY26", "name": "KARNES COUNTY IMMIGRATION PROCESSING CENTER", "city": "KARNES CITY", "state": "TX", "aor": "SNA", "alos": 48.51, "male_crim": 36, "male_non_crim": 801, "female_crim": 33, "female_non_crim": 335, "total_population": 1205}, {"fy": "FY26", "name": "KAY CO JUSTICE FACILITY", "city": "NEWKIRK", "state": "OK", "aor": "CHI", "alos": 23.23, "male_crim": 55, "male_non_crim": 103, "female_crim": 0, "female_non_crim": 0, "total_population": 158}, {"fy": "FY26", "name": "KENTON COUNTY JAIL", "city": "COVINGTON", "state": "KY", "aor": "CHI", "alos": 40.36, "male_crim": 35, "male_non_crim": 78, "female_crim": 0, "female_non_crim": 0, "total_population": 113}, {"fy": "FY26", "name": "KNOX COUNTY DETENTION FACILITY", "city": "KNOXVILLE", "state": "TN", "aor": "NOL", "alos": 4.01, "male_crim": 6, "male_non_crim": 21, "female_crim": 1, "female_non_crim": 6, "total_population": 34}, {"fy": "FY26", "name": "KROME NORTH SERVICE PROCESSING CENTER", "city": "MIAMI", "state": "FL", "aor": "MIA", "alos": 22.77, "male_crim": 376, "male_non_crim": 482, "female_crim": 0, "female_non_crim": 0, "total_population": 858}, {"fy": "FY26", "name": "LA PAZ COUNTY ADULT DETENTION FACILITY", "city": "PARKER", "state": "AZ", "aor": "PHO", "alos": 1.81, "male_crim": 1, "male_non_crim": 0, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "LA SALLE COUNTY REGIONAL DETENTION CENTER", "city": "ENCINAL", "state": "TX", "aor": "SNA", "alos": 41.97, "male_crim": 19, "male_non_crim": 234, "female_crim": 0, "female_non_crim": 1, "total_population": 254}, {"fy": "FY26", "name": "LAFAYETTE PARISH CORRECTIONAL CENTER", "city": "LAFAYETTE", "state": "LA", "aor": "NOL", "alos": 3.39, "male_crim": 0, "male_non_crim": 1, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "LAKE COUNTY JAIL", "city": "TAVARES", "state": "FL", "aor": "MIA", "alos": 1.0, "male_crim": 0, "male_non_crim": 1, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "LARAMIE COUNTY JAIL", "city": "CHEYENNE", "state": "WY", "aor": "DEN", "alos": 2.28, "male_crim": 1, "male_non_crim": 4, "female_crim": 0, "female_non_crim": 0, "total_population": 5}, {"fy": "FY26", "name": "LAREDO PROCESSING CENTER", "city": "LAREDO", "state": "TX", "aor": "HLG", "alos": 49.05, "male_crim": 0, "male_non_crim": 2, "female_crim": 18, "female_non_crim": 347, "total_population": 367}, {"fy": "FY26", "name": "LAUREL COUNTY CORRECTIONAL CENTER", "city": "LONDON", "state": "KY", "aor": "CHI", "alos": 2.23, "male_crim": 1, "male_non_crim": 0, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "LAWRENCE COUNTY", "city": "DEADWOOD", "state": "SD", "aor": "SPM", "alos": 35.45, "male_crim": 1, "male_non_crim": 8, "female_crim": 0, "female_non_crim": 0, "total_population": 9}, {"fy": "FY26", "name": "LEAVENWORTH US PENITENTIARY", "city": "LEAVENWORTH", "state": "KS", "aor": "CHI", "alos": 96.23, "male_crim": 42, "male_non_crim": 18, "female_crim": 0, "female_non_crim": 0, "total_population": 60}, {"fy": "FY26", "name": "LEWISBURG US PENITENTIARY", "city": "LEWISBURG", "state": "PA", "aor": "PHI", "alos": 2.17, "male_crim": 8, "male_non_crim": 4, "female_crim": 0, "female_non_crim": 0, "total_population": 12}, {"fy": "FY26", "name": "LEXINGTON COUNTY JAIL", "city": "LEXINGTON", "state": "SC", "aor": "ATL", "alos": 1.67, "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 1, "total_population": 5}, {"fy": "FY26", "name": "LIMESTONE COUNTY DETENTION CENTER", "city": "GROESBECK", "state": "TX", "aor": "HOU", "alos": 39.58, "male_crim": 40, "male_non_crim": 216, "female_crim": 0, "female_non_crim": 0, "total_population": 256}, {"fy": "FY26", "name": "LINCOLN COUNTY JAIL", "city": "NORTH PLATTE", "state": "NE", "aor": "SPM", "alos": 32.66, "male_crim": 17, "male_non_crim": 8, "female_crim": 2, "female_non_crim": 1, "total_population": 28}, {"fy": "FY26", "name": "LINN COUNTY JAIL", "city": "CEDAR RAPIDS", "state": "IA", "aor": "SPM", "alos": 21.56, "male_crim": 16, "male_non_crim": 19, "female_crim": 1, "female_non_crim": 3, "total_population": 39}, {"fy": "FY26", "name": "LOGAN COUNTY JAIL", "city": "GUTHRIE", "state": "OK", "aor": "DAL", "alos": 1.64, "male_crim": 1, "male_non_crim": 4, "female_crim": 0, "female_non_crim": 0, "total_population": 5}, {"fy": "FY26", "name": "LOUISIANA ICE PROCESSING", "city": "ANGOLA", "state": "LA", "aor": "NOL", "alos": 53.25, "male_crim": 161, "male_non_crim": 19, "female_crim": 0, "female_non_crim": 0, "total_population": 180}, {"fy": "FY26", "name": "MADISON COUNTY JAIL", "city": "CANTON", "state": "MS", "aor": "NOL", "alos": 1.73, "male_crim": 1, "male_non_crim": 6, "female_crim": 0, "female_non_crim": 2, "total_population": 9}, {"fy": "FY26", "name": "MAHONING COUNTY JAIL", "city": "YOUNGSTOWN", "state": "OH", "aor": "DET", "alos": 16.94, "male_crim": 10, "male_non_crim": 46, "female_crim": 4, "female_non_crim": 30, "total_population": 90}, {"fy": "FY26", "name": "MARTIN COUNTY JAIL", "city": "STUART", "state": "FL", "aor": "MIA", "alos": 2.12, "male_crim": 1, "male_non_crim": 2, "female_crim": 1, "female_non_crim": 2, "total_population": 6}, {"fy": "FY26", "name": "MCCOOK DETENTION CENTER", "city": "MCCOOK", "state": "NE", "aor": "SPM", "alos": 25.59, "male_crim": 41, "male_non_crim": 45, "female_crim": 0, "female_non_crim": 0, "total_population": 86}, {"fy": "FY26", "name": "MESA VERDE ICE PROCESSING CENTER", "city": "BAKERSFIELD", "state": "CA", "aor": "SFR", "alos": 47.26, "male_crim": 84, "male_non_crim": 292, "female_crim": 0, "female_non_crim": 0, "total_population": 376}, {"fy": "FY26", "name": "MIAMI CORRECTIONAL CENTER", "city": "BUNKERHILL", "state": "IN", "aor": "CHI", "alos": 33.71, "male_crim": 267, "male_non_crim": 157, "female_crim": 0, "female_non_crim": 0, "total_population": 424}, {"fy": "FY26", "name": "MIAMI FEDERAL DETENTION", "city": "MIAMI", "state": "FL", "aor": "MIA", "alos": 57.37, "male_crim": 222, "male_non_crim": 238, "female_crim": 0, "female_non_crim": 0, "total_population": 460}, {"fy": "FY26", "name": "MIAMI STAGING FACILITY", "city": "MIAMI", "state": "FL", "aor": "MIA", "alos": 0.74, "male_crim": 4, "male_non_crim": 16, "female_crim": 0, "female_non_crim": 0, "total_population": 20}, {"fy": "FY26", "name": "MIGRANT OPS CENTER MAIN A", "city": "FPO", "state": "FL", "aor": "MIA", "alos": 11.74, "male_crim": 1, "male_non_crim": 6, "female_crim": 0, "female_non_crim": 0, "total_population": 7}, {"fy": "FY26", "name": "MILLER COUNTY JAIL", "city": "TEXARKANA", "state": "AR", "aor": "NOL", "alos": 2.37, "male_crim": 1, "male_non_crim": 4, "female_crim": 0, "female_non_crim": 0, "total_population": 5}, {"fy": "FY26", "name": "MINICASSIA DETENTION CENTER", "city": "BURLEY", "state": "ID", "aor": "SLC", "alos": 2.69, "male_crim": 1, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 0, "total_population": 3}, {"fy": "FY26", "name": "MINNEHAHA COUNTY JAIL", "city": "SIOUX FALLS", "state": "SD", "aor": "SPM", "alos": 2.74, "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 0, "total_population": 4}, {"fy": "FY26", "name": "MONROE COUNTY DETENTION-DORM", "city": "MONROE", "state": "MI", "aor": "DET", "alos": 47.83, "male_crim": 12, "male_non_crim": 114, "female_crim": 0, "female_non_crim": 0, "total_population": 126}, {"fy": "FY26", "name": "MONTGOMERY ICE PROCESSING CENTER", "city": "CONROE", "state": "TX", "aor": "HOU", "alos": 14.78, "male_crim": 291, "male_non_crim": 626, "female_crim": 29, "female_non_crim": 286, "total_population": 1232}, {"fy": "FY26", "name": "MOSHANNON VALLEY PROCESSING CENTER", "city": "PHILIPSBURG", "state": "PA", "aor": "PHI", "alos": 55.34, "male_crim": 400, "male_non_crim": 1215, "female_crim": 20, "female_non_crim": 28, "total_population": 1663}, {"fy": "FY26", "name": "MUSCATINE COUNTY JAIL", "city": "MUSCATINE", "state": "IA", "aor": "SPM", "alos": 31.31, "male_crim": 11, "male_non_crim": 7, "female_crim": 0, "female_non_crim": 1, "total_population": 19}, {"fy": "FY26", "name": "NASSAU COUNTY CORRECTIONAL CENTER", "city": "EAST MEADOW", "state": "NY", "aor": "NYC", "alos": 2.09, "male_crim": 1, "male_non_crim": 12, "female_crim": 0, "female_non_crim": 0, "total_population": 13}, {"fy": "FY26", "name": "NATRONA COUNTY JAIL", "city": "CASPER", "state": "WY", "aor": "DEN", "alos": 14.92, "male_crim": 2, "male_non_crim": 11, "female_crim": 1, "female_non_crim": 0, "total_population": 14}, {"fy": "FY26", "name": "NELSON COLEMAN CORRECTION", "city": "KILLONA", "state": "LA", "aor": "NOL", "alos": 1.82, "male_crim": 1, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 0, "total_population": 3}, {"fy": "FY26", "name": "NEVADA SOUTHERN DETENTION CENTER", "city": "PAHRUMP", "state": "NV", "aor": "SLC", "alos": 46.94, "male_crim": 194, "male_non_crim": 266, "female_crim": 0, "female_non_crim": 0, "total_population": 460}, {"fy": "FY26", "name": "NEW HANOVER COUNTY JAIL", "city": "CASTLE HAYNE", "state": "NC", "aor": "ATL", "alos": 2.29, "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 0, "total_population": 4}, {"fy": "FY26", "name": "NIAGARA COUNTY JAIL", "city": "LOCKPORT", "state": "NY", "aor": "BUF", "alos": 10.98, "male_crim": 0, "male_non_crim": 0, "female_crim": 0, "female_non_crim": 11, "total_population": 11}, {"fy": "FY26", "name": "NORTH CENTRAL REGIONAL JAIL", "city": "GREENWOOD", "state": "WV", "aor": "PHI", "alos": 5.08, "male_crim": 0, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 0, "total_population": 2}, {"fy": "FY26", "name": "NORTH LAKE CORRECTIONAL FACILITY", "city": "BALDWIN", "state": "MI", "aor": "DET", "alos": 45.17, "male_crim": 141, "male_non_crim": 1166, "female_crim": 7, "female_non_crim": 106, "total_population": 1420}, {"fy": "FY26", "name": "NORTHEAST OHIO CORRECTIONAL CENTER", "city": "YOUNGSTOWN", "state": "OH", "aor": "DET", "alos": 30.54, "male_crim": 43, "male_non_crim": 163, "female_crim": 0, "female_non_crim": 0, "total_population": 206}, {"fy": "FY26", "name": "NORTHERN REGIONAL JAIL", "city": "MOUNDSVILLE", "state": "WV", "aor": "PHI", "alos": 7.14, "male_crim": 2, "male_non_crim": 25, "female_crim": 0, "female_non_crim": 3, "total_population": 30}, {"fy": "FY26", "name": "NORTHWEST ICE PROCESSSING CENTER", "city": "TACOMA", "state": "WA", "aor": "SEA", "alos": 51.11, "male_crim": 376, "male_non_crim": 863, "female_crim": 31, "female_non_crim": 102, "total_population": 1372}, {"fy": "FY26", "name": "NORTHWEST REGIONAL CORRECTIONS CENTER", "city": "CROOKSTON", "state": "MN", "aor": "SPM", "alos": 24.27, "male_crim": 1, "male_non_crim": 13, "female_crim": 0, "female_non_crim": 1, "total_population": 15}, {"fy": "FY26", "name": "NORTHWEST STATE CORRECTIONAL CENTER", "city": "SWANTON", "state": "VT", "aor": "BOS", "alos": 13.44, "male_crim": 1, "male_non_crim": 10, "female_crim": 0, "female_non_crim": 0, "total_population": 11}, {"fy": "FY26", "name": "OLDHAM COUNTY DETENTION CENTER", "city": "LA GRANGE", "state": "KY", "aor": "CHI", "alos": 37.37, "male_crim": 43, "male_non_crim": 85, "female_crim": 0, "female_non_crim": 0, "total_population": 128}, {"fy": "FY26", "name": "ORANGE COUNTY JAIL (FL)", "city": "ORLANDO", "state": "FL", "aor": "MIA", "alos": 2.6, "male_crim": 11, "male_non_crim": 53, "female_crim": 2, "female_non_crim": 13, "total_population": 79}, {"fy": "FY26", "name": "ORANGE COUNTY JAIL (NY)", "city": "GOSHEN", "state": "NY", "aor": "NYC", "alos": 51.81, "male_crim": 83, "male_non_crim": 81, "female_crim": 1, "female_non_crim": 0, "total_population": 165}, {"fy": "FY26", "name": "OTAY MESA DETENTION CENTER", "city": "SAN DIEGO", "state": "CA", "aor": "SND", "alos": 55.28, "male_crim": 219, "male_non_crim": 994, "female_crim": 18, "female_non_crim": 242, "total_population": 1473}, {"fy": "FY26", "name": "OTERO COUNTY PROCESSING CENTER", "city": "CHAPARRAL", "state": "NM", "aor": "ELP", "alos": 60.08, "male_crim": 132, "male_non_crim": 633, "female_crim": 9, "female_non_crim": 132, "total_population": 906}, {"fy": "FY26", "name": "OZARK COUNTY SHERIFF'S OFFICE", "city": "GAINESVILLE", "state": "MO", "aor": "CHI", "alos": 32.58, "male_crim": 10, "male_non_crim": 11, "female_crim": 0, "female_non_crim": 0, "total_population": 21}, {"fy": "FY26", "name": "PENNINGTON COUNTY JAIL (SOUTH DAKOTA)", "city": "RAPID CITY", "state": "SD", "aor": "SPM", "alos": 4.22, "male_crim": 1, "male_non_crim": 3, "female_crim": 0, "female_non_crim": 0, "total_population": 4}, {"fy": "FY26", "name": "PHELPS COUNTY JAIL (MO)", "city": "ROLLA", "state": "MO", "aor": "CHI", "alos": 38.32, "male_crim": 3, "male_non_crim": 11, "female_crim": 1, "female_non_crim": 1, "total_population": 16}, {"fy": "FY26", "name": "PHELPS COUNTY JAIL (NE)", "city": "HOLDREGE", "state": "NE", "aor": "SPM", "alos": 46.47, "male_crim": 13, "male_non_crim": 9, "female_crim": 1, "female_non_crim": 1, "total_population": 24}, {"fy": "FY26", "name": "PICKENS COUNTY DETENTION CENTER", "city": "CARROLLTON", "state": "AL", "aor": "NOL", "alos": 4.4, "male_crim": 5, "male_non_crim": 33, "female_crim": 2, "female_non_crim": 3, "total_population": 43}, {"fy": "FY26", "name": "PIKE COUNTY JAIL", "city": "LORDS VALLEY", "state": "PA", "aor": "PHI", "alos": 58.54, "male_crim": 71, "male_non_crim": 170, "female_crim": 0, "female_non_crim": 0, "total_population": 241}, {"fy": "FY26", "name": "PINE PRAIRIE ICE PROCESSING CENTER", "city": "PINE PRAIRIE", "state": "LA", "aor": "NOL", "alos": 15.51, "male_crim": 201, "male_non_crim": 696, "female_crim": 0, "female_non_crim": 0, "total_population": 897}, {"fy": "FY26", "name": "PINELLAS COUNTY JAIL", "city": "CLEARWATER", "state": "FL", "aor": "MIA", "alos": 1.84, "male_crim": 6, "male_non_crim": 24, "female_crim": 1, "female_non_crim": 7, "total_population": 38}, {"fy": "FY26", "name": "PLYMOUTH COUNTY CORRECTIONAL FACILITY", "city": "PLYMOUTH", "state": "MA", "aor": "BOS", "alos": 44.68, "male_crim": 136, "male_non_crim": 367, "female_crim": 0, "female_non_crim": 0, "total_population": 503}, {"fy": "FY26", "name": "POLK COUNTY JAIL", "city": "DES MOINES", "state": "IA", "aor": "SPM", "alos": 24.33, "male_crim": 25, "male_non_crim": 24, "female_crim": 1, "female_non_crim": 3, "total_population": 53}, {"fy": "FY26", "name": "PORT ISABEL SPC", "city": "LOS FRESNOS", "state": "TX", "aor": "HLG", "alos": 6.9, "male_crim": 129, "male_non_crim": 1139, "female_crim": 1, "female_non_crim": 11, "total_population": 1280}, {"fy": "FY26", "name": "POTTAWATTAMIE COUNTY JAIL", "city": "COUNCIL BLUFFS", "state": "IA", "aor": "SPM", "alos": 19.18, "male_crim": 18, "male_non_crim": 9, "female_crim": 1, "female_non_crim": 2, "total_population": 30}, {"fy": "FY26", "name": "PRAIRIELAND DETENTION CENTER", "city": "ALVARADO", "state": "TX", "aor": "DAL", "alos": 20.72, "male_crim": 143, "male_non_crim": 675, "female_crim": 25, "female_non_crim": 110, "total_population": 953}, {"fy": "FY26", "name": "PUTNAM COUNTY SHERIFF", "city": "COOKEVILLE", "state": "TN", "aor": "NOL", "alos": 1.81, "male_crim": 4, "male_non_crim": 13, "female_crim": 0, "female_non_crim": 0, "total_population": 17}, {"fy": "FY26", "name": "RICHWOOD CORRECTIONAL CENTER", "city": "MONROE", "state": "LA", "aor": "NOL", "alos": 50.72, "male_crim": 65, "male_non_crim": 297, "female_crim": 43, "female_non_crim": 684, "total_population": 1089}, {"fy": "FY26", "name": "RIO GRANDE DETENTION CENTER", "city": "LAREDO", "state": "TX", "aor": "HLG", "alos": 61.07, "male_crim": 46, "male_non_crim": 579, "female_crim": 0, "female_non_crim": 0, "total_population": 625}, {"fy": "FY26", "name": "RIVER CORRECTIONAL CENTER", "city": "FERRIDAY", "state": "LA", "aor": "NOL", "alos": 60.26, "male_crim": 46, "male_non_crim": 539, "female_crim": 0, "female_non_crim": 0, "total_population": 585}, {"fy": "FY26", "name": "RIVERSIDE REGIONAL JAIL", "city": "HOPEWELL", "state": "VA", "aor": "WAS", "alos": 3.31, "male_crim": 13, "male_non_crim": 76, "female_crim": 1, "female_non_crim": 3, "total_population": 93}, {"fy": "FY26", "name": "ROANOKE CITY JAIL", "city": "ROANOKE", "state": "VA", "aor": "WAS", "alos": 2.25, "male_crim": 0, "male_non_crim": 1, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "ROBERT A DEYTON DETENTION FACILITY", "city": "LOVEJOY", "state": "GA", "aor": "ATL", "alos": 3.53, "male_crim": 6, "male_non_crim": 8, "female_crim": 0, "female_non_crim": 0, "total_population": 14}, {"fy": "FY26", "name": "SAIPAN DEPARTMENT OF CORRECTIONS (SUSUPE)", "city": "SAIPAN", "state": "MP", "aor": "SFR", "alos": 40.14, "male_crim": 3, "male_non_crim": 15, "female_crim": 1, "female_non_crim": 2, "total_population": 21}, {"fy": "FY26", "name": "SAN DIEGO DISTRICT STAGING", "city": "SAN DIEGO", "state": "CA", "aor": "SND", "alos": 0.49, "male_crim": 3, "male_non_crim": 6, "female_crim": 0, "female_non_crim": 2, "total_population": 11}, {"fy": "FY26", "name": "SAN JUAN STAGING", "city": "GUAYNABO", "state": "PR", "aor": "MIA", "alos": 3.05, "male_crim": 2, "male_non_crim": 13, "female_crim": 0, "female_non_crim": 1, "total_population": 16}, {"fy": "FY26", "name": "SAN LUIS REGIONAL DETENTION CENTER", "city": "SAN LUIS", "state": "AZ", "aor": "SND", "alos": 62.08, "male_crim": 58, "male_non_crim": 210, "female_crim": 1, "female_non_crim": 56, "total_population": 325}, {"fy": "FY26", "name": "SARASOTA COUNTY JAIL", "city": "SARASOTA", "state": "FL", "aor": "MIA", "alos": 1.38, "male_crim": 0, "male_non_crim": 1, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "SARPY COUNTY JAIL", "city": "PAPILLION", "state": "NE", "aor": "SPM", "alos": 20.17, "male_crim": 10, "male_non_crim": 9, "female_crim": 0, "female_non_crim": 1, "total_population": 20}, {"fy": "FY26", "name": "SAUK COUNTY SHERIFF", "city": "BARABOO", "state": "WI", "aor": "CHI", "alos": 14.7, "male_crim": 4, "male_non_crim": 10, "female_crim": 0, "female_non_crim": 0, "total_population": 14}, {"fy": "FY26", "name": "SCOTT COUNTY DET. FACILITY", "city": "DAVENPORT", "state": "IA", "aor": "CHI", "alos": 1.96, "male_crim": 1, "male_non_crim": 0, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "SEBASTIAN COUNTY DETENTION CENTER", "city": "FORT SMITH", "state": "AR", "aor": "NOL", "alos": 1.51, "male_crim": 0, "male_non_crim": 1, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "SENECA COUNTY JAIL", "city": "TIFFIN", "state": "OH", "aor": "DET", "alos": 29.58, "male_crim": 12, "male_non_crim": 44, "female_crim": 0, "female_non_crim": 4, "total_population": 60}, {"fy": "FY26", "name": "SHERBURNE COUNTY JAIL", "city": "ELK RIVER", "state": "MN", "aor": "SPM", "alos": 22.92, "male_crim": 26, "male_non_crim": 68, "female_crim": 4, "female_non_crim": 4, "total_population": 102}, {"fy": "FY26", "name": "SIOUX COUNTY JAIL", "city": "ORANGE CITY", "state": "IA", "aor": "SPM", "alos": 31.15, "male_crim": 5, "male_non_crim": 7, "female_crim": 0, "female_non_crim": 0, "total_population": 12}, {"fy": "FY26", "name": "SOUTH CENTRAL REGIONAL JAIL", "city": "CHARLESTON", "state": "WV", "aor": "PHI", "alos": 8.75, "male_crim": 6, "male_non_crim": 29, "female_crim": 0, "female_non_crim": 2, "total_population": 37}, {"fy": "FY26", "name": "SOUTH LOUISIANA ICE PROCESSING CENTER", "city": "BASILE", "state": "LA", "aor": "NOL", "alos": 46.35, "male_crim": 0, "male_non_crim": 1, "female_crim": 153, "female_non_crim": 825, "total_population": 979}, {"fy": "FY26", "name": "SOUTH TEXAS ICE PROCESSING CENTER", "city": "PEARSALL", "state": "TX", "aor": "SNA", "alos": 47.24, "male_crim": 471, "male_non_crim": 1165, "female_crim": 42, "female_non_crim": 80, "total_population": 1758}, {"fy": "FY26", "name": "SOUTHWESTERN REGIONAL JAIL", "city": "HOLDEN", "state": "WV", "aor": "PHI", "alos": 6.78, "male_crim": 0, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 0, "total_population": 2}, {"fy": "FY26", "name": "ST. CLAIR COUNTY JAIL", "city": "PORT HURON", "state": "MI", "aor": "DET", "alos": 38.69, "male_crim": 9, "male_non_crim": 41, "female_crim": 0, "female_non_crim": 0, "total_population": 50}, {"fy": "FY26", "name": "STE. GENEVIEVE COUNTY SHERIFF/JAIL", "city": "STE. GENEVIEVE", "state": "MO", "aor": "CHI", "alos": 20.64, "male_crim": 17, "male_non_crim": 91, "female_crim": 1, "female_non_crim": 10, "total_population": 119}, {"fy": "FY26", "name": "STEWART DETENTION CENTER", "city": "LUMPKIN", "state": "GA", "aor": "ATL", "alos": 49.98, "male_crim": 567, "male_non_crim": 1128, "female_crim": 61, "female_non_crim": 254, "total_population": 2010}, {"fy": "FY26", "name": "STRAFFORD COUNTY CORRECTIONS", "city": "DOVER", "state": "NH", "aor": "BOS", "alos": 43.95, "male_crim": 43, "male_non_crim": 82, "female_crim": 2, "female_non_crim": 17, "total_population": 144}, {"fy": "FY26", "name": "SWEETWATER COUNTY JAIL", "city": "ROCK SPRINGS", "state": "WY", "aor": "DEN", "alos": 8.82, "male_crim": 4, "male_non_crim": 4, "female_crim": 0, "female_non_crim": 0, "total_population": 8}, {"fy": "FY26", "name": "T DON HUTTO DETENTION CENTER", "city": "TAYLOR", "state": "TX", "aor": "SNA", "alos": 39.29, "male_crim": 117, "male_non_crim": 339, "female_crim": 0, "female_non_crim": 0, "total_population": 456}, {"fy": "FY26", "name": "TOM GREEN COUNTY JAIL", "city": "SAN ANGELO", "state": "TX", "aor": "DAL", "alos": 1.41, "male_crim": 0, "male_non_crim": 1, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "TOOELE COUNTY JAIL", "city": "TOOELE", "state": "UT", "aor": "SLC", "alos": 3.15, "male_crim": 2, "male_non_crim": 6, "female_crim": 0, "female_non_crim": 1, "total_population": 9}, {"fy": "FY26", "name": "TORRANCE/ESTANCIA, NM", "city": "ESTANCIA", "state": "NM", "aor": "ELP", "alos": 105.16, "male_crim": 45, "male_non_crim": 322, "female_crim": 0, "female_non_crim": 0, "total_population": 367}, {"fy": "FY26", "name": "TULSA COUNTY JAIL (DAVID L. MOSS JUSTICE CTR)", "city": "TULSA", "state": "OK", "aor": "DAL", "alos": 5.61, "male_crim": 6, "male_non_crim": 31, "female_crim": 0, "female_non_crim": 5, "total_population": 42}, {"fy": "FY26", "name": "TURNER GUILFORD KNIGHT (TGK) JAIL", "city": "MIAMI", "state": "FL", "aor": "MIA", "alos": 0.98, "male_crim": 2, "male_non_crim": 6, "female_crim": 0, "female_non_crim": 1, "total_population": 9}, {"fy": "FY26", "name": "TWO BRIDGES REGIONAL JAIL", "city": "WISCASSET", "state": "ME", "aor": "BOS", "alos": 207.6, "male_crim": 3, "male_non_crim": 5, "female_crim": 0, "female_non_crim": 0, "total_population": 8}, {"fy": "FY26", "name": "UINTA COUNTY JAIL", "city": "EVANSTON", "state": "WY", "aor": "SLC", "alos": 3.54, "male_crim": 5, "male_non_crim": 17, "female_crim": 0, "female_non_crim": 1, "total_population": 23}, {"fy": "FY26", "name": "VAL VERDE CORRECTIONAL FACILITY", "city": "DEL RIO", "state": "TX", "aor": "SNA", "alos": 0.57, "male_crim": 2, "male_non_crim": 1, "female_crim": 1, "female_non_crim": 0, "total_population": 4}, {"fy": "FY26", "name": "WALTON COUNTY JAIL", "city": "DEFUNIAK SPRINGS", "state": "FL", "aor": "MIA", "alos": 2.71, "male_crim": 5, "male_non_crim": 23, "female_crim": 0, "female_non_crim": 0, "total_population": 28}, {"fy": "FY26", "name": "WARD COUNTY JAIL", "city": "MINOT", "state": "ND", "aor": "SPM", "alos": 3.44, "male_crim": 0, "male_non_crim": 1, "female_crim": 0, "female_non_crim": 0, "total_population": 1}, {"fy": "FY26", "name": "WASHINGTON COUNTY JAIL (PURGATORY CORRECTIONAL FACILITY)", "city": "HURRICANE", "state": "UT", "aor": "SLC", "alos": 6.38, "male_crim": 3, "male_non_crim": 9, "female_crim": 0, "female_non_crim": 0, "total_population": 12}, {"fy": "FY26", "name": "WASHOE COUNTY JAIL", "city": "RENO", "state": "NV", "aor": "SLC", "alos": 23.84, "male_crim": 18, "male_non_crim": 31, "female_crim": 0, "female_non_crim": 2, "total_population": 51}, {"fy": "FY26", "name": "WAUKESHA COUNTY JAIL", "city": "WAUKESHA", "state": "WI", "aor": "CHI", "alos": 2.04, "male_crim": 1, "male_non_crim": 2, "female_crim": 0, "female_non_crim": 0, "total_population": 3}, {"fy": "FY26", "name": "WEBB COUNTY DETENTION CENTER (CCA)", "city": "LAREDO", "state": "TX", "aor": "HLG", "alos": 70.43, "male_crim": 48, "male_non_crim": 387, "female_crim": 2, "female_non_crim": 6, "total_population": 443}, {"fy": "FY26", "name": "WEBER COUNTY JAIL", "city": "OGDEN", "state": "UT", "aor": "SLC", "alos": 3.3, "male_crim": 2, "male_non_crim": 4, "female_crim": 0, "female_non_crim": 0, "total_population": 6}, {"fy": "FY26", "name": "WESTERN REGIONAL JAIL AND CORRECTIONAL FACILITY", "city": "BARBOURSVILLE", "state": "WV", "aor": "PHI", "alos": 6.29, "male_crim": 1, "male_non_crim": 11, "female_crim": 0, "female_non_crim": 1, "total_population": 13}, {"fy": "FY26", "name": "WESTERN TENNESSEE DETENTION FACILITY", "city": "MASON", "state": "TN", "aor": "NOL", "alos": 17.04, "male_crim": 34, "male_non_crim": 256, "female_crim": 0, "female_non_crim": 4, "total_population": 294}, {"fy": "FY26", "name": "WINN CORRECTIONAL CENTER", "city": "WINNFIELD", "state": "LA", "aor": "NOL", "alos": 36.19, "male_crim": 365, "male_non_crim": 1194, "female_crim": 0, "female_non_crim": 0, "total_population": 1559}, {"fy": "FY26", "name": "WOODBURY COUNTY JAIL", "city": "SIOUX CITY", "state": "IA", "aor": "SPM", "alos": 23.73, "male_crim": 25, "male_non_crim": 31, "female_crim": 2, "female_non_crim": 6, "total_population": 64}, {"fy": "FY26", "name": "WYATT DETENTION CENTER", "city": "CENTRAL FALLS", "state": "RI", "aor": "BOS", "alos": 36.34, "male_crim": 38, "male_non_crim": 75, "female_crim": 0, "female_non_crim": 1, "total_population": 114}], "fearDetermination": [{"fy": "FY23", "year": 2023, "month": "January", "fy_month": 4, "fy_label": "Jan", "midend": "mid", "days": 71.9}, {"fy": "FY23", "year": 2023, "month": "February", "fy_month": 5, "fy_label": "Feb", "midend": "mid", "days": 58.8}, {"fy": "FY23", "year": 2023, "month": "March", "fy_month": 6, "fy_label": "Mar", "midend": "mid", "days": 52.5}, {"fy": "FY23", "year": 2023, "month": "April", "fy_month": 7, "fy_label": "Apr", "midend": "mid", "days": 55.8}, {"fy": "FY23", "year": 2023, "month": "May", "fy_month": 8, "fy_label": "May", "midend": "mid", "days": 62.6}, {"fy": "FY23", "year": 2023, "month": "June", "fy_month": 9, "fy_label": "Jun", "midend": "mid", "days": 51.4}, {"fy": "FY23", "year": 2023, "month": "July", "fy_month": 10, "fy_label": "Jul", "midend": "mid", "days": 56.3}, {"fy": "FY23", "year": 2023, "month": "August", "fy_month": 11, "fy_label": "Aug", "midend": "mid", "days": 62.8}, {"fy": "FY23", "year": 2023, "month": "September", "fy_month": 12, "fy_label": "Sep", "midend": "mid", "days": 68.2}, {"fy": "FY24", "year": 2023, "month": "October", "fy_month": 1, "fy_label": "Oct", "midend": "mid", "days": 74.3}, {"fy": "FY24", "year": 2023, "month": "November", "fy_month": 2, "fy_label": "Nov", "midend": "mid", "days": 97.7}, {"fy": "FY24", "year": 2023, "month": "December", "fy_month": 3, "fy_label": "Dec", "midend": "mid", "days": 129.6}, {"fy": "FY24", "year": 2024, "month": "January", "fy_month": 4, "fy_label": "Jan", "midend": "mid", "days": 78.0}, {"fy": "FY24", "year": 2024, "month": "February", "fy_month": 5, "fy_label": "Feb", "midend": "mid", "days": 76.5}, {"fy": "FY24", "year": 2024, "month": "March", "fy_month": 6, "fy_label": "Mar", "midend": "mid", "days": 85.0}, {"fy": "FY24", "year": 2024, "month": "April", "fy_month": 7, "fy_label": "Apr", "midend": "mid", "days": 87.7}, {"fy": "FY24", "year": 2024, "month": "May", "fy_month": 8, "fy_label": "May", "midend": "mid", "days": 84.0}, {"fy": "FY24", "year": 2024, "month": "June", "fy_month": 9, "fy_label": "Jun", "midend": "mid", "days": 83.8}, {"fy": "FY24", "year": 2024, "month": "July", "fy_month": 10, "fy_label": "Jul", "midend": "mid", "days": 81.9}, {"fy": "FY24", "year": 2024, "month": "August", "fy_month": 11, "fy_label": "Aug", "midend": "mid", "days": 79.5}, {"fy": "FY24", "year": 2024, "month": "September", "fy_month": 12, "fy_label": "Sep", "midend": "mid", "days": 80.4}, {"fy": "FY26", "year": 2025, "month": "October", "fy_month": 1, "fy_label": "Oct", "midend": "mid", "days": 146.1}, {"fy": "FY26", "year": 2025, "month": "November", "fy_month": 2, "fy_label": "Nov", "midend": "mid", "days": 157.5}, {"fy": "FY26", "year": 2025, "month": "December", "fy_month": 3, "fy_label": "Dec", "midend": "mid", "days": 168.0}, {"fy": "FY25", "year": 2025, "month": "January", "fy_month": 4, "fy_label": "Jan", "midend": "mid", "days": 183.3}], "segregation": [{"month": "October 2025", "public": 150, "private": 954}, {"month": "November 2025", "public": 152, "private": 825}, {"month": "December 2025", "public": 149, "private": 790}, {"month": "January 2026", "public": 129, "private": 760}]};
+
+// ============================================================
+// CHART.JS DEFAULTS
+// ============================================================
+Chart.defaults.color = '#8b949e';
+Chart.defaults.borderColor = '#30363d';
+Chart.defaults.font.family = "'IBM Plex Sans', sans-serif";
+Chart.defaults.font.size = 11;
+
+const MONTHS_FY = ['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
+
+// Colors
+const C = {
+  cbp:       '#4a9eff',
+  ice:       '#e05252',
+  convicted: '#02020C',   // near white
+  pending:   '#888888',   // mid grey
+  other:     '#3a3a3a',   // dark grey
+  nonCrim:   '#60a5fa',
+  prevFy:    '#AFCBDB',   // consistent with other comparison charts
+};
+
+// ============================================================
+// HELPERS
+// ============================================================
+
+function fmt(n) {
+  if (n == null) return '—';
+  return Number(n).toLocaleString();
+}
+
+function pct(a, b) {
+  if (!b) return '0.0%';
+  return (a / b * 100).toFixed(1) + '%';
+}
+
+function getBookIns(agency, fy) {
+  return DATA.bookIns
+    .filter(d => d.agency === agency && d.fy === fy)
+    .sort((a, b) => a.month_order - b.month_order);
+}
+
+function getBookInsYoy(agency, fy) {
+  return (DATA.bookInsYoy || [])
+    .filter(d => d.agency === agency && d.fy === fy)
+    .sort((a, b) => a.month_order - b.month_order);
+}
+
+function getCrim(agency) {
+  return DATA.criminality.filter(d => d.agency === agency);
+}
+
+function getCrimMonths(agency) {
+  const months = [...new Set(getCrim(agency).map(d => d.month))];
+  return MONTHS_FY.filter(m => months.includes(m));
+}
+
+// Current FY
+const CURRENT_FY = DATA.meta.fy;
+
+// Previous FY (e.g. FY25 -> FY24)
+function prevFy(fy) {
+  const m = fy.match(/FY(\d{2,4})/);
+  if (!m) return null;
+  const n = parseInt(m[1]);
+  const prev = n - 1;
+  return `FY${String(prev).slice(-2)}`;
+}
+
+const PREV_FY = prevFy(CURRENT_FY);
+
+// ============================================================
+// INIT HEADER
+// ============================================================
+document.getElementById('fyBadge').textContent = CURRENT_FY;
+document.getElementById('sourceLabel').textContent = DATA.meta.source_file;
+
+// ============================================================
+// KPI CARDS
+// ============================================================
+function buildKPIs() {
+  const cbpTotal   = DATA.bookIns.filter(d => d.agency === 'CBP').reduce((s, d) => s + d.count, 0);
+  const iceTotal   = DATA.bookIns.filter(d => d.agency === 'ICE').reduce((s, d) => s + d.count, 0);
+  const totalPop   = DATA.byState.reduce((s, d) => s + d.total_population, 0);
+  const totalCrim  = DATA.byState.reduce((s, d) => s + d.total_crim, 0);
+  const totalNonCrim = totalPop - totalCrim;
+  const facilities = DATA.facilities.length;
+  const avgAlos    = DATA.facilities.reduce((s, d) => s + d.alos, 0) / (DATA.facilities.length || 1);
+
+  const cards = [
+    { label: 'CBP Book-Ins YTD',                  value: fmt(cbpTotal),              sub: CURRENT_FY,                          cls: 'accent-1' },
+    { label: 'ICE Book-Ins YTD',                  value: fmt(iceTotal),              sub: CURRENT_FY,                          cls: 'accent-2' },
+    { label: 'Total Detained',                    value: fmt(totalPop),              sub: 'across all states',                 cls: 'accent-3' },
+    { label: 'Detainees w/ No Criminal Record',   value: pct(totalNonCrim, totalPop),sub: fmt(totalNonCrim) + ' individuals',  cls: 'accent-4' },
+    { label: 'Active Facilities',                 value: fmt(facilities),            sub: 'with population ≥ 1',               cls: 'accent-5' },
+    { label: 'ALOS',                              value: avgAlos.toFixed(1) + 'd',   sub: 'avg length of stay',                cls: 'accent-6' },
+  ];
+
+  document.getElementById('kpi-row').innerHTML = cards.map(c => `
+    <div class="kpi-card ${c.cls}">
+      <div class="kpi-label">${c.label}</div>
+      <div class="kpi-value">${c.value}</div>
+      <div class="kpi-sub">${c.sub}</div>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+// CHART FACTORIES
+// ============================================================
+
+function makeFilledLineChart(canvasId, labels, datasets, opts = {}) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  return new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: opts.legend ?? true, position: 'bottom',
+                  labels: { boxWidth: 10, padding: 14 } },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: { ticks: { callback: opts.yCallback ?? (v => v >= 1000 ? (v/1000 % 1 === 0 ? (v/1000).toFixed(0) : (v/1000).toFixed(1))+'k' : v) },
+             beginAtZero: true }
+      }
+    }
+  });
+}
+
+function makeBarChart(canvasId, labels, datasets, opts = {}) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  return new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: opts.legend ?? false, position: 'bottom',
+                  labels: { boxWidth: 10, padding: 14 } },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { stacked: opts.stacked ?? false, grid: { display: false } },
+        y: { stacked: opts.stacked ?? false,
+             ticks: { callback: v => v >= 1000 ? (v/1000 % 1 === 0 ? (v/1000).toFixed(0) : (v/1000).toFixed(1))+'k' : v },
+             beginAtZero: true }
+      }
+    }
+  });
+}
+
+function makeDoughnutChart(canvasId, labels, data, colors) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  const total = data.reduce((s, v) => s + v, 0);
+  return new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels,
+      datasets: [{ data, backgroundColor: colors, borderColor: '#161b22', borderWidth: 2 }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: true, position: 'bottom', labels: { boxWidth: 10, padding: 12 } },
+        tooltip: {
+          callbacks: {
+            label: (c) => {
+              const p = total > 0 ? (c.raw / total * 100).toFixed(1) : '0.0';
+              return ` ${c.label}: ${p}%`;
+            }
+          }
+        }
+      },
+      cutout: '60%'
+    }
+  });
+}
+
+// ============================================================
+// OVERVIEW
+// ============================================================
+function buildOverviewCharts() {
+  const cbpRows = getBookIns('CBP', CURRENT_FY);
+  const iceRows = getBookIns('ICE', CURRENT_FY);
+  const labels = cbpRows.map(d => d.month);
+
+  // Filled line chart — CBP blue, ICE red
+  makeFilledLineChart('chart-bookins-overview', labels, [
+    {
+      label: 'CBP',
+      data: cbpRows.map(d => d.count),
+      borderColor: C.cbp,
+      backgroundColor: 'rgba(74,158,255,0.12)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointBackgroundColor: C.cbp,
+    },
+    {
+      label: 'ICE',
+      data: iceRows.map(d => d.count),
+      borderColor: C.ice,
+      backgroundColor: 'rgba(224,82,82,0.12)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointBackgroundColor: C.ice,
+    }
+  ]);
+
+  // Segregation — stacked bar, sorted by fiscal month (Oct→Sep)
+  const FY_MONTH_NAMES = ['October','November','December','January','February',
+                          'March','April','May','June','July','August','September'];
+  const segSorted = [...DATA.segregation].sort((a, b) => {
+    const aMonth = FY_MONTH_NAMES.findIndex(m => a.month.startsWith(m));
+    const bMonth = FY_MONTH_NAMES.findIndex(m => b.month.startsWith(m));
+    // Also sort by year so Oct 2024 comes before Oct 2025
+    const aYear = parseInt(a.month.match(/\d{4}/)?.[0] || '0');
+    const bYear = parseInt(b.month.match(/\d{4}/)?.[0] || '0');
+    return aYear !== bYear ? aYear - bYear : aMonth - bMonth;
+  });
+  const segLabels = segSorted.map(d => d.month.replace(' 20', " '"));
+  makeBarChart('chart-segregation', segLabels, [
+    { label: 'Public Facilities',  data: segSorted.map(d => d.public),  backgroundColor: '#02020C', borderRadius: 2 },
+    { label: 'Private Facilities', data: segSorted.map(d => d.private), backgroundColor: '#AFCBDB', borderRadius: 2 }
+  ], { stacked: true, legend: true });
+
+  // Fear determination — FY25 vs FY24, aligned on fiscal month axis
+  // Top 10 states — stacked bar, red/blue
+  const top10 = [...DATA.byState]
+    .sort((a, b) => b.total_population - a.total_population)
+    .slice(0, 10);
+
+  makeBarChart('chart-state-bar', top10.map(d => d.state), [
+    { label: 'Criminal Record',    data: top10.map(d => d.total_crim),     backgroundColor: '#02020C', borderRadius: 2 },
+    { label: 'No Criminal Record', data: top10.map(d => d.total_non_crim), backgroundColor: '#AFCBDB', borderRadius: 2 }
+  ], { stacked: true, legend: true });
+}
+
+// ============================================================
+// BOOK-INS — with prior FY comparison
+// ============================================================
+function buildBookInsPanel() {
+  const FY_MONTHS = ['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
+
+  for (const agency of ['CBP', 'ICE']) {
+    const color    = agency === 'CBP' ? C.cbp : C.ice;
+    const canvasId = agency === 'CBP' ? 'chart-bookins-cbp' : 'chart-bookins-ice';
+
+    // Index data by month for both FYs
+    const curByMonth  = Object.fromEntries(
+      getBookIns(agency, CURRENT_FY).map(d => [d.month, d.count])
+    );
+    const prevByMonth = Object.fromEntries(
+      getBookInsYoy(agency, PREV_FY).map(d => [d.month, d.count])
+    );
+
+    const hasPrev = Object.keys(prevByMonth).length > 0;
+
+    // Only show months that have data in either FY
+    const activeMonths = FY_MONTHS.filter(m => curByMonth[m] != null || prevByMonth[m] != null);
+
+    const datasets = [
+      {
+        label: CURRENT_FY,
+        data: activeMonths.map(m => curByMonth[m] ?? null),
+        backgroundColor: color,
+        borderRadius: 3,
+      }
+    ];
+
+    if (hasPrev) {
+      datasets.push({
+        label: PREV_FY,
+        data: activeMonths.map(m => prevByMonth[m] ?? null),
+        backgroundColor: C.prevFy,
+        borderRadius: 3,
+      });
+    }
+
+    makeBarChart(canvasId, activeMonths, datasets, { legend: hasPrev });
+  }
+
+  // Table — no FY Month # column
+  document.getElementById('tbody-bookins').innerHTML = DATA.bookIns
+    .sort((a, b) => a.month_order - b.month_order)
+    .map(d => `
+      <tr>
+        <td>${d.agency}</td>
+        <td>${d.month}</td>
+        <td class="mono">${fmt(d.count)}</td>
+      </tr>
+    `).join('');
+}
+
+// ============================================================
+// CRIMINALITY
+// ============================================================
+function buildCrimPanel() {
+  const cats   = ['Convicted', 'Pending', 'Other Violation'];
+  // Use brighter colors for line charts — the greyscale works for donuts but
+  // is too low-contrast for thin lines on a dark background
+  const lineColors = ['#60a5fa', '#34d399', '#fbbf24'];
+
+  for (const [agency, canvasId] of [['CBP','chart-crim-cbp-line'], ['ICE','chart-crim-ice-line']]) {
+    const months   = getCrimMonths(agency);
+    const crimData = getCrim(agency);
+
+    const datasets = cats.map((cat, i) => ({
+      label: cat,
+      data: months.map(m => {
+        const r = crimData.find(d => d.category === cat && d.month === m);
+        return r ? r.count : null;
+      }),
+      borderColor: lineColors[i],
+      backgroundColor: lineColors[i] + '18',
+      borderWidth: 2,
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointBackgroundColor: lineColors[i],
+      pointHoverRadius: 6,
+    }));
+
+    makeFilledLineChart(canvasId, months, datasets);
+  }
+
+  renderStateTable();
+  document.getElementById('state-search').addEventListener('input',  renderStateTable);
+  document.getElementById('state-sort').addEventListener('change', renderStateTable);
+}
+
+const STATE_NAMES = {
+  'AL':'alabama','AK':'alaska','AZ':'arizona','AR':'arkansas','CA':'california',
+  'CO':'colorado','CT':'connecticut','DE':'delaware','FL':'florida','GA':'georgia',
+  'HI':'hawaii','ID':'idaho','IL':'illinois','IN':'indiana','IA':'iowa',
+  'KS':'kansas','KY':'kentucky','LA':'louisiana','ME':'maine','MD':'maryland',
+  'MA':'massachusetts','MI':'michigan','MN':'minnesota','MS':'mississippi','MO':'missouri',
+  'MT':'montana','NE':'nebraska','NV':'nevada','NH':'new hampshire','NJ':'new jersey',
+  'NM':'new mexico','NY':'new york','NC':'north carolina','ND':'north dakota','OH':'ohio',
+  'OK':'oklahoma','OR':'oregon','PA':'pennsylvania','RI':'rhode island','SC':'south carolina',
+  'SD':'south dakota','TN':'tennessee','TX':'texas','UT':'utah','VT':'vermont',
+  'VA':'virginia','WA':'washington','WV':'west virginia','WI':'wisconsin','WY':'wyoming',
+  'DC':'district of columbia','PR':'puerto rico','GU':'guam','VI':'virgin islands'
+};
+
+function renderStateTable() {
+  const q       = document.getElementById('state-search').value.toLowerCase();
+  const sortKey = document.getElementById('state-sort').value;
+  let rows = DATA.byState.filter(d => {
+    if (!q) return true;
+    const abbr = d.state.toLowerCase();
+    const full = STATE_NAMES[d.state.toUpperCase()] || '';
+    return abbr.includes(q) || full.includes(q);
+  });
+  rows.sort((a, b) => sortKey === 'state' ? a.state.localeCompare(b.state) : b[sortKey] - a[sortKey]);
+
+  document.getElementById('tbody-state').innerHTML = rows.map(d => {
+    const pctCrim = d.total_population > 0 ? (d.total_crim / d.total_population * 100) : 0;
+    const w = Math.round(pctCrim);
+    return `
+      <tr>
+        <td><strong>${d.state}</strong></td>
+        <td class="mono">${fmt(d.total_crim)}</td>
+        <td class="mono">${fmt(d.total_non_crim)}</td>
+        <td class="mono"><strong>${fmt(d.total_population)}</strong></td>
+        <td class="mono">${pctCrim.toFixed(1)}%</td>
+        <td>
+          <div class="bar-wrap">
+            <div class="bar-inner" style="width:${w}px;background:var(--crim-bar)"></div>
+            <div class="bar-inner" style="width:${100-w}px;background:var(--non-crim-bar)"></div>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// FACILITIES
+// ============================================================
+let facPage = 0;
+const FAC_PAGE_SIZE = 25;
+let facFiltered = [];
+
+function buildFacilitiesPanel() {
+  const states = [...new Set(DATA.facilities.map(d => d.state))].sort();
+  const stateSel = document.getElementById('fac-state');
+  states.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; stateSel.appendChild(o); });
+
+  ['fac-search','fac-state','fac-sort'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('change', () => { facPage = 0; renderFacTable(); });
+    if (id === 'fac-search') el.addEventListener('input', () => { facPage = 0; renderFacTable(); });
+  });
+
+  document.getElementById('fac-prev').addEventListener('click', () => { if (facPage > 0) { facPage--; renderFacTable(); } });
+  document.getElementById('fac-next').addEventListener('click', () => {
+    if ((facPage + 1) * FAC_PAGE_SIZE < facFiltered.length) { facPage++; renderFacTable(); }
+  });
+
+  renderFacTable();
+}
+
+function renderFacTable() {
+  const q     = document.getElementById('fac-search').value.toLowerCase();
+  const state = document.getElementById('fac-state').value;
+  const sort  = document.getElementById('fac-sort').value;
+
+  facFiltered = DATA.facilities.filter(d =>
+    (!q     || d.name.toLowerCase().includes(q) || d.city.toLowerCase().includes(q) || d.state.toLowerCase().includes(q)) &&
+    (!state || d.state === state)
+  );
+  facFiltered.sort((a, b) => sort === 'name' ? a.name.localeCompare(b.name) : b[sort] - a[sort]);
+
+  const start    = facPage * FAC_PAGE_SIZE;
+  const pageRows = facFiltered.slice(start, start + FAC_PAGE_SIZE);
+
+  document.getElementById('tbody-facilities').innerHTML = pageRows.map(d => `
+    <tr>
+      <td><strong>${d.name}</strong></td>
+      <td>${d.city}</td>
+      <td>${d.state}</td>
+      <td class="mono">${d.alos.toFixed(1)}</td>
+      <td class="mono">${fmt(d.male_crim)}</td>
+      <td class="mono">${fmt(d.male_non_crim)}</td>
+      <td class="mono">${fmt(d.female_crim)}</td>
+      <td class="mono">${fmt(d.female_non_crim)}</td>
+      <td class="mono"><strong>${fmt(d.total_population)}</strong></td>
+    </tr>
+  `).join('');
+
+  document.getElementById('fac-pager-info').textContent =
+    `Showing ${start + 1}–${Math.min(start + FAC_PAGE_SIZE, facFiltered.length)} of ${facFiltered.length}`;
+  document.getElementById('fac-prev').disabled = facPage === 0;
+  document.getElementById('fac-next').disabled = (facPage + 1) * FAC_PAGE_SIZE >= facFiltered.length;
+}
+
+// ============================================================
+// YEAR-OVER-YEAR
+// ============================================================
+
+// ATD snapshot data (extracted from FY24/FY25/FY26 Excel files)
+const ATD_YOY = {
+  FY24: {
+    total:       181499,
+    alip:        552.8,
+    tech: {
+      'SmartLINK':     153421,
+      'Ankle Monitor':  19998,
+      'Wristworn':       4164,
+      'VoiceID':         2826,
+      'Dual Tech':       1076,
+      'No Tech':           14,
+    }
+  },
+  FY25: {
+    total:       183756,
+    alip:        686.3,
+    tech: {
+      'SmartLINK':     157386,
+      'Ankle Monitor':  22123,
+      'Wristworn':       3011,
+      'VoiceID':         1222,
+      'Dual Tech':          14,
+    }
+  },
+  FY26: {
+    total:       179991,
+    alip:        754.9,
+    tech: {
+      'SmartLINK':     135279,
+      'Ankle Monitor':  42115,
+      'Wristworn':       2548,
+      'Dual Tech':          48,
+      'No Tech':             1,
+    }
+  }
+};
+
+// Bond stats assembled from all three files (chronological, deduped, non-zero)
+const BOND_SERIES = [
+  // FY24 file covers Mar 2023 – Jun 2024
+  { label: 'Mar \'23', totalBookOuts: 14255, bondOuts: 2026, bondAmt: 4149,  alos: 34.5 },
+  { label: 'Apr \'23', totalBookOuts: 12671, bondOuts: 1004, bondAmt: 6354,  alos: 46.8 },
+  { label: 'May \'23', totalBookOuts: 12442, bondOuts: 1251, bondAmt: 6341,  alos: 44.2 },
+  { label: 'Jun \'23', totalBookOuts: 11090, bondOuts:  980, bondAmt: 6935,  alos: 48.1 },
+  { label: 'Jul \'23', totalBookOuts: 11255, bondOuts: 1112, bondAmt: 7137,  alos: 49.0 },
+  { label: 'Aug \'23', totalBookOuts: 12344, bondOuts: 1446, bondAmt: 6819,  alos: 47.9 },
+  { label: 'Sep \'23', totalBookOuts: 10474, bondOuts: 1201, bondAmt: 6917,  alos: 48.6 },
+  { label: 'Oct \'23', totalBookOuts: 20381, bondOuts: 1166, bondAmt: 6570,  alos: 57.1 },
+  { label: 'Nov \'23', totalBookOuts: 19637, bondOuts: 1141, bondAmt: 6333,  alos: 61.8 },
+  { label: 'Dec \'23', totalBookOuts: 20286, bondOuts: 1040, bondAmt: 6731,  alos: 65.2 },
+  { label: 'Jan \'24', totalBookOuts: 19292, bondOuts:  780, bondAmt: 6614,  alos: 73.1 },
+  { label: 'Feb \'24', totalBookOuts: 22135, bondOuts:  905, bondAmt: 7039,  alos: 77.1 },
+  { label: 'Mar \'24', totalBookOuts: 24401, bondOuts: 1024, bondAmt: 6625,  alos: 79.4 },
+  { label: 'Apr \'24', totalBookOuts: 23645, bondOuts: 1109, bondAmt: 6585,  alos: 73.5 },
+  { label: 'May \'24', totalBookOuts: 25900, bondOuts: 1026, bondAmt: 6550,  alos: 74.5 },
+  // FY25 file: Jun 2024 onward (skip May 24 overlap, pick up Jun 24)
+  { label: 'Jun \'24', totalBookOuts: 23734, bondOuts:  952, bondAmt: 6741,  alos: 70.7 },
+  { label: 'Jul \'24', totalBookOuts: 24749, bondOuts: 1006, bondAmt: 6994,  alos: 69.8 },
+  { label: 'Aug \'24', totalBookOuts: 23626, bondOuts:  910, bondAmt: 6697,  alos: 69.4 },
+  { label: 'Sep \'24', totalBookOuts: 20613, bondOuts:  820, bondAmt: 6694,  alos: 69.2 },
+  { label: 'Oct \'24', totalBookOuts: 21709, bondOuts:  969, bondAmt: 7106,  alos: 73.3 },
+  { label: 'Nov \'24', totalBookOuts: 20890, bondOuts:  728, bondAmt: 7260,  alos: 70.6 },
+  { label: 'Dec \'24', totalBookOuts: 20693, bondOuts:  852, bondAmt: 7628,  alos: 68.8 },
+  { label: 'Jan \'25', totalBookOuts: 19966, bondOuts:  783, bondAmt: 7494,  alos: 83.2 },
+  { label: 'Feb \'25', totalBookOuts: 17328, bondOuts:  852, bondAmt: 6910,  alos: 53.8 },
+  { label: 'Mar \'25', totalBookOuts: 19362, bondOuts: 1847, bondAmt: 6969,  alos: 45.6 },
+  { label: 'Apr \'25', totalBookOuts: 21114, bondOuts: 2572, bondAmt: 7007,  alos: 46.5 },
+  { label: 'May \'25', totalBookOuts: 26779, bondOuts: 2477, bondAmt: 7238,  alos: 48.9 },
+  { label: 'Jun \'25', totalBookOuts: 14551, bondOuts: 1342, bondAmt: 7177,  alos: 48.3 },
+  // FY26 file: Oct 2025 onward (non-zero)
+  { label: 'Oct \'25', totalBookOuts: 37541, bondOuts: 1033, bondAmt: 7420,  alos: 50.2 },
+  { label: 'Nov \'25', totalBookOuts: 36454, bondOuts: 1227, bondAmt: 7575,  alos: 52.5 },
+  { label: 'Dec \'25', totalBookOuts: 38736, bondOuts: 2006, bondAmt: 7027,  alos: 58.4 },
+  { label: 'Jan \'26', totalBookOuts: 37404, bondOuts: 1834, bondAmt: 7671,  alos: 67.9 },
+  // Feb 26 — partial month flag
+  { label: 'Feb \'26*', totalBookOuts: 10090, bondOuts: 348,  bondAmt: 8157,  alos: 68.6, partial: true },
+];
+
+function buildYoyPanel() {
+  const fys    = ['FY24', 'FY25', 'FY26'];
+  const fyColors = ['#AFCBDB', '#4a9eff', '#e36e25'];
+
+  // --- ATD Population bar chart ---
+  makeBarChart('chart-yoy-atd-pop', fys, [{
+    label: 'ATD Active Population',
+    data: fys.map(fy => ATD_YOY[fy].total),
+    backgroundColor: fyColors,
+    borderRadius: 3,
+  }], { legend: false });
+
+  // --- ATD ALIP bar chart ---
+  makeBarChart('chart-yoy-atd-alip', fys, [{
+    label: 'Avg Days in Program',
+    data: fys.map(fy => ATD_YOY[fy].alip),
+    backgroundColor: fyColors,
+    borderRadius: 3,
+  }], { legend: false });
+
+  // --- ATD Technology stacked bar ---
+  const techKeys  = ['SmartLINK', 'Ankle Monitor', 'Wristworn', 'VoiceID', 'Dual Tech', 'No Tech'];
+  const techColors = ['#60a5fa', '#e05252', '#34d399', '#fbbf24', '#a78bfa', '#94a3b8'];
+
+  const techTotals = fys.map(fy => techKeys.reduce((s, k) => s + (ATD_YOY[fy].tech[k] || 0), 0));
+
+  const techDatasets = techKeys.map((key, i) => ({
+    label: key,
+    data: fys.map((fy, fi) => {
+      const raw = ATD_YOY[fy].tech[key] || 0;
+      return techTotals[fi] > 0 ? +(raw / techTotals[fi] * 100).toFixed(2) : 0;
+    }),
+    backgroundColor: techColors[i],
+    borderRadius: 2,
+  }));
+
+  const ctx = document.getElementById('chart-yoy-atd-tech');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'bar',
+      data: { labels: fys, datasets: techDatasets },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true, position: 'bottom', labels: { boxWidth: 10, padding: 14 } },
+          tooltip: {
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              label: c => ` ${c.dataset.label}: ${c.raw.toFixed(1)}%`
+            }
+          }
+        },
+        scales: {
+          x: { stacked: true, grid: { display: false } },
+          y: { stacked: true, min: 0, max: 100,
+               ticks: { callback: v => v + '%' },
+               beginAtZero: true }
+        }
+      }
+    });
+  }
+
+  // --- Bond series charts ---
+  const bondLabels = BOND_SERIES.map(d => d.label);
+  const isPartial  = BOND_SERIES.map(d => !!d.partial);
+
+  // Point styles: open circle for partial month
+  function pointStyle(partial) {
+    return partial ? BOND_SERIES.map((d, i) => d.partial ? 'circle' : 'circle') : BOND_SERIES.map(() => 'circle');
+  }
+
+  // ALOS line
+  makeFilledLineChart('chart-yoy-alos', bondLabels, [{
+    label: 'ALOS (Days)',
+    data: BOND_SERIES.map(d => d.alos),
+    borderColor: '#60a5fa',
+    backgroundColor: 'rgba(96,165,250,0.1)',
+    fill: true,
+    tension: 0.3,
+    pointRadius: BOND_SERIES.map(d => d.partial ? 5 : 3),
+    pointStyle: BOND_SERIES.map(d => d.partial ? 'rectRot' : 'circle'),
+    pointBackgroundColor: BOND_SERIES.map(d => d.partial ? '#fbbf24' : '#60a5fa'),
+    spanGaps: false,
+  }], { legend: false });
+
+  // Bond rate line
+  makeFilledLineChart('chart-yoy-bond-rate', bondLabels, [{
+    label: 'Bond Rate (%)',
+    data: BOND_SERIES.map(d => d.totalBookOuts > 0 ? +(d.bondOuts / d.totalBookOuts * 100).toFixed(2) : null),
+    borderColor: '#34d399',
+    backgroundColor: 'rgba(52,211,153,0.1)',
+    fill: true,
+    tension: 0.3,
+    pointRadius: BOND_SERIES.map(d => d.partial ? 5 : 3),
+    pointStyle: BOND_SERIES.map(d => d.partial ? 'rectRot' : 'circle'),
+    pointBackgroundColor: BOND_SERIES.map(d => d.partial ? '#fbbf24' : '#34d399'),
+    spanGaps: false,
+  }], { legend: false, yCallback: v => v.toFixed(1) + '%' });
+
+  // Bond amount line
+  makeFilledLineChart('chart-yoy-bond-amount', bondLabels, [{
+    label: 'Avg Bond Amount ($)',
+    data: BOND_SERIES.map(d => d.bondAmt),
+    borderColor: '#fbbf24',
+    backgroundColor: 'rgba(251,191,36,0.1)',
+    fill: true,
+    tension: 0.3,
+    pointRadius: BOND_SERIES.map(d => d.partial ? 5 : 3),
+    pointStyle: BOND_SERIES.map(d => d.partial ? 'rectRot' : 'circle'),
+    pointBackgroundColor: BOND_SERIES.map(d => d.partial ? '#fbbf24' : '#fbbf24'),
+    spanGaps: false,
+  }], { legend: false, yCallback: v => '$' + v.toLocaleString() });
+
+  // Partial month note
+  document.querySelectorAll('#panel-yoy .chart-card').forEach(card => {
+    if (card.querySelector('#chart-yoy-alos, #chart-yoy-bond-rate, #chart-yoy-bond-amount')) {
+      const note = document.createElement('div');
+      note.style.cssText = 'margin-top:10px;font-size:11px;color:var(--text-muted);font-family:"IBM Plex Mono",monospace;';
+      note.textContent = '◆ Feb \'26* — partial month data';
+      card.appendChild(note);
+    }
+  });
+}
+
+// ============================================================
+// TAB NAV
+// ============================================================
+let crimBuilt = false, facBuilt = false, bookInsBuilt = false, yoyBuilt = false;
+
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+    if (tab.dataset.panel === 'bookins'     && !bookInsBuilt) { buildBookInsPanel(); bookInsBuilt = true; }
+    if (tab.dataset.panel === 'criminality' && !crimBuilt)    { buildCrimPanel();    crimBuilt    = true; }
+    if (tab.dataset.panel === 'facilities'  && !facBuilt)     { buildFacilitiesPanel(); facBuilt  = true; }
+    if (tab.dataset.panel === 'yoy'         && !yoyBuilt)     { buildYoyPanel();     yoyBuilt     = true; }
+  });
+});
+
+// ============================================================
+// ABOUT DRAWER
+// ============================================================
+(function() {
+  const btn     = document.getElementById('about-btn');
+  const drawer  = document.getElementById('about-drawer');
+  const overlay = document.getElementById('about-overlay');
+  const closeBtn = document.getElementById('drawer-close');
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  document.querySelectorAll('.drawer-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.drawer-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.drawer-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('drawer-' + tab.dataset.drawer).classList.add('active');
+    });
+  });
+})();
+
+// ============================================================
+// SPLASH
+// ============================================================
+document.getElementById('splash-btn').addEventListener('click', () => {
+  const splash = document.getElementById('splash');
+  splash.classList.add('dismissed');
+  splash.addEventListener('transitionend', () => splash.remove(), { once: true });
+});
+
+// ============================================================
+// BOOT
+// ============================================================
+buildKPIs();
+buildOverviewCharts();
+</script>
 
 </body>
 </html>
