@@ -854,6 +854,7 @@
     <div class="chart-grid full">
       <div class="chart-card">
         <div class="chart-title">Monthly Segregation Placements</div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;">Segregation placement refers to the isolation of a detainee from the general detention population, typically in a single-occupancy cell. Placements may occur for reasons including disciplinary action, protective custody, medical or mental health needs, or facility security concerns. This chart shows the number of new placements each month, split by public and private facility type.</p>
         <canvas id="chart-segregation"></canvas>
         <div class="legend">
           <div class="legend-item"><div class="legend-dot" style="background:#02020C"></div>Public Facilities</div>
@@ -1122,7 +1123,48 @@ const PREV_FY = prevFy(CURRENT_FY);
 // INIT HEADER
 // ============================================================
 document.getElementById('fyBadge').textContent = CURRENT_FY;
-document.getElementById('sourceLabel').textContent = DATA.meta.source_file;
+
+// Parse date from filename e.g. FY26_detentionStats_02122026.xlsx → Feb 12, 2026
+(function() {
+  const fname = DATA.meta.source_file || '';
+  const m = fname.match(/(\d{2})(\d{2})(\d{4})(?:\.xlsx)?$/i);
+  const MONTH_NAMES = ['January','February','March','April','May','June',
+                       'July','August','September','October','November','December'];
+  let dateStr = fname;
+  let isPartial = false;
+
+  if (m) {
+    const month = parseInt(m[1], 10);
+    const day   = parseInt(m[2], 10);
+    const year  = parseInt(m[3], 10);
+    // Check if snapshot day is not the last day of the month
+    const lastDay = new Date(year, month, 0).getDate();
+    isPartial = day < lastDay;
+    dateStr = `${MONTH_NAMES[month - 1]} ${day}, ${year}`;
+  }
+
+  document.getElementById('sourceLabel').textContent = 'Data current as of ' + dateStr;
+
+  if (isPartial) {
+    const warning = document.createElement('div');
+    warning.id = 'partial-warning';
+    warning.style.cssText = [
+      'background:#2d1f00',
+      'border-bottom:1px solid #5a3e00',
+      'color:#fbbf24',
+      'font-size:12px',
+      'font-family:"IBM Plex Mono",monospace',
+      'padding:7px 32px',
+      'display:flex',
+      'align-items:center',
+      'gap:8px',
+    ].join(';');
+    warning.innerHTML = `<span style="font-size:14px">⚠</span> This dataset covers data through <strong>${dateStr}</strong> and does not represent a complete month. Some figures — particularly book-out counts and ALOS — may be lower than usual.`;
+    // Insert after nav bar
+    const nav = document.querySelector('.nav-tabs');
+    nav.insertAdjacentElement('afterend', warning);
+  }
+})();
 
 // ============================================================
 // KPI CARDS
