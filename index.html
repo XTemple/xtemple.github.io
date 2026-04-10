@@ -836,14 +836,14 @@
           </div>
           <div style="background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:16px;text-align:center;">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:#e36e25;margin-bottom:4px;">40.8%</div>
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;">FY2026 — Q1 (Oct–Dec 2025)</div>
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;">FY2026 YTD</div>
             <div style="font-size:12px;color:var(--text-dim);margin-top:6px;">No criminal record</div>
           </div>
         </div>
 
         <p style="font-size:13px;color:var(--text-dim);line-height:1.75;margin-bottom:12px;">In FY2024, approximately 1 in 3 people in ICE custody had no criminal record. By FY2025 and FY2026, that figure had grown to closer to 2 in 5 — a shift of <strong style="color:var(--text)">+4.1 percentage points</strong> over two years. The effect size is small (Cramér's V = 0.04), reflecting that the proportional change is modest, but the statistical significance is robust given the large population sizes involved.</p>
 
-        <p style="font-size:11px;color:var(--text-muted);font-family:'IBM Plex Mono',monospace;border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">Chi-square test on ICE ADP fy_overall figures · FY24: n=37,745 (full year) · FY25: n=46,056 (full year) · FY26: n=56,434 (Q1 Oct–Dec 2025 only) · All figures sourced directly from ICE Detention Management Statistics</p>
+        <p style="font-size:11px;color:var(--text-muted);font-family:'IBM Plex Mono',monospace;border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">Chi-square test on ICE ADP fy_overall figures · FY24: n=37,745 · FY25: n=46,056 · FY26: n=56,434 · All figures sourced directly from ICE Detention Management Statistics</p>
       </div>
     </div>
 
@@ -1026,6 +1026,7 @@ function makeBarChart(canvasId, labels, datasets, opts = {}) {
       scales: {
         x: { stacked: opts.stacked ?? false, grid: { display: false } },
         y: { stacked: opts.stacked ?? false,
+             max: opts.yMax ?? undefined,
              ticks: { callback: v => v >= 1000 ? (v/1000 % 1 === 0 ? (v/1000).toFixed(0) : (v/1000).toFixed(1))+'k' : v },
              beginAtZero: true }
       }
@@ -1185,11 +1186,18 @@ function buildOverviewCharts() {
 function buildBookInsPanel() {
   const FY_MONTHS = ['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
 
+  // Calculate shared Y max across both agencies and both FYs for fair comparison
+  const allValues = ['CBP','ICE'].flatMap(agency => {
+    const cur  = getBookIns(agency, CURRENT_FY).map(d => d.count);
+    const prev = getBookInsYoy(agency, PREV_FY).map(d => d.count);
+    return [...cur, ...prev];
+  }).filter(v => v != null && !isNaN(v));
+  const sharedMax = Math.ceil(Math.max(...allValues) * 1.05 / 1000) * 1000;
+
   for (const agency of ['CBP', 'ICE']) {
     const color    = agency === 'CBP' ? C.cbp : C.ice;
     const canvasId = agency === 'CBP' ? 'chart-bookins-cbp' : 'chart-bookins-ice';
 
-    // Index data by month for both FYs
     const curByMonth  = Object.fromEntries(
       getBookIns(agency, CURRENT_FY).map(d => [d.month, d.count])
     );
@@ -1198,8 +1206,6 @@ function buildBookInsPanel() {
     );
 
     const hasPrev = Object.keys(prevByMonth).length > 0;
-
-    // Only show months that have data in either FY
     const activeMonths = FY_MONTHS.filter(m => curByMonth[m] != null || prevByMonth[m] != null);
 
     const datasets = [
@@ -1220,7 +1226,7 @@ function buildBookInsPanel() {
       });
     }
 
-    makeBarChart(canvasId, activeMonths, datasets, { legend: hasPrev });
+    makeBarChart(canvasId, activeMonths, datasets, { legend: hasPrev, yMax: sharedMax });
   }
 
   // Table — no FY Month # column
